@@ -1,1 +1,1 @@
-echo 'www.merongivian.com' >> source/CNAME
+echo 'merongivian.com' >> source/CNAME
