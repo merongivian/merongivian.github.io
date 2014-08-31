@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[Merongivian]]></title>
   <link href="http://merongivian.github.io/atom.xml" rel="self"/>
   <link href="http://merongivian.github.io/"/>
-  <updated>2014-08-30T10:07:30-05:00</updated>
+  <updated>2014-08-31T00:23:36-05:00</updated>
   <id>http://merongivian.github.io/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Jose Anasco]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
