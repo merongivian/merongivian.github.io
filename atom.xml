@@ -4,7 +4,7 @@
   <title><![CDATA[Merongivian]]></title>
   <link href="http://merongivian.github.io/atom.xml" rel="self"/>
   <link href="http://merongivian.github.io/"/>
-  <updated>2014-10-23T08:26:33-05:00</updated>
+  <updated>2014-10-23T11:56:37-05:00</updated>
   <id>http://merongivian.github.io/</id>
   <author>
     <name><![CDATA[Jose Añasco]]></name>
@@ -110,6 +110,20 @@ centralizada de definiciones de políticas</li>
 <h3>Componentes data label</h3>
 
 <p>  <img src="http://merongivian.github.io/images/posts/ols-componentes.png"></p>
+
+<h2>Video Laboratorio #2</h2>
+
+<iframe class="youtube-player" type="text/html" width="640" height="385"
+src="https://www.youtube.com/embed/mmws2ZdHkuA" allowfullscreen
+frameborder="0">
+</iframe>
+
+
+<h2>Video Laboratorio #3</h2>
+
+<p><iframe class="youtube-player" type="text/html" width="640" height="385"
+src="https://www.youtube.com/embed/bTAn45ejjL0" allowfullscreen
+frameborder="0"></p>
 ]]></content>
   </entry>
   
@@ -204,7 +218,13 @@ realidad es la misma base</li>
 </ul>
 
 
-<h3>Video Laboratorio</h3>
+<h3>Video Laboratorio #1</h3>
+
+<iframe class="youtube-player" type="text/html" width="640" height="385"
+src="https://www.youtube.com/embed/CFNbfWktEKc" allowfullscreen
+frameborder="0">
+</iframe>
+
 ]]></content>
   </entry>
   
