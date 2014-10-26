@@ -98,260 +98,24 @@
       </header>
       <div id="main" class="container">
         <div id="content">
-          <div class="row">
+          
+<div class="row">
   <div class="page-content col-md-9">
-    <div class="blog-index" itemscope itemtype="http://schema.org/Blog">
+    <div class="blog-index" itemscope itemtype="http://schema.org/blog">
     <meta itemprop="name" content="Merongivian" />
     
     <meta itemprop="url" content="http://merongivian.github.io" />
       
       
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-10-23T05:56:02-05:00"  data-updated="true" itemprop="datePublished dateCreated"></time>
-        
-      </p>
-    
-    
-      <h1 class="entry-title" itemprop="name headline"><a href="/blog/2014/10/23/certificacion-de-bases-de-datos-clase-number-4/" itemprop="url">Certificación De Bases De Datos, Clase #4</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><h3>Oracle Audit Vault</h3>
-
-<p><img class="right" src="/images/posts/audit-vault-principal.png"></p>
-
-<ul>
-<li>Recopila y consolida los datos de auditorías de manera transparente, brindando valiosos conocimientos respecto de quién hizo qué a cuáles datos y cuándo lo hizo</li>
-<li>Con los informes de Audit Vault, las notificaciones de alertas, y la administración depolíticas de auditoría centralizada, los
-riesgos de amenazas internas y el costo de cumplimiento son altamente
-reducidos.</li>
-<li>Aprovecha la seguridad de la base de datos líder del sector de Oracle y
-la tecnología de data warehousing para administrar, analizar, almacenar, y archivar grandes
-volúmenes de datos de auditoría.</li>
-</ul>
-
-
-</div>
-  
-  
-    <footer>
-      <a class="btn btn-default" href="/blog/2014/10/23/certificacion-de-bases-de-datos-clase-number-4/">Read on &rarr;</a>
-    </footer>
-  
-
-
-        </article>
-      
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-10-22T23:41:30-05:00"  data-updated="true" itemprop="datePublished dateCreated"></time>
-        
-      </p>
-    
-    
-      <h1 class="entry-title" itemprop="name headline"><a href="/blog/2014/10/22/certificacion-de-bases-de-datos-clase-number-3/" itemprop="url">Certificación De Bases De Datos, Clase #3</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><h3>Modelos de control de Acceso</h3>
-
-<ul>
-<li>Control de acceso Discrecional(DAC): es una forma en la cual
-podemos restringir el acceso a objetos basados en la identidad o
-grupos a los que pertenecen</li>
-<li>Seguridad a nivel de registro:
-
-<ul>
-<li>Se pueden aplicar sofisticadas reglas para el control de acceso</li>
-<li>Complementa a DAC</li>
-<li>Es provisto por VPD o por OLS</li>
-</ul>
-</li>
-</ul>
-
-
-<h3>Oracle Label Security (OLS)</h3>
-
-<p>  <img src="/images/posts/ols-principal.png"></p>
-
-</div>
-  
-  
-    <footer>
-      <a class="btn btn-default" href="/blog/2014/10/22/certificacion-de-bases-de-datos-clase-number-3/">Read on &rarr;</a>
-    </footer>
-  
-
-
-        </article>
-      
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-10-22T21:01:42-05:00"  data-updated="true" itemprop="datePublished dateCreated"></time>
-        
-      </p>
-    
-    
-      <h1 class="entry-title" itemprop="name headline"><a href="/blog/2014/10/22/certificacion-de-bases-de-datos-clase-number-2/" itemprop="url">Certificación De Bases De Datos, Clase #2</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><h3>Contexto de Aplicacion</h3>
-
-<ul>
-<li>Contenedor en memoria con atributos de solo lectura, llamado namespace</li>
-<li>Namespace posee atributos nombrados</li>
-<li>Namespace son independientes</li>
-<li>Atributos son poblados a traves de un paquete pl/sql</li>
-</ul>
-
-
-<h3>Tipos de contextos</h3>
-
-<ul>
-<li><strong>Local:</strong> Seteado en un paquete pl/sql , se guarda en PGA(se usa para
-cada sesion)</li>
-<li><strong>Global:</strong> Seteado en SGA, se habilita para todas las sesiones
-
-<ul>
-<li>hrapp: namespace</li>
-<li>hr_context: package</li>
-</ul>
-</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="k">create</span> <span class="n">context</span> <span class="n">hrapp</span> <span class="k">using</span> <span class="n">hr_context</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-</div>
-  
-  
-    <footer>
-      <a class="btn btn-default" href="/blog/2014/10/22/certificacion-de-bases-de-datos-clase-number-2/">Read on &rarr;</a>
-    </footer>
-  
-
-
-        </article>
-      
-      
-        <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-          
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="glyphicon glyphicon-calendar"></span> <time datetime="2014-10-22T18:39:32-05:00"  data-updated="true" itemprop="datePublished dateCreated"></time>
-        
-      </p>
-    
-    
-      <h1 class="entry-title" itemprop="name headline"><a href="/blog/2014/10/22/certificacion-de-bases-de-datos-clase-number-1/" itemprop="url">Certificación De Bases De Datos, Clase #1</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content clearfix" itemprop="articleBody description"><h3>Triada CIA</h3>
-
-<p>  <img src="/images/posts/triada.png"></p>
-
-<ul>
-<li><strong>Confidentiality:</strong> Permiso por cada usuario</li>
-<li><strong>Integrity:</strong> Información verídica, consistente y que no sea alterada</li>
-<li><strong>Availability:</strong> Capacidad, disponibilidad de la base</li>
-</ul>
-
-
-</div>
-  
-  
-    <footer>
-      <a class="btn btn-default" href="/blog/2014/10/22/certificacion-de-bases-de-datos-clase-number-1/">Read on &rarr;</a>
-    </footer>
-  
-
-
-        </article>
-      
     </div>
 
     <ul class="pager">
       
-        <li class="previous disabled"><a href="#">&larr;&nbsp;Older</a></li>
+        <li class="previous disabled"><a href="#">&larr;&nbsp;older</a></li>
       
-      <li><a href="/blog/archives">Blog Archives</a></li>
+      <li><a href="/blog/archives">blog archives</a></li>
       
-        <li class="next disabled"><a href="#">Newer&nbsp;&rarr;</a></li>
+        <li class="next disabled"><a href="#">newer&nbsp;&rarr;</a></li>
       
     </ul>
   </div>
@@ -379,14 +143,6 @@ cada sesion)</li>
   </div>
   
   <div id="recent_posts" class="list-group">
-    
-    <a class="list-group-item " href="/blog/2014/10/23/certificacion-de-bases-de-datos-clase-number-4/">Certificación De Bases De Datos, Clase #4</a>
-    
-    <a class="list-group-item " href="/blog/2014/10/22/certificacion-de-bases-de-datos-clase-number-3/">Certificación De Bases De Datos, Clase #3</a>
-    
-    <a class="list-group-item " href="/blog/2014/10/22/certificacion-de-bases-de-datos-clase-number-2/">Certificación De Bases De Datos, Clase #2</a>
-    
-    <a class="list-group-item " href="/blog/2014/10/22/certificacion-de-bases-de-datos-clase-number-1/">Certificación De Bases De Datos, Clase #1</a>
     
   </div>
 </section>
@@ -433,6 +189,7 @@ cada sesion)</li>
     </aside>
   
 </div>
+
 
         </div>
       </div>
