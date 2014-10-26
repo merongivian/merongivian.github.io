@@ -2,9 +2,8 @@
 layout: post
 title: "Certificación de Bases de Datos, Clase #4"
 date: 2014-10-23 05:56:02 -0500
-author: Bases
 comments: false
-categories: [Oracle, UDLA]
+categories: [udla, aci040]
 ---
 
 ### Oracle Audit Vault

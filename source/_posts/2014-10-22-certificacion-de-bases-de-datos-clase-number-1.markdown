@@ -2,10 +2,8 @@
 layout: post
 title: "Certificación de Bases de Datos, Clase #1"
 date: 2014-10-22 18:39:32 -0500
-author: Bases
-author_site: http://www.merongivian.com/bases/
 comments: false
-categories: [Oracle, UDLA]
+categories: [udla, aci040]
 ---
 
 ### Triada CIA

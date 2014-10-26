@@ -2,9 +2,8 @@
 layout: post
 title: "Certificación de Bases de Datos, Clase #3"
 date: 2014-10-22 23:41:30 -0500
-author: Bases
 comments: false
-categories: [Oracle, UDLA]
+categories: [udla, aci040]
 ---
 
 ### Modelos de control de Acceso

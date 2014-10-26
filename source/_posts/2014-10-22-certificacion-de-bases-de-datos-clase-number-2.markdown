@@ -2,9 +2,8 @@
 layout: post
 title: "Certificación de Bases de Datos, Clase #2"
 date: 2014-10-22 21:01:42 -0500
-author: Bases
 comments: false
-categories: [Oracle, UDLA]
+categories: [udla, aci040]
 ---
 
 ### Contexto de Aplicacion
