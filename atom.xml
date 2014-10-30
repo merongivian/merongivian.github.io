@@ -4,7 +4,7 @@
   <title><![CDATA[Merongivian]]></title>
   <link href="http://merongivian.github.io/atom.xml" rel="self"/>
   <link href="http://merongivian.github.io/"/>
-  <updated>2014-10-29T10:03:16-05:00</updated>
+  <updated>2014-10-30T17:01:42-05:00</updated>
   <id>http://merongivian.github.io/</id>
   <author>
     <name><![CDATA[Jose Añasco]]></name>
@@ -421,6 +421,53 @@ transparente</li>
 </ul>
 
 
+<h3>Pasos para la implementacion de Audit Volt</h3>
+
+<p>1.- Subir base de datos oracle vault
+2.- Creat usuario en base remota</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  create user avagusr01 identified by oracle_4U</span></code></pre></td></tr></table></div></figure>
+
+
+<p>3.- Ejecutar permisos con scriptk</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  @/home/oracle/oracle/product/10.3.0/av_agent_1/av/scripts/streams/source/zarsspriv.sql</span></code></pre></td></tr></table></div></figure>
+
+
+<p>4.- Setear Oracle Home</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  export ORACLE_HOME=/home/oracle/oracle/product/10.3.0/agent</span></code></pre></td></tr></table></div></figure>
+
+
+<p>5.- Arrancar el agent en el directorio $ORACLE_HOME/bin</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  ./avctl start_agent</span></code></pre></td></tr></table></div></figure>
+
+
+<p>6.- Cambiamos el sourcename</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  ./avorcldb setup -srcname aci040_db</span></code></pre></td></tr></table></div></figure>
+
+
+<p>7.- Creamos el collector en la base de datos audit volt</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  avorcldb add_collector -srcname aci040_db -agentname agaci040lab -colltype DBAUD -collname colaci040lab</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<iframe class="youtube-player" type="text/html" width="640" height="385"
+src="https://www.youtube.com/embed/4ZE8-ds4-2w" allowfullscreen
+frameborder="0">
+</iframe>
+
+
 <h3>Conclucion</h3>
 
 <ul>
@@ -463,7 +510,7 @@ grupos a los que pertenecen</li>
 
 <h3>Oracle Label Security (OLS)</h3>
 
-<p>  <img src="http://merongivian.github.io/images/posts/ols-principal.png"></p>
+<p>  <img class="center" src="http://merongivian.github.io/images/posts/ols-principal.png"></p>
 
 <!--more-->
 
@@ -478,17 +525,119 @@ centralizada de definiciones de políticas</li>
 
 <h3>Componentes data label</h3>
 
-<p>  <img src="http://merongivian.github.io/images/posts/ols-componentes.png"></p>
+<p>  <img class="center" src="http://merongivian.github.io/images/posts/ols-componentes.png"></p>
 
-<h2>Video Laboratorio #2</h2>
+<h3>Pasos Para la implementacion de OLS</h3>
 
-<iframe class="youtube-player" type="text/html" width="640" height="385"
-src="https://www.youtube.com/embed/mmws2ZdHkuA" allowfullscreen
-frameborder="0">
-</iframe>
+<p>1.- Crear la politica facility</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'>  <span class="k">BEGIN</span>
+</span><span class='line'>    <span class="n">SA_SYSDBA</span><span class="p">.</span><span class="n">CREATE_POLICY</span><span class="p">(</span><span class="s1">&#39;FACILITY&#39;</span><span class="p">,</span><span class="s1">&#39;FACLAB&#39;</span><span class="p">,</span>
+</span><span class='line'>    <span class="s1">&#39;READ_CONTROL,CHECK_CONTROL,LABEL_DEFAULT,HIDE&#39;</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">END</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
-<h2>Video Laboratorio #3</h2>
+<p>2.- Crear los niveles para la politica</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'>  <span class="k">BEGIN</span>
+</span><span class='line'>    <span class="n">SA_COMPONENTS</span><span class="p">.</span><span class="n">CREATE_LEVEL</span><span class="p">(</span><span class="s1">&#39;FACILITY&#39;</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="s1">&#39;P&#39;</span><span class="p">,</span><span class="s1">&#39;PUBLIC&#39;</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">SA_COMPONENTS</span><span class="p">.</span><span class="n">CREATE_LEVEL</span><span class="p">(</span><span class="s1">&#39;FACILITY&#39;</span><span class="p">,</span><span class="mi">2000</span><span class="p">,</span><span class="s1">&#39;S&#39;</span><span class="p">,</span><span class="s1">&#39;SENSITIVE&#39;</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">SA_COMPONENTS</span><span class="p">.</span><span class="n">CREATE_LEVEL</span><span class="p">(</span><span class="s1">&#39;FACILITY&#39;</span><span class="p">,</span><span class="mi">3000</span><span class="p">,</span><span class="s1">&#39;HS&#39;</span><span class="p">,</span><span class="s1">&#39;HIGHLY_SENSITIVE&#39;</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">END</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>3.- Crear los grupos para la politica</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'>  <span class="k">BEGIN</span>
+</span><span class='line'>    <span class="n">SA_COMPONENTS</span><span class="p">.</span><span class="n">CREATE_GROUP</span><span class="p">(</span><span class="s1">&#39;FACILITY&#39;</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="s1">&#39;Global&#39;</span><span class="p">,</span><span class="s1">&#39;Global&#39;</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">SA_COMPONENTS</span><span class="p">.</span><span class="n">CREATE_GROUP</span><span class="p">(</span><span class="s1">&#39;FACILITY&#39;</span><span class="p">,</span><span class="mi">101</span><span class="p">,</span><span class="s1">&#39;US&#39;</span><span class="p">,</span><span class="s1">&#39;United States&#39;</span><span class="p">,</span><span class="s1">&#39;GLOBAL&#39;</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">SA_COMPONENTS</span><span class="p">.</span><span class="n">CREATE_GROUP</span><span class="p">(</span><span class="s1">&#39;FACILITY&#39;</span><span class="p">,</span><span class="mi">102</span><span class="p">,</span><span class="s1">&#39;EU&#39;</span><span class="p">,</span><span class="s1">&#39;Europe&#39;</span><span class="p">,</span><span class="s1">&#39;GLOBAL&#39;</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">SA_COMPONENTS</span><span class="p">.</span><span class="n">CREATE_GROUP</span><span class="p">(</span><span class="s1">&#39;FACILITY&#39;</span><span class="p">,</span><span class="mi">103</span><span class="p">,</span><span class="s1">&#39;Asia&#39;</span><span class="p">,</span><span class="s1">&#39;Asia&#39;</span><span class="p">,</span><span class="s1">&#39;GLOBAL&#39;</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">END</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>4.- Crear las etiquetas, juntando los niveles y grupos</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'>  <span class="k">BEGIN</span>
+</span><span class='line'>    <span class="n">SA_LABEL_ADMIN</span><span class="p">.</span><span class="n">CREATE_LABEL</span><span class="p">(</span><span class="s1">&#39;FACILITY&#39;</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="s1">&#39;P&#39;</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">SA_LABEL_ADMIN</span><span class="p">.</span><span class="n">CREATE_LABEL</span><span class="p">(</span><span class="s1">&#39;FACILITY&#39;</span><span class="p">,</span><span class="mi">2101</span><span class="p">,</span><span class="s1">&#39;S::US&#39;</span><span class="p">);.</span>
+</span><span class='line'>    <span class="n">SA_LABEL_ADMIN</span><span class="p">.</span><span class="n">CREATE_LABEL</span><span class="p">(</span><span class="s1">&#39;FACILITY&#39;</span><span class="p">,</span><span class="mi">3101</span><span class="p">,</span><span class="s1">&#39;HS::US&#39;</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">SA_LABEL_ADMIN</span><span class="p">.</span><span class="n">CREATE_LABEL</span><span class="p">(</span><span class="s1">&#39;FACILITY&#39;</span><span class="p">,</span><span class="mi">3103</span><span class="p">,</span><span class="s1">&#39;HS::ASIA&#39;</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">END</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>5.- Crear etiquetas para usuarios</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'>  <span class="k">BEGIN</span>
+</span><span class='line'>    <span class="n">SA_USER_ADMIN</span><span class="p">.</span><span class="n">SET_USER_LABELS</span><span class="p">(</span><span class="s1">&#39;PRIVACY&#39;</span><span class="p">,</span><span class="s1">&#39;MYCO_MGR&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">SA_USER_ADMIN</span><span class="p">.</span><span class="n">SET_USER_LABELS</span><span class="p">(</span><span class="s1">&#39;FACILITY&#39;</span><span class="p">,</span><span class="s1">&#39;MYCO_EMP&#39;</span><span class="p">,</span><span class="s1">&#39;P&#39;</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">SA_USER_ADMIN</span><span class="p">.</span><span class="n">SET_USER_LABELS</span><span class="p">(</span><span class="s1">&#39;FACILITY&#39;</span><span class="p">,</span><span class="s1">&#39;MYCO_MGR&#39;</span><span class="p">,</span><span class="s1">&#39;S::US,EU,ASIA&#39;</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">SA_USER_ADMIN</span><span class="p">.</span><span class="n">SET_USER_LABELS</span><span class="p">(</span><span class="s1">&#39;FACILITY&#39;</span><span class="p">,</span><span class="s1">&#39;MYCO_PLANNING&#39;</span><span class="p">,</span><span class="s1">&#39;HS::GLOBAL&#39;</span><span class="p">);.</span>
+</span><span class='line'>  <span class="k">END</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>6.- Actualizar la tabla locations con las nuevas etiquetas</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'>  <span class="k">BEGIN</span>
+</span><span class='line'>    <span class="k">UPDATE</span> <span class="n">LOCATIONS</span>
+</span><span class='line'>      <span class="k">SET</span> <span class="n">FACLAB</span><span class="o">=</span><span class="n">CHAR_TO_LABEL</span><span class="p">(</span><span class="s1">&#39;FACILITY&#39;</span><span class="p">,</span><span class="s1">&#39;S::ASIA&#39;</span><span class="p">)</span>
+</span><span class='line'>      <span class="k">WHERE</span> <span class="k">UPPER</span><span class="p">(</span><span class="n">CITY</span><span class="p">)</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;BEIJING&#39;</span><span class="p">,</span><span class="s1">&#39;TOKYO&#39;</span><span class="p">,</span><span class="s1">&#39;SINGAPORE&#39;</span><span class="p">);</span>
+</span><span class='line'>    <span class="k">UPDATE</span> <span class="n">LOCATIONS</span>
+</span><span class='line'>      <span class="k">SET</span> <span class="n">FACLAB</span><span class="o">=</span><span class="n">CHAR_TO_LABEL</span><span class="p">(</span><span class="s1">&#39;FACILITY&#39;</span><span class="p">,</span><span class="s1">&#39;HS::US&#39;</span><span class="p">).</span>
+</span><span class='line'>      <span class="k">WHERE</span> <span class="k">UPPER</span><span class="p">(</span><span class="n">CITY</span><span class="p">)</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;SOUTH SAN FRANCISCO&#39;</span><span class="p">);</span>
+</span><span class='line'>    <span class="k">UPDATE</span> <span class="n">LOCATIONS</span>
+</span><span class='line'>      <span class="k">SET</span> <span class="n">FACLAB</span><span class="o">=</span><span class="n">CHAR_TO_LABEL</span><span class="p">(</span><span class="s1">&#39;FACILITY&#39;</span><span class="p">,</span><span class="s1">&#39;P&#39;</span><span class="p">)</span>
+</span><span class='line'>      <span class="k">WHERE</span> <span class="n">FACLAB</span> <span class="k">IS</span> <span class="k">NULL</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">COMMIT</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">END</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Video</h4>
 
 <p><iframe class="youtube-player" type="text/html" width="640" height="385"
 src="https://www.youtube.com/embed/bTAn45ejjL0" allowfullscreen
@@ -587,10 +736,145 @@ realidad es la misma base</li>
 </ul>
 
 
-<h3>Video Laboratorio #1</h3>
+<h3>Pasos para la implementacion de VPD con triggers</h3>
+
+<p>1.- Declarar el procedure set_emp_info dentro del paquete current_emp</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'>  <span class="k">CREATE</span> <span class="k">OR</span> <span class="k">REPLACE</span> <span class="n">PACKAGE</span> <span class="n">CURRENT_EMP</span> <span class="k">IS</span>
+</span><span class='line'>  <span class="k">PROCEDURE</span> <span class="n">SET_EMP_INFO</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">END</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>2.- Definir el procedure para la tabla employees</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="k">CREATE</span> <span class="k">OR</span> <span class="k">REPLACE</span> <span class="n">PACKAGE</span> <span class="n">BODY</span> <span class="n">current_emp</span> <span class="k">IS</span> <span class="k">PROCEDURE</span> <span class="n">set_emp_info</span> <span class="k">IS</span>
+</span><span class='line'> <span class="n">v_employee_id</span> <span class="n">hr</span><span class="p">.</span><span class="n">employees</span><span class="p">.</span><span class="n">employee_id</span><span class="o">%</span><span class="k">TYPE</span><span class="p">;</span>
+</span><span class='line'> <span class="n">v_first_name</span>  <span class="n">hr</span><span class="p">.</span><span class="n">employees</span><span class="p">.</span><span class="n">first_name</span><span class="o">%</span><span class="k">TYPE</span><span class="p">;</span>
+</span><span class='line'> <span class="n">v_last_name</span> <span class="n">hr</span><span class="p">.</span><span class="n">employees</span><span class="p">.</span><span class="n">last_name</span><span class="o">%</span><span class="k">TYPE</span><span class="p">;</span>
+</span><span class='line'> <span class="k">BEGIN</span>
+</span><span class='line'>   <span class="k">SELECT</span> <span class="n">employee_id</span><span class="p">,</span>
+</span><span class='line'>          <span class="n">first_name</span><span class="p">,</span>
+</span><span class='line'>          <span class="n">last_name</span>
+</span><span class='line'>   <span class="k">INTO</span> <span class="n">v_employee_id</span><span class="p">,</span>
+</span><span class='line'>        <span class="n">v_first_name</span><span class="p">,</span>
+</span><span class='line'>        <span class="n">v_last_name</span>
+</span><span class='line'>   <span class="k">FROM</span> <span class="n">hr</span><span class="p">.</span><span class="n">employees</span>
+</span><span class='line'>   <span class="k">WHERE</span> <span class="n">email</span><span class="o">=</span><span class="n">SYS_CONTEXT</span><span class="p">(</span><span class="s1">&#39;USERENV&#39;</span><span class="p">,</span><span class="s1">&#39;SESSION_USER&#39;</span><span class="p">);</span>
+</span><span class='line'>         <span class="n">DBMS_SESSION</span><span class="p">.</span><span class="n">SET_CONTEXT</span><span class="p">(</span><span class="s1">&#39;emp_user&#39;</span><span class="p">,</span><span class="s1">&#39;id&#39;</span><span class="p">,</span><span class="n">v_employee_id</span><span class="p">);</span>
+</span><span class='line'>         <span class="n">DBMS_SESSION</span><span class="p">.</span><span class="n">SET_CONTEXT</span><span class="p">(</span><span class="s1">&#39;emp_user&#39;</span><span class="p">,</span><span class="s1">&#39;name&#39;</span><span class="p">,</span><span class="n">v_first_name</span> <span class="o">||</span><span class="s1">&#39; &#39;</span><span class="o">||</span> <span class="n">v_last_name</span><span class="p">);</span>
+</span><span class='line'>         <span class="n">DBMS_SESSION</span><span class="p">.</span><span class="n">SET_CONTEXT</span><span class="p">(</span><span class="s1">&#39;emp_user&#39;</span><span class="p">,</span><span class="s1">&#39;email&#39;</span><span class="p">,</span><span class="n">SYS_CONTEXT</span><span class="p">(</span><span class="s1">&#39;USERENV&#39;</span><span class="p">,</span><span class="s1">&#39;SESSION_USER&#39;</span><span class="p">));</span>
+</span><span class='line'>   <span class="k">EXCEPTION</span>
+</span><span class='line'>   <span class="k">WHEN</span> <span class="n">no_data_found</span> <span class="k">THEN</span> <span class="k">NULL</span><span class="p">;</span>
+</span><span class='line'> <span class="k">END</span><span class="p">;</span>
+</span><span class='line'><span class="k">END</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>3.- Crear el trigger con el procedure creado, este se ejecutara cada que
+que se inicia sesion</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="k">CREATE</span> <span class="k">OR</span> <span class="k">REPLACE</span> <span class="k">TRIGGER</span> <span class="n">EMP_LOGON</span>
+</span><span class='line'><span class="k">AFTER</span> <span class="n">LOGON</span> <span class="k">ON</span> <span class="k">DATABASE</span>
+</span><span class='line'><span class="k">BEGIN</span>
+</span><span class='line'>  <span class="n">CURRENT_EMP</span><span class="p">.</span><span class="n">SET_EMP_INFO</span><span class="p">;</span>
+</span><span class='line'><span class="k">END</span><span class="p">;</span>
+</span><span class='line'><span class="o">/</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Video</h4>
 
 <iframe class="youtube-player" type="text/html" width="640" height="385"
 src="https://www.youtube.com/embed/CFNbfWktEKc" allowfullscreen
+frameborder="0">
+</iframe>
+
+
+<h3>Pasos para la implementacion de VPD con politicas</h3>
+
+<p>1.- Declarar la politica en el paquete hr_policy_package</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="k">create</span> <span class="k">or</span> <span class="k">replace</span> <span class="n">package</span> <span class="n">hr_policy_pkg</span> <span class="k">is</span>
+</span><span class='line'><span class="k">function</span> <span class="n">limit_emp_emp</span><span class="p">(</span>
+</span><span class='line'><span class="n">object_schema</span> <span class="k">in</span> <span class="n">varchar2</span><span class="p">,</span>
+</span><span class='line'><span class="n">object_name</span> <span class="n">varchar2</span><span class="p">)</span>
+</span><span class='line'><span class="k">return</span> <span class="n">varchar2</span><span class="p">;</span>
+</span><span class='line'><span class="k">end</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>2.- Crear la politica con la funcion limit_emp_emp</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="k">create</span> <span class="k">or</span> <span class="k">replace</span> <span class="n">package</span> <span class="n">body</span> <span class="n">hr_policy_pkg</span> <span class="k">is</span>
+</span><span class='line'>  <span class="k">function</span> <span class="n">limit_emp_emp</span><span class="p">(</span> <span class="n">object_schema</span> <span class="k">in</span> <span class="n">varchar2</span><span class="p">,</span> <span class="n">object_name</span> <span class="n">varchar2</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">return</span> <span class="n">varchar2</span>
+</span><span class='line'>  <span class="k">is</span>
+</span><span class='line'>  <span class="n">v_emp_id</span> <span class="nb">number</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">BEGIN</span>
+</span><span class='line'>   <span class="k">return</span> <span class="s1">&#39;employee_id=sys_context(&quot;emp_user&quot;,&quot;id&quot;)&#39;</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">end</span><span class="p">;</span>
+</span><span class='line'><span class="k">end</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>3.- Anadir la politica a la tabla employees</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="k">exec</span> <span class="n">dbms_rls</span><span class="p">.</span><span class="n">add_policy</span>
+</span><span class='line'><span class="p">(</span><span class="s1">&#39;HR&#39;</span><span class="p">,</span><span class="s1">&#39;EMPLOYEES&#39;</span><span class="p">,</span><span class="s1">&#39;HR_EMP_POL&#39;</span><span class="p">,</span><span class="s1">&#39;SEC&#39;</span><span class="p">,</span><span class="s1">&#39;HR_POLICY_PKG.LIMIT_EMP_EMP&#39;</span><span class="p">,</span><span class="s1">&#39;SELECT&#39;</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Video</h4>
+
+<iframe class="youtube-player" type="text/html" width="640" height="385"
+src="https://www.youtube.com/embed/mmws2ZdHkuA" allowfullscreen
 frameborder="0">
 </iframe>
 

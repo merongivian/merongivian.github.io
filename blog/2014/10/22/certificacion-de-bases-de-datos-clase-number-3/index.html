@@ -153,7 +153,7 @@ grupos a los que pertenecen</li>
 
 <h3>Oracle Label Security (OLS)</h3>
 
-<p>  <img src="/images/posts/ols-principal.png"></p>
+<p>  <img class="center" src="/images/posts/ols-principal.png"></p>
 
 <!--more-->
 
@@ -168,17 +168,119 @@ centralizada de definiciones de políticas</li>
 
 <h3>Componentes data label</h3>
 
-<p>  <img src="/images/posts/ols-componentes.png"></p>
+<p>  <img class="center" src="/images/posts/ols-componentes.png"></p>
 
-<h2>Video Laboratorio #2</h2>
+<h3>Pasos Para la implementacion de OLS</h3>
 
-<iframe class="youtube-player" type="text/html" width="640" height="385"
-src="https://www.youtube.com/embed/mmws2ZdHkuA" allowfullscreen
-frameborder="0">
-</iframe>
+<p>1.- Crear la politica facility</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'>  <span class="k">BEGIN</span>
+</span><span class='line'>    <span class="n">SA_SYSDBA</span><span class="p">.</span><span class="n">CREATE_POLICY</span><span class="p">(</span><span class="s1">&#39;FACILITY&#39;</span><span class="p">,</span><span class="s1">&#39;FACLAB&#39;</span><span class="p">,</span>
+</span><span class='line'>    <span class="s1">&#39;READ_CONTROL,CHECK_CONTROL,LABEL_DEFAULT,HIDE&#39;</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">END</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
-<h2>Video Laboratorio #3</h2>
+<p>2.- Crear los niveles para la politica</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'>  <span class="k">BEGIN</span>
+</span><span class='line'>    <span class="n">SA_COMPONENTS</span><span class="p">.</span><span class="n">CREATE_LEVEL</span><span class="p">(</span><span class="s1">&#39;FACILITY&#39;</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="s1">&#39;P&#39;</span><span class="p">,</span><span class="s1">&#39;PUBLIC&#39;</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">SA_COMPONENTS</span><span class="p">.</span><span class="n">CREATE_LEVEL</span><span class="p">(</span><span class="s1">&#39;FACILITY&#39;</span><span class="p">,</span><span class="mi">2000</span><span class="p">,</span><span class="s1">&#39;S&#39;</span><span class="p">,</span><span class="s1">&#39;SENSITIVE&#39;</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">SA_COMPONENTS</span><span class="p">.</span><span class="n">CREATE_LEVEL</span><span class="p">(</span><span class="s1">&#39;FACILITY&#39;</span><span class="p">,</span><span class="mi">3000</span><span class="p">,</span><span class="s1">&#39;HS&#39;</span><span class="p">,</span><span class="s1">&#39;HIGHLY_SENSITIVE&#39;</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">END</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>3.- Crear los grupos para la politica</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'>  <span class="k">BEGIN</span>
+</span><span class='line'>    <span class="n">SA_COMPONENTS</span><span class="p">.</span><span class="n">CREATE_GROUP</span><span class="p">(</span><span class="s1">&#39;FACILITY&#39;</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="s1">&#39;Global&#39;</span><span class="p">,</span><span class="s1">&#39;Global&#39;</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">SA_COMPONENTS</span><span class="p">.</span><span class="n">CREATE_GROUP</span><span class="p">(</span><span class="s1">&#39;FACILITY&#39;</span><span class="p">,</span><span class="mi">101</span><span class="p">,</span><span class="s1">&#39;US&#39;</span><span class="p">,</span><span class="s1">&#39;United States&#39;</span><span class="p">,</span><span class="s1">&#39;GLOBAL&#39;</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">SA_COMPONENTS</span><span class="p">.</span><span class="n">CREATE_GROUP</span><span class="p">(</span><span class="s1">&#39;FACILITY&#39;</span><span class="p">,</span><span class="mi">102</span><span class="p">,</span><span class="s1">&#39;EU&#39;</span><span class="p">,</span><span class="s1">&#39;Europe&#39;</span><span class="p">,</span><span class="s1">&#39;GLOBAL&#39;</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">SA_COMPONENTS</span><span class="p">.</span><span class="n">CREATE_GROUP</span><span class="p">(</span><span class="s1">&#39;FACILITY&#39;</span><span class="p">,</span><span class="mi">103</span><span class="p">,</span><span class="s1">&#39;Asia&#39;</span><span class="p">,</span><span class="s1">&#39;Asia&#39;</span><span class="p">,</span><span class="s1">&#39;GLOBAL&#39;</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">END</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>4.- Crear las etiquetas, juntando los niveles y grupos</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'>  <span class="k">BEGIN</span>
+</span><span class='line'>    <span class="n">SA_LABEL_ADMIN</span><span class="p">.</span><span class="n">CREATE_LABEL</span><span class="p">(</span><span class="s1">&#39;FACILITY&#39;</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="s1">&#39;P&#39;</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">SA_LABEL_ADMIN</span><span class="p">.</span><span class="n">CREATE_LABEL</span><span class="p">(</span><span class="s1">&#39;FACILITY&#39;</span><span class="p">,</span><span class="mi">2101</span><span class="p">,</span><span class="s1">&#39;S::US&#39;</span><span class="p">);.</span>
+</span><span class='line'>    <span class="n">SA_LABEL_ADMIN</span><span class="p">.</span><span class="n">CREATE_LABEL</span><span class="p">(</span><span class="s1">&#39;FACILITY&#39;</span><span class="p">,</span><span class="mi">3101</span><span class="p">,</span><span class="s1">&#39;HS::US&#39;</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">SA_LABEL_ADMIN</span><span class="p">.</span><span class="n">CREATE_LABEL</span><span class="p">(</span><span class="s1">&#39;FACILITY&#39;</span><span class="p">,</span><span class="mi">3103</span><span class="p">,</span><span class="s1">&#39;HS::ASIA&#39;</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">END</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>5.- Crear etiquetas para usuarios</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'>  <span class="k">BEGIN</span>
+</span><span class='line'>    <span class="n">SA_USER_ADMIN</span><span class="p">.</span><span class="n">SET_USER_LABELS</span><span class="p">(</span><span class="s1">&#39;PRIVACY&#39;</span><span class="p">,</span><span class="s1">&#39;MYCO_MGR&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">SA_USER_ADMIN</span><span class="p">.</span><span class="n">SET_USER_LABELS</span><span class="p">(</span><span class="s1">&#39;FACILITY&#39;</span><span class="p">,</span><span class="s1">&#39;MYCO_EMP&#39;</span><span class="p">,</span><span class="s1">&#39;P&#39;</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">SA_USER_ADMIN</span><span class="p">.</span><span class="n">SET_USER_LABELS</span><span class="p">(</span><span class="s1">&#39;FACILITY&#39;</span><span class="p">,</span><span class="s1">&#39;MYCO_MGR&#39;</span><span class="p">,</span><span class="s1">&#39;S::US,EU,ASIA&#39;</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">SA_USER_ADMIN</span><span class="p">.</span><span class="n">SET_USER_LABELS</span><span class="p">(</span><span class="s1">&#39;FACILITY&#39;</span><span class="p">,</span><span class="s1">&#39;MYCO_PLANNING&#39;</span><span class="p">,</span><span class="s1">&#39;HS::GLOBAL&#39;</span><span class="p">);.</span>
+</span><span class='line'>  <span class="k">END</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>6.- Actualizar la tabla locations con las nuevas etiquetas</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'>  <span class="k">BEGIN</span>
+</span><span class='line'>    <span class="k">UPDATE</span> <span class="n">LOCATIONS</span>
+</span><span class='line'>      <span class="k">SET</span> <span class="n">FACLAB</span><span class="o">=</span><span class="n">CHAR_TO_LABEL</span><span class="p">(</span><span class="s1">&#39;FACILITY&#39;</span><span class="p">,</span><span class="s1">&#39;S::ASIA&#39;</span><span class="p">)</span>
+</span><span class='line'>      <span class="k">WHERE</span> <span class="k">UPPER</span><span class="p">(</span><span class="n">CITY</span><span class="p">)</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;BEIJING&#39;</span><span class="p">,</span><span class="s1">&#39;TOKYO&#39;</span><span class="p">,</span><span class="s1">&#39;SINGAPORE&#39;</span><span class="p">);</span>
+</span><span class='line'>    <span class="k">UPDATE</span> <span class="n">LOCATIONS</span>
+</span><span class='line'>      <span class="k">SET</span> <span class="n">FACLAB</span><span class="o">=</span><span class="n">CHAR_TO_LABEL</span><span class="p">(</span><span class="s1">&#39;FACILITY&#39;</span><span class="p">,</span><span class="s1">&#39;HS::US&#39;</span><span class="p">).</span>
+</span><span class='line'>      <span class="k">WHERE</span> <span class="k">UPPER</span><span class="p">(</span><span class="n">CITY</span><span class="p">)</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;SOUTH SAN FRANCISCO&#39;</span><span class="p">);</span>
+</span><span class='line'>    <span class="k">UPDATE</span> <span class="n">LOCATIONS</span>
+</span><span class='line'>      <span class="k">SET</span> <span class="n">FACLAB</span><span class="o">=</span><span class="n">CHAR_TO_LABEL</span><span class="p">(</span><span class="s1">&#39;FACILITY&#39;</span><span class="p">,</span><span class="s1">&#39;P&#39;</span><span class="p">)</span>
+</span><span class='line'>      <span class="k">WHERE</span> <span class="n">FACLAB</span> <span class="k">IS</span> <span class="k">NULL</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">COMMIT</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">END</span><span class="p">;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>Video</h4>
 
 <p><iframe class="youtube-player" type="text/html" width="640" height="385"
 src="https://www.youtube.com/embed/bTAn45ejjL0" allowfullscreen

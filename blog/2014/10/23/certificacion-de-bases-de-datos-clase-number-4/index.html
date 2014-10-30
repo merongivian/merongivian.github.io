@@ -168,6 +168,53 @@ transparente</li>
 </ul>
 
 
+<h3>Pasos para la implementacion de Audit Volt</h3>
+
+<p>1.- Subir base de datos oracle vault
+2.- Creat usuario en base remota</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  create user avagusr01 identified by oracle_4U</span></code></pre></td></tr></table></div></figure>
+
+
+<p>3.- Ejecutar permisos con scriptk</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  @/home/oracle/oracle/product/10.3.0/av_agent_1/av/scripts/streams/source/zarsspriv.sql</span></code></pre></td></tr></table></div></figure>
+
+
+<p>4.- Setear Oracle Home</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  export ORACLE_HOME=/home/oracle/oracle/product/10.3.0/agent</span></code></pre></td></tr></table></div></figure>
+
+
+<p>5.- Arrancar el agent en el directorio $ORACLE_HOME/bin</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  ./avctl start_agent</span></code></pre></td></tr></table></div></figure>
+
+
+<p>6.- Cambiamos el sourcename</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  ./avorcldb setup -srcname aci040_db</span></code></pre></td></tr></table></div></figure>
+
+
+<p>7.- Creamos el collector en la base de datos audit volt</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>  avorcldb add_collector -srcname aci040_db -agentname agaci040lab -colltype DBAUD -collname colaci040lab</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<iframe class="youtube-player" type="text/html" width="640" height="385"
+src="https://www.youtube.com/embed/4ZE8-ds4-2w" allowfullscreen
+frameborder="0">
+</iframe>
+
+
 <h3>Conclucion</h3>
 
 <ul>
