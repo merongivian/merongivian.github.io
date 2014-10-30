@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Udla | Merongivian]]></title>
   <link href="http://merongivian.github.io/blog/categories/udla/atom.xml" rel="self"/>
   <link href="http://merongivian.github.io/"/>
-  <updated>2014-10-30T17:01:42-05:00</updated>
+  <updated>2014-10-30T18:09:15-05:00</updated>
   <id>http://merongivian.github.io/</id>
   <author>
     <name><![CDATA[Jose Añasco]]></name>
@@ -383,7 +383,7 @@ inversión de tiempo/dinero</li>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Certificación De Bases De Datos, Clase #4]]></title>
+    <title type="html"><![CDATA[Oracle Audit Vault]]></title>
     <link href="http://merongivian.github.io/blog/2014/10/23/certificacion-de-bases-de-datos-clase-number-4/"/>
     <updated>2014-10-23T05:56:02-05:00</updated>
     <id>http://merongivian.github.io/blog/2014/10/23/certificacion-de-bases-de-datos-clase-number-4</id>
@@ -408,20 +408,20 @@ volúmenes de datos de auditoría.</li>
 <h3>Caracteristicas</h3>
 
 <ul>
-<li>Recopilacion y Consolidacion de Datos de Auditoria de manera
+<li>Recopilación y Consolidación de Datos de Auditoria de manera
 transparente</li>
 <li><p>Informe Simplificado de cumplimiento</p>
 
 <p><img src="/images/posts/audit-vault-informe.png"></p></li>
-<li><p>Deteccion Anticipada de Amenazas con Alertas</p>
+<li><p>Detección Anticipada de Amenazas con Alertas</p>
 
 <p><img src="/images/posts/audit-vault-alerta.png"></p></li>
 <li><p>Seguridad y Escalabilidad</p></li>
-<li>Reduccion los costos de IT con las politicas de Oracle Audit Vault</li>
+<li>Reducción los costos de IT con las políticas de Oracle Audit Vault</li>
 </ul>
 
 
-<h3>Pasos para la implementacion de Audit Volt</h3>
+<h3>Pasos para la implementación de Audit Volt</h3>
 
 <p>1.- Subir base de datos oracle vault
 2.- Creat usuario en base remota
@@ -455,18 +455,18 @@ frameborder="0">
 </iframe>
 
 
-<h3>Conclucion</h3>
+<h3>Conclución</h3>
 
 <ul>
-<li>Brinda una avanzada solucion de auditoria que a ayuda
+<li>Brinda una avanzada solución de auditoría que a ayuda
 a simplificar los informes de cumplimiento, detectar las amenazas con
 alertas anticipadas, reducir el costo de cumplimiento y garantizar los
-datos de Auditoria</li>
-<li>Automatiza el proceso de analisis y consolidacion, convirtiendo los
-datos de auditoria en un recurso de seguridad clave para ayudar a
+datos de Auditoría</li>
+<li>Automatiza el proceso de análisis y consolidación, convirtiendo los
+datos de auditoría en un recurso de seguridad clave para ayudar a
 superar los desafios de cumplimiento y seguridad del mismo</li>
 <li>Aprovecha las capacidades comprobadas de particionamiento y
-deposito de datos para alcanzar escalibilidad y almacenamiento
+depósito de datos para alcanzar escalibilidad y almacenamiento
 masivo</li>
 </ul>
 

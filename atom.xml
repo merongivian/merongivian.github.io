@@ -4,7 +4,7 @@
   <title><![CDATA[Merongivian]]></title>
   <link href="http://merongivian.github.io/atom.xml" rel="self"/>
   <link href="http://merongivian.github.io/"/>
-  <updated>2014-10-30T17:01:42-05:00</updated>
+  <updated>2014-10-30T18:09:15-05:00</updated>
   <id>http://merongivian.github.io/</id>
   <author>
     <name><![CDATA[Jose Añasco]]></name>
@@ -383,7 +383,7 @@ inversión de tiempo/dinero</li>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Certificación De Bases De Datos, Clase #4]]></title>
+    <title type="html"><![CDATA[Oracle Audit Vault]]></title>
     <link href="http://merongivian.github.io/blog/2014/10/23/certificacion-de-bases-de-datos-clase-number-4/"/>
     <updated>2014-10-23T05:56:02-05:00</updated>
     <id>http://merongivian.github.io/blog/2014/10/23/certificacion-de-bases-de-datos-clase-number-4</id>
@@ -408,20 +408,20 @@ volúmenes de datos de auditoría.</li>
 <h3>Caracteristicas</h3>
 
 <ul>
-<li>Recopilacion y Consolidacion de Datos de Auditoria de manera
+<li>Recopilación y Consolidación de Datos de Auditoria de manera
 transparente</li>
 <li><p>Informe Simplificado de cumplimiento</p>
 
 <p><img src="http://merongivian.github.io/images/posts/audit-vault-informe.png"></p></li>
-<li><p>Deteccion Anticipada de Amenazas con Alertas</p>
+<li><p>Detección Anticipada de Amenazas con Alertas</p>
 
 <p><img src="http://merongivian.github.io/images/posts/audit-vault-alerta.png"></p></li>
 <li><p>Seguridad y Escalabilidad</p></li>
-<li>Reduccion los costos de IT con las politicas de Oracle Audit Vault</li>
+<li>Reducción los costos de IT con las políticas de Oracle Audit Vault</li>
 </ul>
 
 
-<h3>Pasos para la implementacion de Audit Volt</h3>
+<h3>Pasos para la implementación de Audit Volt</h3>
 
 <p>1.- Subir base de datos oracle vault
 2.- Creat usuario en base remota</p>
@@ -468,18 +468,18 @@ frameborder="0">
 </iframe>
 
 
-<h3>Conclucion</h3>
+<h3>Conclución</h3>
 
 <ul>
-<li>Brinda una avanzada solucion de auditoria que a ayuda
+<li>Brinda una avanzada solución de auditoría que a ayuda
 a simplificar los informes de cumplimiento, detectar las amenazas con
 alertas anticipadas, reducir el costo de cumplimiento y garantizar los
-datos de Auditoria</li>
-<li>Automatiza el proceso de analisis y consolidacion, convirtiendo los
-datos de auditoria en un recurso de seguridad clave para ayudar a
+datos de Auditoría</li>
+<li>Automatiza el proceso de análisis y consolidación, convirtiendo los
+datos de auditoría en un recurso de seguridad clave para ayudar a
 superar los desafios de cumplimiento y seguridad del mismo</li>
 <li>Aprovecha las capacidades comprobadas de particionamiento y
-deposito de datos para alcanzar escalibilidad y almacenamiento
+depósito de datos para alcanzar escalibilidad y almacenamiento
 masivo</li>
 </ul>
 
@@ -487,7 +487,7 @@ masivo</li>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Certificación De Bases De Datos, Clase #3]]></title>
+    <title type="html"><![CDATA[Oracle Label Security (OLS)]]></title>
     <link href="http://merongivian.github.io/blog/2014/10/22/certificacion-de-bases-de-datos-clase-number-3/"/>
     <updated>2014-10-22T23:41:30-05:00</updated>
     <id>http://merongivian.github.io/blog/2014/10/22/certificacion-de-bases-de-datos-clase-number-3</id>
@@ -527,7 +527,7 @@ centralizada de definiciones de políticas</li>
 
 <p>  <img class="center" src="http://merongivian.github.io/images/posts/ols-componentes.png"></p>
 
-<h3>Pasos Para la implementacion de OLS</h3>
+<h3>Pasos Para la implementación de OLS</h3>
 
 <p>1.- Crear la politica facility</p>
 
@@ -646,11 +646,11 @@ frameborder="0"></p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Certificación De Bases De Datos, Clase #2]]></title>
+    <title type="html"><![CDATA[Oracle VPD (Virtual Private Database)]]></title>
     <link href="http://merongivian.github.io/blog/2014/10/22/certificacion-de-bases-de-datos-clase-number-2/"/>
     <updated>2014-10-22T21:01:42-05:00</updated>
     <id>http://merongivian.github.io/blog/2014/10/22/certificacion-de-bases-de-datos-clase-number-2</id>
-    <content type="html"><![CDATA[<h3>Contexto de Aplicacion</h3>
+    <content type="html"><![CDATA[<h3>Contexto de Aplicación</h3>
 
 <ul>
 <li>Contenedor en memoria con atributos de solo lectura, llamado namespace</li>
@@ -726,7 +726,7 @@ realidad es la misma base</li>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h4>Implementacion de una politica VPD</h4>
+<h4>Implementación de una politica VPD</h4>
 
 <ul>
 <li>Desarrollar estrategia</li>
@@ -736,7 +736,7 @@ realidad es la misma base</li>
 </ul>
 
 
-<h3>Pasos para la implementacion de VPD con triggers</h3>
+<h3>Pasos para la implementación de VPD con triggers</h3>
 
 <p>1.- Declarar el procedure set_emp_info dentro del paquete current_emp</p>
 
@@ -820,7 +820,7 @@ frameborder="0">
 </iframe>
 
 
-<h3>Pasos para la implementacion de VPD con politicas</h3>
+<h3>Pasos para la implementación de VPD con politicas</h3>
 
 <p>1.- Declarar la politica en el paquete hr_policy_package</p>
 
@@ -882,7 +882,7 @@ frameborder="0">
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Certificación De Bases De Datos, Clase #1]]></title>
+    <title type="html"><![CDATA[Factores De Seguridad]]></title>
     <link href="http://merongivian.github.io/blog/2014/10/22/certificacion-de-bases-de-datos-clase-number-1/"/>
     <updated>2014-10-22T18:39:32-05:00</updated>
     <id>http://merongivian.github.io/blog/2014/10/22/certificacion-de-bases-de-datos-clase-number-1</id>
