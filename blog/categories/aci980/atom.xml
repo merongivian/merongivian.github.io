@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Aci980 | Merongivian]]></title>
   <link href="http://merongivian.github.io/blog/categories/aci980/atom.xml" rel="self"/>
   <link href="http://merongivian.github.io/"/>
-  <updated>2014-10-30T18:09:15-05:00</updated>
+  <updated>2014-11-12T09:25:21-05:00</updated>
   <id>http://merongivian.github.io/</id>
   <author>
     <name><![CDATA[Jose Añasco]]></name>
@@ -45,9 +45,9 @@ decisiones serán consensuadas y las consecuencias podrán ser  asumidas
 por todos, dando a conocer a todos los involucrados  los riesgos que
 están en  juego.</p>
 
-<p><img class="center <a" src="href="http://mindavation.com/wp-content/uploads/2011/11/project-charter.png">http://mindavation.com/wp-content/uploads/2011/11/project-charter.png</a>&#8221; width=&#8221;340&#8221; height=&#8221;250&#8221;></p>
+<p>{%img center <a href="http://mindavation.com/wp-content/uploads/2011/11/project-charter.png">http://mindavation.com/wp-content/uploads/2011/11/project-charter.png</a> 340 250 %}</p>
 
-<p><img class="<a" src="href="https://raw.githubusercontent.com/arvida/emoji-cheat-sheet.com/master/public/graphics/emojis/pushpin.png">https://raw.githubusercontent.com/arvida/emoji-cheat-sheet.com/master/public/graphics/emojis/pushpin.png</a>&#8221; width=&#8221;40&#8221; height=&#8221;40&#8221;><em>Lecciones aprendidas:</em></p>
+<p>{%img <a href="https://raw.githubusercontent.com/arvida/emoji-cheat-sheet.com/master/public/graphics/emojis/pushpin.png">https://raw.githubusercontent.com/arvida/emoji-cheat-sheet.com/master/public/graphics/emojis/pushpin.png</a> 40 40 %}<em>Lecciones aprendidas:</em></p>
 
 <ul>
 <li>Se debe tomar muy en cuenta la parte del &ldquo;Caso de negocio&rdquo;, por que este explica el
@@ -86,7 +86,7 @@ son los siguientes:</p>
 
 <h3>SENPLADES (Secretaria Nacional de Planificación y Desarrollo)</h3>
 
-<p><img class="right <a" src="href="http://1.bp.blogspot.com/-Pg8WbP5exJs/VEqKcuYJtaI/AAAAAAAAAQo/GPmqgUN3PX0/s1600/logos-02.png">http://1.bp.blogspot.com/-Pg8WbP5exJs/VEqKcuYJtaI/AAAAAAAAAQo/GPmqgUN3PX0/s1600/logos-02.png</a>&#8221; width=&#8221;275&#8221; height=&#8221;275&#8221;></p>
+<p>{% img right <a href="http://1.bp.blogspot.com/-Pg8WbP5exJs/VEqKcuYJtaI/AAAAAAAAAQo/GPmqgUN3PX0/s1600/logos-02.png">http://1.bp.blogspot.com/-Pg8WbP5exJs/VEqKcuYJtaI/AAAAAAAAAQo/GPmqgUN3PX0/s1600/logos-02.png</a> 275 275 %}</p>
 
 <p>Es encargado de financiar proyectos de entidades ejecutivas del estado</p>
 
@@ -117,7 +117,7 @@ son los siguientes:</p>
 <!--more-->
 
 
-<h3>CFN (Corporación Financiera Nacional) <img class="<a" src="href="http://3.bp.blogspot.com/-sbI_R_yJMbU/VEqJObEOMQI/AAAAAAAAAQY/QgoN3GaJytY/s1600/logo_cfn.jpg">http://3.bp.blogspot.com/-sbI_R_yJMbU/VEqJObEOMQI/AAAAAAAAAQY/QgoN3GaJytY/s1600/logo_cfn.jpg</a>&#8221; width=&#8221;325&#8221; height=&#8221;325&#8221;></h3>
+<h3>CFN (Corporación Financiera Nacional) {% img <a href="http://3.bp.blogspot.com/-sbI_R_yJMbU/VEqJObEOMQI/AAAAAAAAAQY/QgoN3GaJytY/s1600/logo_cfn.jpg">http://3.bp.blogspot.com/-sbI_R_yJMbU/VEqJObEOMQI/AAAAAAAAAQY/QgoN3GaJytY/s1600/logo_cfn.jpg</a> 325 325 %}</h3>
 
 <p>Es una institución financiera publica, cuya misión consiste en canalizar
 productos financieros y no financieros alineados al plan nacional del
@@ -127,14 +127,14 @@ buen vivir para servir a los sectores productivos del país</p>
 </br>
 <em>Entre organismos internacionales encontramos los siguientes:</em></p>
 
-<h3>BID <img class="<a" src="href="http://innovationmtycic.org.mx/openassets/logocontent-bid.jpg">http://innovationmtycic.org.mx/openassets/logocontent-bid.jpg</a>&#8221;></h3>
+<h3>BID {% img <a href="http://innovationmtycic.org.mx/openassets/logocontent-bid.jpg">http://innovationmtycic.org.mx/openassets/logocontent-bid.jpg</a> %}</h3>
 
 <p>Es la mayor fuente de financiamiento para el desarrollo de América
 Latina y el Caribe, con un solido compromiso para lograr resultados
 mensurables, con una mayor integridad, transparencia y rendición de
 cuentas</p>
 
-<h3>OIM <img class="<a" src="href="http://www.oim.org.ec/drupal/sites/all/themes/iomcountry/logo.png">http://www.oim.org.ec/drupal/sites/all/themes/iomcountry/logo.png</a>&#8221;></h3>
+<h3>OIM {% img <a href="http://www.oim.org.ec/drupal/sites/all/themes/iomcountry/logo.png">http://www.oim.org.ec/drupal/sites/all/themes/iomcountry/logo.png</a> %}</h3>
 
 <p>Esta consagrada al principio de promover una migración humana y ordenada
 para beneficio de todos. En ese contexto ofrece servicios, asesoramiento
@@ -143,7 +143,7 @@ observadores</p>
 
 <p></br>
 </br>
-<img class="<a" src="href="https://raw.githubusercontent.com/arvida/emoji-cheat-sheet.com/master/public/graphics/emojis/pushpin.png">https://raw.githubusercontent.com/arvida/emoji-cheat-sheet.com/master/public/graphics/emojis/pushpin.png</a>&#8221; width=&#8221;40&#8221; height=&#8221;40&#8221;><em>Lecciones aprendidas:</em></p>
+{%img <a href="https://raw.githubusercontent.com/arvida/emoji-cheat-sheet.com/master/public/graphics/emojis/pushpin.png">https://raw.githubusercontent.com/arvida/emoji-cheat-sheet.com/master/public/graphics/emojis/pushpin.png</a> 40 40 %}<em>Lecciones aprendidas:</em></p>
 
 <ul>
 <li>Para conocer exactamente cuales son los requisitos para la
@@ -206,9 +206,9 @@ priorizar problemas, objetivos o decisiones. El problema principal es
 representado como el tronco de un árbol y los factores relevantes,
 influencias y resultados se reflejan como raíces y ramas</p>
 
-<p><img class="center <a" src="href="http://sorprendeatucorazon.com/wordpress/wp-content/uploads/2012/06/ARBOL1-300x235.jpg">http://sorprendeatucorazon.com/wordpress/wp-content/uploads/2012/06/ARBOL1-300x235.jpg</a>&#8221; width=&#8221;400&#8221; height=&#8221;320&#8221;></p>
+<p>{%img center <a href="http://sorprendeatucorazon.com/wordpress/wp-content/uploads/2012/06/ARBOL1-300x235.jpg">http://sorprendeatucorazon.com/wordpress/wp-content/uploads/2012/06/ARBOL1-300x235.jpg</a> 400 320 %}</p>
 
-<p>  <img class="<a" src="href="https://raw.githubusercontent.com/arvida/emoji-cheat-sheet.com/master/public/graphics/emojis/pushpin.png">https://raw.githubusercontent.com/arvida/emoji-cheat-sheet.com/master/public/graphics/emojis/pushpin.png</a>&#8221; width=&#8221;40&#8221; height=&#8221;40&#8221;><em>lecciones aprendidas:</em></p>
+<p>  {%img <a href="https://raw.githubusercontent.com/arvida/emoji-cheat-sheet.com/master/public/graphics/emojis/pushpin.png">https://raw.githubusercontent.com/arvida/emoji-cheat-sheet.com/master/public/graphics/emojis/pushpin.png</a> 40 40 %}<em>lecciones aprendidas:</em></p>
 
 <ul>
 <li>Un árbol de decisiones puede usarse para ilustrar los costos y
@@ -268,7 +268,7 @@ temporal para crear un único producto o servicio</strong></p>
 <!--more-->
 
 
-<p><img class="center <a" src="href="http://project.eprowin.com/images/esquema.jpg">http://project.eprowin.com/images/esquema.jpg</a>&#8221;></p>
+<p>{%img center <a href="http://project.eprowin.com/images/esquema.jpg">http://project.eprowin.com/images/esquema.jpg</a> %}</p>
 
 <h3>Qué es un Portafolio ?</h3>
 
@@ -285,7 +285,7 @@ tienen un objetivo/tema en común</p>
 hacia un fin determinado</p>
 
 <p></br>
-  <img class="<a" src="href="https://raw.githubusercontent.com/arvida/emoji-cheat-sheet.com/master/public/graphics/emojis/pushpin.png">https://raw.githubusercontent.com/arvida/emoji-cheat-sheet.com/master/public/graphics/emojis/pushpin.png</a>&#8221; width=&#8221;40&#8221; height=&#8221;40&#8221;><em>Tips:</em></p>
+  {%img <a href="https://raw.githubusercontent.com/arvida/emoji-cheat-sheet.com/master/public/graphics/emojis/pushpin.png">https://raw.githubusercontent.com/arvida/emoji-cheat-sheet.com/master/public/graphics/emojis/pushpin.png</a> 40 40 %}<em>Tips:</em></p>
 
 <ul>
 <li>Una vez que un proyecto se acaba y se convierte en un proceso, debe pasar
@@ -331,7 +331,7 @@ producto del proyecto</li>
 interactúan entre si a lo largo del proyecto para lograr los objetivos
 planteados</p>
 
-<p><img class="center <a" src="href="http://blog.iedge.eu/wp-content/uploads/2011/09/IEDGE-SITI-19.jpg">http://blog.iedge.eu/wp-content/uploads/2011/09/IEDGE-SITI-19.jpg</a>&#8221; width=&#8221;480&#8221; height=&#8221;180&#8221;></p>
+<p>{%img center <a href="http://blog.iedge.eu/wp-content/uploads/2011/09/IEDGE-SITI-19.jpg">http://blog.iedge.eu/wp-content/uploads/2011/09/IEDGE-SITI-19.jpg</a> 480 180 %}</p>
 
 <ul>
 <li><p><strong><em>Iniciación</em></strong></p>
@@ -354,7 +354,7 @@ sea necesario</p></li>
 <p>Se formaliza la aceptación del proyecto o de la fase siendo llevada a
 una finalización ordenada</p>
 
-<p><img class="<a" src="href="https://raw.githubusercontent.com/arvida/emoji-cheat-sheet.com/master/public/graphics/emojis/pushpin.png">https://raw.githubusercontent.com/arvida/emoji-cheat-sheet.com/master/public/graphics/emojis/pushpin.png</a>&#8221; width=&#8221;40&#8221; height=&#8221;40&#8221;><em>Tips:</em></p>
+<p>{%img <a href="https://raw.githubusercontent.com/arvida/emoji-cheat-sheet.com/master/public/graphics/emojis/pushpin.png">https://raw.githubusercontent.com/arvida/emoji-cheat-sheet.com/master/public/graphics/emojis/pushpin.png</a> 40 40 %}<em>Tips:</em></p>
 
 <ul>
 <li>Se debe prestar mayor atención a las etapas de ejecución y

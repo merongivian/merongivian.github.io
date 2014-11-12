@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Aci040 | Merongivian]]></title>
   <link href="http://merongivian.github.io/blog/categories/aci040/atom.xml" rel="self"/>
   <link href="http://merongivian.github.io/"/>
-  <updated>2014-10-30T18:09:15-05:00</updated>
+  <updated>2014-11-12T09:25:21-05:00</updated>
   <id>http://merongivian.github.io/</id>
   <author>
     <name><![CDATA[Jose Añasco]]></name>
@@ -20,7 +20,7 @@
     <id>http://merongivian.github.io/blog/2014/10/23/certificacion-de-bases-de-datos-clase-number-4</id>
     <content type="html"><![CDATA[<h3>Oracle Audit Vault</h3>
 
-<p><img class="right" src="/images/posts/audit-vault-principal.png"></p>
+<p>{% img right /images/posts/audit-vault-principal.png %}</p>
 
 <ul>
 <li>Recopila y consolida los datos de auditorías de manera transparente, brindando valiosos conocimientos respecto de quién hizo qué a cuáles datos y cuándo lo hizo</li>
@@ -43,10 +43,10 @@ volúmenes de datos de auditoría.</li>
 transparente</li>
 <li><p>Informe Simplificado de cumplimiento</p>
 
-<p><img src="/images/posts/audit-vault-informe.png"></p></li>
+<p>{% img /images/posts/audit-vault-informe.png %}</p></li>
 <li><p>Detección Anticipada de Amenazas con Alertas</p>
 
-<p><img src="/images/posts/audit-vault-alerta.png"></p></li>
+<p>{% img /images/posts/audit-vault-alerta.png %}</p></li>
 <li><p>Seguridad y Escalabilidad</p></li>
 <li>Reducción los costos de IT con las políticas de Oracle Audit Vault</li>
 </ul>
@@ -128,7 +128,7 @@ grupos a los que pertenecen</li>
 
 <h3>Oracle Label Security (OLS)</h3>
 
-<p>  <img class="center" src="/images/posts/ols-principal.png"></p>
+<p>  {% img center /images/posts/ols-principal.png %}</p>
 
 <!--more-->
 
@@ -143,7 +143,7 @@ centralizada de definiciones de políticas</li>
 
 <h3>Componentes data label</h3>
 
-<p>  <img class="center" src="/images/posts/ols-componentes.png"></p>
+<p>  {% img center /images/posts/ols-componentes.png %}</p>
 
 <h3>Pasos Para la implementación de OLS</h3>
 
@@ -271,7 +271,7 @@ predicado where a la consulta original)</li>
 
 <h3>Bases de datos virtuales (VPD)</h3>
 
-<p><img src="/images/posts/vpd.png"></p>
+<p>{% img /images/posts/vpd.png %}</p>
 
 <ul>
 <li>Application context + FGAC</li>
@@ -396,7 +396,7 @@ frameborder="0">
     <id>http://merongivian.github.io/blog/2014/10/22/certificacion-de-bases-de-datos-clase-number-1</id>
     <content type="html"><![CDATA[<h3>Triada CIA</h3>
 
-<p>  <img src="/images/posts/triada.png"></p>
+<p>  {% img /images/posts/triada.png %}</p>
 
 <ul>
 <li><strong>Confidentiality:</strong> Permiso por cada usuario</li>
@@ -486,7 +486,7 @@ especifico)</li>
 
 <h3>Amenazas comunes</h3>
 
-<p>  <img src="/images/posts/ataques.png"></p>
+<p>  {% img /images/posts/ataques.png %}</p>
 
 <ul>
 <li>Phishing: Capturar información con un elemento intermedio</li>
