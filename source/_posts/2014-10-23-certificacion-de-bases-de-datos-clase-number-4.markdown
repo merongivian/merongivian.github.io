@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Certificación de Bases de Datos, Clase #4"
+title: "Oracle Audit Vault"
 date: 2014-10-23 05:56:02 -0500
 comments: false
 categories: [udla, aci040]
@@ -22,28 +22,61 @@ volúmenes de datos de auditoría.
 
 ### Caracteristicas
 
-- Recopilacion y Consolidacion de Datos de Auditoria de manera
+- Recopilación y Consolidación de Datos de Auditoria de manera
   transparente
 - Informe Simplificado de cumplimiento
 
   {% img /images/posts/audit-vault-informe.png %}
 
-- Deteccion Anticipada de Amenazas con Alertas
+- Detección Anticipada de Amenazas con Alertas
 
   {% img /images/posts/audit-vault-alerta.png %}
 
 - Seguridad y Escalabilidad
-- Reduccion los costos de IT con las politicas de Oracle Audit Vault
+- Reducción los costos de IT con las políticas de Oracle Audit Vault
 
-### Conclucion
+### Pasos para la implementación de Audit Volt
 
-- Brinda una avanzada solucion de auditoria que a ayuda
+1.- Subir base de datos oracle vault
+2.- Creat usuario en base remota
+```
+  create user avagusr01 identified by oracle_4U
+```
+3.- Ejecutar permisos con scriptk
+```
+  @/home/oracle/oracle/product/10.3.0/av_agent_1/av/scripts/streams/source/zarsspriv.sql
+```
+4.- Setear Oracle Home
+```
+  export ORACLE_HOME=/home/oracle/oracle/product/10.3.0/agent
+```
+5.- Arrancar el agent en el directorio $ORACLE_HOME/bin
+```
+  ./avctl start_agent
+```
+6.- Cambiamos el sourcename
+```
+  ./avorcldb setup -srcname aci040_db
+```
+7.- Creamos el collector en la base de datos audit volt
+```
+  avorcldb add_collector -srcname aci040_db -agentname agaci040lab -colltype DBAUD -collname colaci040lab
+```
+
+<iframe class="youtube-player" type="text/html" width="640" height="385"
+src="https://www.youtube.com/embed/4ZE8-ds4-2w" allowfullscreen
+frameborder="0">
+</iframe>
+
+### Conclución
+
+- Brinda una avanzada solución de auditoría que a ayuda
 a simplificar los informes de cumplimiento, detectar las amenazas con
 alertas anticipadas, reducir el costo de cumplimiento y garantizar los
-datos de Auditoria
-- Automatiza el proceso de analisis y consolidacion, convirtiendo los
-  datos de auditoria en un recurso de seguridad clave para ayudar a
+datos de Auditoría
+- Automatiza el proceso de análisis y consolidación, convirtiendo los
+  datos de auditoría en un recurso de seguridad clave para ayudar a
 superar los desafios de cumplimiento y seguridad del mismo
 - Aprovecha las capacidades comprobadas de particionamiento y
-  deposito de datos para alcanzar escalibilidad y almacenamiento
+  depósito de datos para alcanzar escalibilidad y almacenamiento
 masivo

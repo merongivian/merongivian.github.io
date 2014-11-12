@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Certificación de Bases de Datos, Clase #1"
+title: "Factores de Seguridad"
 date: 2014-10-22 18:39:32 -0500
 comments: false
 categories: [udla, aci040]
