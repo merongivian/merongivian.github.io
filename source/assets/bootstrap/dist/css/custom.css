@@ -1,6 +1,39 @@
+#nav-social-links a img {
+  padding: 3px;
+  width: 56px;
+  height: 51px;
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+
+#nav-social-links a.linkedin img {
+  padding: 10px;
+}
+
+.navbar-collapse .form-group input {
+  display: none;
+}
+
+.navbar-collapse .navbar-right li a.subscribe-rss {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .navbar-collapse .form-group input {
+    display: initial;
+  }
+  #nav-social-links {
+    display: none;
+  }
+}
+
 #social-links a img {
   padding: 3px;
   width: 63px;
+}
+
+#social-links a.linkedin img {
+  padding: 11px;
 }
 
 p#bio {
