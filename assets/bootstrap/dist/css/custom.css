@@ -17,6 +17,10 @@
   display: none;
 }
 
+#content {
+  margin-top: 56px;
+}
+
 body {
   background: rgba(237,237,237,1);
   background: -moz-linear-gradient(left, rgba(237,237,237,1) 0%, rgba(246,246,246,1) 38%, rgba(255,255,255,1) 100%);
