@@ -54,3 +54,19 @@ p#bio {
 #twitter-section {
   width: 262px;
 }
+
+.avatar {
+  border: 1px solid #DDD;
+  width: 172px;
+  height: 171px;
+  -webkit-border-radius: 50%; /* Can also be 55px */
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+ }
+
+.avatar img {
+  margin: 5px;
+  -webkit-border-radius: 50%; /* Can also be 50px */
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+ }
