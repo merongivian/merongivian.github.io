@@ -6,16 +6,16 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ root_url }}/">{{ site.title }}</a>
+            <a class="navbar-brand trim" href="{{ root_url }}/">{{ site.title }}</a>
         </div>
 
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li {% if page.navbar == 'Blog' %}class="active"{% endif %}>
-                    <a rel="index" href="{{ root_url }}/">Blog</a>
+                    <a class="trim" rel="index" href="{{ root_url }}/">Blog</a>
                 </li>
                 <li {% if page.navbar == 'Archives' %}class="active"{% endif %}>
-                    <a href="{{ root_url }}/blog/archives">Archives</a>
+                    <a class="trim" href="{{ root_url }}/blog/archives">Archives</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
