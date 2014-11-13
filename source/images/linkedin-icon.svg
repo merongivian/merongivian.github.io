@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="100px" height="100px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
-<path id="LinkedIn" d="M95,59.727V93H75.71V61.955c0-7.799-2.79-13.121-9.773-13.121c-5.33,0-8.502,3.587-9.897,7.056
-	c-0.509,1.241-0.64,2.967-0.64,4.704V93H36.104c0,0,0.26-52.58,0-58.028h19.295v8.225c-0.039,0.062-0.09,0.128-0.127,0.188h0.127
-	v-0.188c2.563-3.948,7.141-9.588,17.388-9.588C85.483,33.609,95,41.903,95,59.727z M15.919,7C9.318,7,5,11.33,5,17.024
-	c0,5.57,4.193,10.031,10.663,10.031h0.129c6.729,0,10.914-4.46,10.914-10.031C26.579,11.33,22.521,7,15.919,7z M6.146,93h19.289
-	V34.972H6.146V93z"/>
+<?xml version="1.0"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100">
+    <desc iVinci="yes" version="4.5" gridStep="20" showGrid="no" snapToGrid="no" codePlatform="0"/>
+    <g id="Layer1" opacity="1">
+        <g id="Shape1">
+            <desc shapeID="1" type="0" basicInfo-basicType="0" basicInfo-roundedRectRadius="12" basicInfo-polygonSides="6" basicInfo-starPoints="5" bounding="rect(-45,-43,90,86)" text="" font-familyName="" font-pixelSize="20" font-bold="0" font-underline="0" font-alignment="1" strokeStyle="0" markerStart="0" markerEnd="0" shadowEnabled="0" shadowOffsetX="0" shadowOffsetY="2" shadowBlur="4" shadowOpacity="160" blurEnabled="0" blurRadius="4" transform="matrix(1,0,0,1,50,50)" pers-center="0,0" pers-size="0,0" pers-start="0,0" pers-end="0,0" locked="0" mesh="" flag=""/>
+            <path id="shapePath1" d="M95,59.727 L95,93 L75.71,93 L75.71,61.955 C75.71,54.156 72.92,48.834 65.937,48.834 C60.607,48.834 57.435,52.421 56.04,55.89 C55.531,57.131 55.4,58.857 55.4,60.594 L55.4,93 L36.104,93 C36.104,93 36.364,40.42 36.104,34.972 L55.399,34.972 L55.399,43.197 C55.36,43.259 55.309,43.325 55.272,43.385 L55.399,43.385 L55.399,43.197 C57.962,39.249 62.54,33.609 72.787,33.609 C85.483,33.609 95,41.903 95,59.727 M15.919,7 C9.318,7 5,11.33 5,17.024 C5,22.594 9.193,27.055 15.663,27.055 L15.792,27.055 C22.521,27.055 26.706,22.595 26.706,17.024 C26.579,11.33 22.521,7 15.919,7 M6.146,93 L25.435,93 L25.435,34.972 L6.146,34.972 L6.146,93 Z" style="stroke:none;fill-rule:nonzero;fill:#ffffff;fill-opacity:1;"/>
+        </g>
+    </g>
 </svg>
