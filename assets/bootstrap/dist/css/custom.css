@@ -32,7 +32,6 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#ffffff', GradientType=1 );
 }
 
-
 @media screen and (max-width: 767px) {
   .navbar-collapse .form-group input {
     display: initial;
@@ -40,6 +39,14 @@ body {
   #nav-social-links {
     display: none;
   }
+}
+
+.page-content {
+  float: right;
+}
+
+.sidebar {
+  float: left;
 }
 
 p#bio {
