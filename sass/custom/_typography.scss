@@ -1,27 +1,27 @@
-h1, h2, h3 {
-    margin-top: 32px;
-    margin-bottom: 12px;
-}
-h1, h2, h3, {
-    font-weight: bold;
-}
-
-.entry-content {
-    font-size: 14px;
-    @media only screen and (min-width: 768px) {
-        font-size: 16px;
-    }
-}
-
-q {
-    font-style: italic;
-    &:before {
-        content: "\201C";
-    }
-    &:after {
-        content: "\201D";
-    }
-}
+// h1, h2, h3 {
+//     margin-top: 32px;
+//     margin-bottom: 12px;
+// }
+// h1, h2, h3, {
+//     font-weight: bold;
+// }
+//
+// .entry-content {
+//     font-size: 14px;
+//     @media only screen and (min-width: 768px) {
+//         font-size: 16px;
+//     }
+// }
+//
+// q {
+//     font-style: italic;
+//     &:before {
+//         content: "\201C";
+//     }
+//     &:after {
+//         content: "\201D";
+//     }
+// }
 
 // Here you can easily change font faces which are used in your site.
 // To give it a try, uncomment some of the lines below rebuild your blog, and see how it works. your sites's.
