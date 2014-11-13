@@ -3,17 +3,7 @@ layout: default
 ---
 
 <div class="row">
-  {% unless page.sidebar == false or site.page_asides == empty and site.default_asides == empty %}
-    <aside class="sidebar col-md-3">
-      {% if site.page_asides.size %}
-        {% include_array page_asides %}
-      {% else %}
-        {% include_array default_asides %}
-      {% endif %}
-    </aside>
-  {% endunless %}
-
-  <div class="page-content {% unless page.sidebar == false or site.page_asides == empty and site.default_asides == empty %}col-md-9{% else %}col-md-12{% endunless %}">
+    <div class="page-content {% unless page.sidebar == false or site.page_asides == empty and site.default_asides == empty %}col-md-9{% else %}col-md-12{% endunless %}">
     <article role="article">
       {% unless page.no_header %}
         <header class="page-header">
@@ -55,4 +45,14 @@ layout: default
       </section>
     {% endif %}
   </div>
+
+  {% unless page.sidebar == false or site.page_asides == empty and site.default_asides == empty %}
+    <aside class="sidebar col-md-3">
+      {% if site.page_asides.size %}
+        {% include_array page_asides %}
+      {% else %}
+        {% include_array default_asides %}
+      {% endif %}
+    </aside>
+  {% endunless %}
 </div>
