@@ -44,6 +44,7 @@ body {
 
 p#bio {
   text-align: justify;
+  margin-bottom: 23px;
 }
 
 #email-icon {
@@ -56,17 +57,18 @@ p#bio {
 }
 
 .avatar {
-  border: 1px solid #DDD;
+  border: 1px solid #000;
   width: 172px;
   height: 171px;
-  -webkit-border-radius: 50%; /* Can also be 55px */
+  -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
+  margin-bottom: 13px;
  }
 
 .avatar img {
   margin: 5px;
-  -webkit-border-radius: 50%; /* Can also be 50px */
+  -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
  }
