@@ -52,3 +52,29 @@
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
 }
+
+/* Trim */
+.trim {
+  display: inline-block;
+  position: relative;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.trim:before {
+  content: '';
+  position: absolute;
+  border: white solid 4px;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  opacity: 0;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+}
+.trim:hover:before, .trim:focus:before, .trim:active:before {
+  opacity: 1;
+}
