@@ -100,3 +100,11 @@ google_analytics_tracking_id: UA-55897463-1
 
 # Facebook Like
 facebook_like: true
+
+# For code colors
+markdown: kramdown
+kramdown:
+  use_coderay: true
+  coderay:
+    coderay_line_numbers: table
+    coderay_css: class

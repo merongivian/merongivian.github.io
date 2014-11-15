@@ -18,9 +18,12 @@ categories: [udla, aci040]
 - **Global:** Seteado en SGA, se habilita para todas las sesiones
   * hrapp: namespace
   * hr_context: package
-```sql
+
+~~~~
 create context hrapp using hr_context
-```
+~~~~
+{:.language-sql}
+
 <!--more-->
 
 ### Control de acceso granular(FGAC)
@@ -45,9 +48,11 @@ create context hrapp using hr_context
 - Recuperar context:
   * CUST_ID: campo
   * OEAPP: contexto
-```sql
-  CUSTOMER_ID=SYS_CONTEXT('OEAPP','CUST_ID')
-```
+
+~~~~
+CUSTOMER_ID=SYS_CONTEXT('OEAPP','CUST_ID')
+~~~~
+{:.language-sql}
 
 #### Implementación de una politica VPD
 - Desarrollar estrategia
@@ -57,44 +62,47 @@ create context hrapp using hr_context
 
 ### Pasos para la implementación de VPD con triggers
 1.- Declarar el procedure set_emp_info dentro del paquete current_emp
-```sql
-  CREATE OR REPLACE PACKAGE CURRENT_EMP IS
-  PROCEDURE SET_EMP_INFO;
-  END;
-```
+
+    CREATE OR REPLACE PACKAGE CURRENT_EMP IS
+    PROCEDURE SET_EMP_INFO;
+    END
+{:.language-sql}
+
 2.- Definir el procedure para la tabla employees
-```sql
-CREATE OR REPLACE PACKAGE BODY current_emp IS PROCEDURE set_emp_info IS
- v_employee_id hr.employees.employee_id%TYPE;
- v_first_name  hr.employees.first_name%TYPE;
- v_last_name hr.employees.last_name%TYPE;
- BEGIN
-   SELECT employee_id,
-          first_name,
-          last_name
-   INTO v_employee_id,
-        v_first_name,
-        v_last_name
-   FROM hr.employees
-   WHERE email=SYS_CONTEXT('USERENV','SESSION_USER');
-         DBMS_SESSION.SET_CONTEXT('emp_user','id',v_employee_id);
-         DBMS_SESSION.SET_CONTEXT('emp_user','name',v_first_name ||' '|| v_last_name);
-         DBMS_SESSION.SET_CONTEXT('emp_user','email',SYS_CONTEXT('USERENV','SESSION_USER'));
-   EXCEPTION
-   WHEN no_data_found THEN NULL;
- END;
-END;
-```
+
+    CREATE OR REPLACE PACKAGE BODY current_emp IS PROCEDURE set_emp_info IS
+     v_employee_id hr.employees.employee_id%TYPE;
+     v_first_name  hr.employees.first_name%TYPE;
+     v_last_name hr.employees.last_name%TYPE;
+     BEGIN
+       SELECT employee_id,
+              first_name,
+              last_name
+       INTO v_employee_id,
+            v_first_name,
+            v_last_name
+       FROM hr.employees
+       WHERE email=SYS_CONTEXT('USERENV','SESSION_USER');
+             DBMS_SESSION.SET_CONTEXT('emp_user','id',v_employee_id);
+             DBMS_SESSION.SET_CONTEXT('emp_user','name',v_first_name ||' '|| v_last_name);
+             DBMS_SESSION.SET_CONTEXT('emp_user','email',SYS_CONTEXT('USERENV','SESSION_USER'));
+       EXCEPTION
+       WHEN no_data_found THEN NULL;
+     END;
+    END;
+{:.language-sql}
+
 3.- Crear el trigger con el procedure creado, este se ejecutara cada que
 que se inicia sesion
-```sql
-CREATE OR REPLACE TRIGGER EMP_LOGON
-AFTER LOGON ON DATABASE
-BEGIN
-  CURRENT_EMP.SET_EMP_INFO;
-END;
-/
-```
+
+    CREATE OR REPLACE TRIGGER EMP_LOGON
+    AFTER LOGON ON DATABASE
+    BEGIN
+      CURRENT_EMP.SET_EMP_INFO;
+    END;
+    /
+{:.language-sql}
+
 #### Video
 
 <iframe class="youtube-player" type="text/html" width="640" height="385"
@@ -105,31 +113,33 @@ frameborder="0">
 ### Pasos para la implementación de VPD con politicas
 
 1.- Declarar la politica en el paquete hr_policy_package
-```sql
-create or replace package hr_policy_pkg is
-function limit_emp_emp(
-object_schema in varchar2,
-object_name varchar2)
-return varchar2;
-end;
-```
+
+    create or replace package hr_policy_pkg is
+    function limit_emp_emp(
+    object_schema in varchar2,
+    object_name varchar2)
+    return varchar2;
+    end;
+{:.language-sql}
+
 2.- Crear la politica con la funcion limit_emp_emp
-```sql
-create or replace package body hr_policy_pkg is
-  function limit_emp_emp( object_schema in varchar2, object_name varchar2)
-  return varchar2
-  is
-  v_emp_id number;
-  BEGIN
-   return 'employee_id=sys_context("emp_user","id")';
-  end;
-end;
-```
+
+    create or replace package body hr_policy_pkg is
+      function limit_emp_emp( object_schema in varchar2, object_name varchar2)
+      return varchar2
+      is
+      v_emp_id number;
+      BEGIN
+       return 'employee_id=sys_context("emp_user","id")';
+      end;
+    end;
+{:.language-sql}
+
 3.- Anadir la politica a la tabla employees
-```sql
-exec dbms_rls.add_policy
-('HR','EMPLOYEES','HR_EMP_POL','SEC','HR_POLICY_PKG.LIMIT_EMP_EMP','SELECT');
-```
+
+    exec dbms_rls.add_policy
+    ('HR','EMPLOYEES','HR_EMP_POL','SEC','HR_POLICY_PKG.LIMIT_EMP_EMP','SELECT');
+{:.language-sql}
 
 #### Video
 

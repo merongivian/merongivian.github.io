@@ -39,29 +39,34 @@ volúmenes de datos de auditoría.
 
 1.- Subir base de datos oracle vault
 2.- Creat usuario en base remota
-```
-  create user avagusr01 identified by oracle_4U
-```
+
+    create user avagusr01 identified by oracle_4U
+{:.language-sql}
+
 3.- Ejecutar permisos con scriptk
-```
-  @/home/oracle/oracle/product/10.3.0/av_agent_1/av/scripts/streams/source/zarsspriv.sql
-```
+
+    @/home/oracle/oracle/product/10.3.0/av_agent_1/av/scripts/streams/source/zarsspriv.sql
+{:.language-sql}
+
 4.- Setear Oracle Home
-```
-  export ORACLE_HOME=/home/oracle/oracle/product/10.3.0/agent
-```
+
+    export ORACLE_HOME=/home/oracle/oracle/product/10.3.0/agent
+{:.language-sql}
+
 5.- Arrancar el agent en el directorio $ORACLE_HOME/bin
-```
-  ./avctl start_agent
-```
+
+    ./avctl start_agent
+{:.language-sql}
+
 6.- Cambiamos el sourcename
-```
-  ./avorcldb setup -srcname aci040_db
-```
+
+    ./avorcldb setup -srcname aci040_db
+{:.language-sql}
+
 7.- Creamos el collector en la base de datos audit volt
-```
-  avorcldb add_collector -srcname aci040_db -agentname agaci040lab -colltype DBAUD -collname colaci040lab
-```
+
+    avorcldb add_collector -srcname aci040_db -agentname agaci040lab -colltype DBAUD -collname colaci040lab
+{:.language-sql}
 
 <iframe class="youtube-player" type="text/html" width="640" height="385"
 src="https://www.youtube.com/embed/4ZE8-ds4-2w" allowfullscreen
