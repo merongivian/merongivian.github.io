@@ -149,20 +149,19 @@
   </header>
 
 
-  <div class="entry-content clearfix" itemprop="articleBody description"><h3>Oracle Audit Vault</h3>
+  <div class="entry-content clearfix" itemprop="articleBody description"><h3 id="oracle-audit-vault">Oracle Audit Vault</h3>
 
-<p><img class="right" src="/images/posts/audit-vault-principal.png"></p>
+<p><img class="right" src="/images/posts/audit-vault-principal.png" /></p>
 
 <ul>
-<li>Recopila y consolida los datos de auditorías de manera transparente, brindando valiosos conocimientos respecto de quién hizo qué a cuáles datos y cuándo lo hizo</li>
-<li>Con los informes de Audit Vault, las notificaciones de alertas, y la administración depolíticas de auditoría centralizada, los
+  <li>Recopila y consolida los datos de auditorías de manera transparente, brindando valiosos conocimientos respecto de quién hizo qué a cuáles datos y cuándo lo hizo</li>
+  <li>Con los informes de Audit Vault, las notificaciones de alertas, y la administración depolíticas de auditoría centralizada, los
 riesgos de amenazas internas y el costo de cumplimiento son altamente
 reducidos.</li>
-<li>Aprovecha la seguridad de la base de datos líder del sector de Oracle y
+  <li>Aprovecha la seguridad de la base de datos líder del sector de Oracle y
 la tecnología de data warehousing para administrar, analizar, almacenar, y archivar grandes
 volúmenes de datos de auditoría.</li>
 </ul>
-
 
 </div>
   
@@ -205,26 +204,23 @@ volúmenes de datos de auditoría.</li>
   </header>
 
 
-  <div class="entry-content clearfix" itemprop="articleBody description"><h3>Modelos de control de Acceso</h3>
-
+  <div class="entry-content clearfix" itemprop="articleBody description"><h3 id="modelos-de-control-de-acceso">Modelos de control de Acceso</h3>
 <ul>
-<li>Control de acceso Discrecional(DAC): es una forma en la cual
+  <li>Control de acceso Discrecional(DAC): es una forma en la cual
 podemos restringir el acceso a objetos basados en la identidad o
 grupos a los que pertenecen</li>
-<li>Seguridad a nivel de registro:
-
-<ul>
-<li>Se pueden aplicar sofisticadas reglas para el control de acceso</li>
-<li>Complementa a DAC</li>
-<li>Es provisto por VPD o por OLS</li>
+  <li>Seguridad a nivel de registro:
+    <ul>
+      <li>Se pueden aplicar sofisticadas reglas para el control de acceso</li>
+      <li>Complementa a DAC</li>
+      <li>Es provisto por VPD o por OLS</li>
+    </ul>
+  </li>
 </ul>
-</li>
-</ul>
 
+<h3 id="oracle-label-security-ols">Oracle Label Security (OLS)</h3>
 
-<h3>Oracle Label Security (OLS)</h3>
-
-<p>  <img class="center" src="/images/posts/ols-principal.png"></p>
+<p><img class="center" src="/images/posts/ols-principal.png" /></p>
 
 </div>
   
@@ -267,35 +263,33 @@ grupos a los que pertenecen</li>
   </header>
 
 
-  <div class="entry-content clearfix" itemprop="articleBody description"><h3>Contexto de Aplicación</h3>
-
+  <div class="entry-content clearfix" itemprop="articleBody description"><h3 id="contexto-de-aplicacin">Contexto de Aplicación</h3>
 <ul>
-<li>Contenedor en memoria con atributos de solo lectura, llamado namespace</li>
-<li>Namespace posee atributos nombrados</li>
-<li>Namespace son independientes</li>
-<li>Atributos son poblados a traves de un paquete pl/sql</li>
+  <li>Contenedor en memoria con atributos de solo lectura, llamado namespace</li>
+  <li>Namespace posee atributos nombrados</li>
+  <li>Namespace son independientes</li>
+  <li>Atributos son poblados a traves de un paquete pl/sql</li>
 </ul>
 
-
-<h3>Tipos de contextos</h3>
-
+<h3 id="tipos-de-contextos">Tipos de contextos</h3>
 <ul>
-<li><strong>Local:</strong> Seteado en un paquete pl/sql , se guarda en PGA(se usa para
+  <li><strong>Local:</strong> Seteado en un paquete pl/sql , se guarda en PGA(se usa para
 cada sesion)</li>
-<li><strong>Global:</strong> Seteado en SGA, se habilita para todas las sesiones
-
-<ul>
-<li>hrapp: namespace</li>
-<li>hr_context: package</li>
+  <li><strong>Global:</strong> Seteado en SGA, se habilita para todas las sesiones
+    <ul>
+      <li>hrapp: namespace</li>
+      <li>hr_context: package</li>
+    </ul>
+  </li>
 </ul>
-</li>
-</ul>
 
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="k">create</span> <span class="n">context</span> <span class="n">hrapp</span> <span class="k">using</span> <span class="n">hr_context</span>
-</span></code></pre></td></tr></table></div></figure>
-
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre><span class="class">create</span> context hrapp <span class="keyword">using</span> hr_context
+</pre></td>
+</tr></table>
+</div>
 
 </div>
   
@@ -338,16 +332,15 @@ cada sesion)</li>
   </header>
 
 
-  <div class="entry-content clearfix" itemprop="articleBody description"><h3>Triada CIA</h3>
+  <div class="entry-content clearfix" itemprop="articleBody description"><h3 id="triada-cia">Triada CIA</h3>
 
-<p>  <img src="/images/posts/triada.png"></p>
+<p><img src="/images/posts/triada.png" /></p>
 
 <ul>
-<li><strong>Confidentiality:</strong> Permiso por cada usuario</li>
-<li><strong>Integrity:</strong> Información verídica, consistente y que no sea alterada</li>
-<li><strong>Availability:</strong> Capacidad, disponibilidad de la base</li>
+  <li><strong>Confidentiality:</strong> Permiso por cada usuario</li>
+  <li><strong>Integrity:</strong> Información verídica, consistente y que no sea alterada</li>
+  <li><strong>Availability:</strong> Capacidad, disponibilidad de la base</li>
 </ul>
-
 
 </div>
   

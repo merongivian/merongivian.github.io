@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Aci040 | Merongivian]]></title>
   <link href="http://merongivian.github.io/blog/categories/aci040/atom.xml" rel="self"/>
   <link href="http://merongivian.github.io/"/>
-  <updated>2014-11-14T12:05:27-05:00</updated>
+  <updated>2014-11-15T18:05:34-05:00</updated>
   <id>http://merongivian.github.io/</id>
   <author>
     <name><![CDATA[Jose Añasco]]></name>
@@ -18,89 +18,121 @@
     <link href="http://merongivian.github.io/blog/2014/10/23/certificacion-de-bases-de-datos-clase-number-4/"/>
     <updated>2014-10-23T05:56:02-05:00</updated>
     <id>http://merongivian.github.io/blog/2014/10/23/certificacion-de-bases-de-datos-clase-number-4</id>
-    <content type="html"><![CDATA[<h3>Oracle Audit Vault</h3>
+    <content type="html"><![CDATA[<h3 id="oracle-audit-vault">Oracle Audit Vault</h3>
 
 <p><img class="right" src="/images/posts/audit-vault-principal.png"></p>
 
 <ul>
-<li>Recopila y consolida los datos de auditorías de manera transparente, brindando valiosos conocimientos respecto de quién hizo qué a cuáles datos y cuándo lo hizo</li>
-<li>Con los informes de Audit Vault, las notificaciones de alertas, y la administración depolíticas de auditoría centralizada, los
+  <li>Recopila y consolida los datos de auditorías de manera transparente, brindando valiosos conocimientos respecto de quién hizo qué a cuáles datos y cuándo lo hizo</li>
+  <li>Con los informes de Audit Vault, las notificaciones de alertas, y la administración depolíticas de auditoría centralizada, los
 riesgos de amenazas internas y el costo de cumplimiento son altamente
 reducidos.</li>
-<li>Aprovecha la seguridad de la base de datos líder del sector de Oracle y
+  <li>Aprovecha la seguridad de la base de datos líder del sector de Oracle y
 la tecnología de data warehousing para administrar, analizar, almacenar, y archivar grandes
 volúmenes de datos de auditoría.</li>
 </ul>
 
-
 <!--more-->
 
-
-<h3>Caracteristicas</h3>
+<h3 id="caracteristicas">Caracteristicas</h3>
 
 <ul>
-<li>Recopilación y Consolidación de Datos de Auditoria de manera
+  <li>Recopilación y Consolidación de Datos de Auditoria de manera
 transparente</li>
-<li><p>Informe Simplificado de cumplimiento</p>
+  <li>
+    <p>Informe Simplificado de cumplimiento</p>
 
-<p><img src="/images/posts/audit-vault-informe.png"></p></li>
-<li><p>Detección Anticipada de Amenazas con Alertas</p>
+    <p><img src="/images/posts/audit-vault-informe.png"></p>
+  </li>
+  <li>
+    <p>Detección Anticipada de Amenazas con Alertas</p>
 
-<p><img src="/images/posts/audit-vault-alerta.png"></p></li>
-<li><p>Seguridad y Escalabilidad</p></li>
-<li>Reducción los costos de IT con las políticas de Oracle Audit Vault</li>
+    <p><img src="/images/posts/audit-vault-alerta.png"></p>
+  </li>
+  <li>Seguridad y Escalabilidad</li>
+  <li>Reducción los costos de IT con las políticas de Oracle Audit Vault</li>
 </ul>
 
-
-<h3>Pasos para la implementación de Audit Volt</h3>
+<h3 id="pasos-para-la-implementacin-de-audit-volt">Pasos para la implementación de Audit Volt</h3>
 
 <p>1.- Subir base de datos oracle vault
-2.- Creat usuario en base remota
-<code>
-  create user avagusr01 identified by oracle_4U
-</code>
-3.- Ejecutar permisos con scriptk
-<code>
-  @/home/oracle/oracle/product/10.3.0/av_agent_1/av/scripts/streams/source/zarsspriv.sql
-</code>
-4.- Setear Oracle Home
-<code>
-  export ORACLE_HOME=/home/oracle/oracle/product/10.3.0/agent
-</code>
-5.- Arrancar el agent en el directorio $ORACLE_HOME/bin
-<code>
-  ./avctl start_agent
-</code>
-6.- Cambiamos el sourcename
-<code>
-  ./avorcldb setup -srcname aci040_db
-</code>
-7.- Creamos el collector en la base de datos audit volt
-<code>
-  avorcldb add_collector -srcname aci040_db -agentname agaci040lab -colltype DBAUD -collname colaci040lab
-</code></p>
+2.- Creat usuario en base remota</p>
 
-<iframe class="youtube-player" type="text/html" width="640" height="385"
-src="https://www.youtube.com/embed/4ZE8-ds4-2w" allowfullscreen
-frameborder="0">
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre><span class="class">create</span> user avagusr01 identified <span class="keyword">by</span> oracle_4U
+</pre></td>
+</tr></table>
+</div>
+
+<p>3.- Ejecutar permisos con scriptk</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre><span class="error">@</span>/home/oracle/oracle/product/<span class="float">10.3</span><span class="float">.0</span>/av_agent_1/av/scripts/streams/source/zarsspriv.sql
+</pre></td>
+</tr></table>
+</div>
+
+<p>4.- Setear Oracle Home</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre>export ORACLE_HOME=/home/oracle/oracle/product/<span class="float">10.3</span><span class="float">.0</span>/agent
+</pre></td>
+</tr></table>
+</div>
+
+<p>5.- Arrancar el agent en el directorio $ORACLE_HOME/bin</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre>./avctl start_agent
+</pre></td>
+</tr></table>
+</div>
+
+<p>6.- Cambiamos el sourcename</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre>./avorcldb setup -srcname aci040_db
+</pre></td>
+</tr></table>
+</div>
+
+<p>7.- Creamos el collector en la base de datos audit volt</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre>avorcldb add_collector -srcname aci040_db -agentname agaci040lab -colltype DBAUD -collname colaci040lab
+</pre></td>
+</tr></table>
+</div>
+
+<iframe class="youtube-player" type="text/html" width="640" height="385" src="https://www.youtube.com/embed/4ZE8-ds4-2w" allowfullscreen="" frameborder="0">
 </iframe>
 
-
-<h3>Conclución</h3>
+<h3 id="conclucin">Conclución</h3>
 
 <ul>
-<li>Brinda una avanzada solución de auditoría que a ayuda
+  <li>Brinda una avanzada solución de auditoría que a ayuda
 a simplificar los informes de cumplimiento, detectar las amenazas con
 alertas anticipadas, reducir el costo de cumplimiento y garantizar los
 datos de Auditoría</li>
-<li>Automatiza el proceso de análisis y consolidación, convirtiendo los
+  <li>Automatiza el proceso de análisis y consolidación, convirtiendo los
 datos de auditoría en un recurso de seguridad clave para ayudar a
 superar los desafios de cumplimiento y seguridad del mismo</li>
-<li>Aprovecha las capacidades comprobadas de particionamiento y
+  <li>Aprovecha las capacidades comprobadas de particionamiento y
 depósito de datos para alcanzar escalibilidad y almacenamiento
 masivo</li>
 </ul>
-
 ]]></content>
   </entry>
   
@@ -109,107 +141,169 @@ masivo</li>
     <link href="http://merongivian.github.io/blog/2014/10/22/certificacion-de-bases-de-datos-clase-number-3/"/>
     <updated>2014-10-22T23:41:30-05:00</updated>
     <id>http://merongivian.github.io/blog/2014/10/22/certificacion-de-bases-de-datos-clase-number-3</id>
-    <content type="html"><![CDATA[<h3>Modelos de control de Acceso</h3>
-
+    <content type="html"><![CDATA[<h3 id="modelos-de-control-de-acceso">Modelos de control de Acceso</h3>
 <ul>
-<li>Control de acceso Discrecional(DAC): es una forma en la cual
+  <li>Control de acceso Discrecional(DAC): es una forma en la cual
 podemos restringir el acceso a objetos basados en la identidad o
 grupos a los que pertenecen</li>
-<li>Seguridad a nivel de registro:
-
-<ul>
-<li>Se pueden aplicar sofisticadas reglas para el control de acceso</li>
-<li>Complementa a DAC</li>
-<li>Es provisto por VPD o por OLS</li>
+  <li>Seguridad a nivel de registro:
+    <ul>
+      <li>Se pueden aplicar sofisticadas reglas para el control de acceso</li>
+      <li>Complementa a DAC</li>
+      <li>Es provisto por VPD o por OLS</li>
+    </ul>
+  </li>
 </ul>
-</li>
-</ul>
 
+<h3 id="oracle-label-security-ols">Oracle Label Security (OLS)</h3>
 
-<h3>Oracle Label Security (OLS)</h3>
-
-<p>  <img class="center" src="/images/posts/ols-principal.png"></p>
+<p><img class="center" src="/images/posts/ols-principal.png"></p>
 
 <!--more-->
 
-
 <ul>
-<li>Categoriza e intercede fácilmente en el acceso a datos según su
+  <li>Categoriza e intercede fácilmente en el acceso a datos según su
 clasificación.</li>
-<li>Integrada con Oracle Identity Management, permitiendo la gestión
+  <li>Integrada con Oracle Identity Management, permitiendo la gestión
 centralizada de definiciones de políticas</li>
 </ul>
 
+<h3 id="componentes-data-label">Componentes data label</h3>
 
-<h3>Componentes data label</h3>
+<p><img class="center" src="/images/posts/ols-componentes.png"></p>
 
-<p>  <img class="center" src="/images/posts/ols-componentes.png"></p>
+<h3 id="pasos-para-la-implementacin-de-ols">Pasos Para la implementación de OLS</h3>
 
-<h3>Pasos Para la implementación de OLS</h3>
+<p>1.- Crear la politica facility</p>
 
-<p>1.- Crear la politica facility
-<code>sql
-  BEGIN
-    SA_SYSDBA.CREATE_POLICY('FACILITY','FACLAB',
-    'READ_CONTROL,CHECK_CONTROL,LABEL_DEFAULT,HIDE');
-  END;
-</code>
-2.- Crear los niveles para la politica
-<code>sql
-  BEGIN
-    SA_COMPONENTS.CREATE_LEVEL('FACILITY',1000,'P','PUBLIC');
-    SA_COMPONENTS.CREATE_LEVEL('FACILITY',2000,'S','SENSITIVE');
-    SA_COMPONENTS.CREATE_LEVEL('FACILITY',3000,'HS','HIGHLY_SENSITIVE');
-  END;
-</code>
-3.- Crear los grupos para la politica
-<code>sql
-  BEGIN
-    SA_COMPONENTS.CREATE_GROUP('FACILITY',1000,'Global','Global');
-    SA_COMPONENTS.CREATE_GROUP('FACILITY',101,'US','United States','GLOBAL');
-    SA_COMPONENTS.CREATE_GROUP('FACILITY',102,'EU','Europe','GLOBAL');
-    SA_COMPONENTS.CREATE_GROUP('FACILITY',103,'Asia','Asia','GLOBAL');
-  END;
-</code>
-4.- Crear las etiquetas, juntando los niveles y grupos
-<code>sql
-  BEGIN
-    SA_LABEL_ADMIN.CREATE_LABEL('FACILITY',1000,'P');
-    SA_LABEL_ADMIN.CREATE_LABEL('FACILITY',2101,'S::US');.
-    SA_LABEL_ADMIN.CREATE_LABEL('FACILITY',3101,'HS::US');
-    SA_LABEL_ADMIN.CREATE_LABEL('FACILITY',3103,'HS::ASIA');
-  END;
-</code>
-5.- Crear etiquetas para usuarios
-<code>sql
-  BEGIN
-    SA_USER_ADMIN.SET_USER_LABELS('PRIVACY','MYCO_MGR','C');
-    SA_USER_ADMIN.SET_USER_LABELS('FACILITY','MYCO_EMP','P');
-    SA_USER_ADMIN.SET_USER_LABELS('FACILITY','MYCO_MGR','S::US,EU,ASIA');
-    SA_USER_ADMIN.SET_USER_LABELS('FACILITY','MYCO_PLANNING','HS::GLOBAL');.
-  END;
-</code>
-6.- Actualizar la tabla locations con las nuevas etiquetas
-<code>sql
-  BEGIN
-    UPDATE LOCATIONS
-      SET FACLAB=CHAR_TO_LABEL('FACILITY','S::ASIA')
-      WHERE UPPER(CITY) IN ('BEIJING','TOKYO','SINGAPORE');
-    UPDATE LOCATIONS
-      SET FACLAB=CHAR_TO_LABEL('FACILITY','HS::US').
-      WHERE UPPER(CITY) IN ('SOUTH SAN FRANCISCO');
-    UPDATE LOCATIONS
-      SET FACLAB=CHAR_TO_LABEL('FACILITY','P')
-      WHERE FACLAB IS NULL;
-    COMMIT;
-  END;
-</code></p>
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+</pre></td>
+  <td class="code"><pre><span class="class">BEGIN</span>
+  SA_SYSDBA.CREATE_POLICY(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">FACLAB</span><span class="delimiter">'</span></span>,
+  <span class="string"><span class="delimiter">'</span><span class="content">READ_CONTROL,CHECK_CONTROL,LABEL_DEFAULT,HIDE</span><span class="delimiter">'</span></span>);
+<span class="keyword">END</span>;
+</pre></td>
+</tr></table>
+</div>
 
-<h4>Video</h4>
+<p>2.- Crear los niveles para la politica</p>
 
-<p><iframe class="youtube-player" type="text/html" width="640" height="385"
-src="https://www.youtube.com/embed/bTAn45ejjL0" allowfullscreen
-frameborder="0"></p>
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+</pre></td>
+  <td class="code"><pre><span class="class">BEGIN</span>
+  SA_COMPONENTS.CREATE_LEVEL(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">1000</span>,<span class="string"><span class="delimiter">'</span><span class="content">P</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">PUBLIC</span><span class="delimiter">'</span></span>);
+  SA_COMPONENTS.CREATE_LEVEL(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">2000</span>,<span class="string"><span class="delimiter">'</span><span class="content">S</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">SENSITIVE</span><span class="delimiter">'</span></span>);
+  SA_COMPONENTS.CREATE_LEVEL(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">3000</span>,<span class="string"><span class="delimiter">'</span><span class="content">HS</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">HIGHLY_SENSITIVE</span><span class="delimiter">'</span></span>);
+<span class="keyword">END</span>;
+</pre></td>
+</tr></table>
+</div>
+
+<p>3.- Crear los grupos para la politica</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+</pre></td>
+  <td class="code"><pre><span class="class">BEGIN</span>
+  SA_COMPONENTS.CREATE_GROUP(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">1000</span>,<span class="string"><span class="delimiter">'</span><span class="content">Global</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">Global</span><span class="delimiter">'</span></span>);
+  SA_COMPONENTS.CREATE_GROUP(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">101</span>,<span class="string"><span class="delimiter">'</span><span class="content">US</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">United States</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">GLOBAL</span><span class="delimiter">'</span></span>);
+  SA_COMPONENTS.CREATE_GROUP(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">102</span>,<span class="string"><span class="delimiter">'</span><span class="content">EU</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">Europe</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">GLOBAL</span><span class="delimiter">'</span></span>);
+  SA_COMPONENTS.CREATE_GROUP(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">103</span>,<span class="string"><span class="delimiter">'</span><span class="content">Asia</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">Asia</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">GLOBAL</span><span class="delimiter">'</span></span>);
+<span class="keyword">END</span>;
+</pre></td>
+</tr></table>
+</div>
+
+<p>4.- Crear las etiquetas, juntando los niveles y grupos</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+</pre></td>
+  <td class="code"><pre><span class="class">BEGIN</span>
+  SA_LABEL_ADMIN.CREATE_LABEL(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">1000</span>,<span class="string"><span class="delimiter">'</span><span class="content">P</span><span class="delimiter">'</span></span>);
+  SA_LABEL_ADMIN.CREATE_LABEL(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">2101</span>,<span class="string"><span class="delimiter">'</span><span class="content">S::US</span><span class="delimiter">'</span></span>);.
+  SA_LABEL_ADMIN.CREATE_LABEL(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">3101</span>,<span class="string"><span class="delimiter">'</span><span class="content">HS::US</span><span class="delimiter">'</span></span>);
+  SA_LABEL_ADMIN.CREATE_LABEL(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">3103</span>,<span class="string"><span class="delimiter">'</span><span class="content">HS::ASIA</span><span class="delimiter">'</span></span>);
+<span class="keyword">END</span>;
+</pre></td>
+</tr></table>
+</div>
+
+<p>5.- Crear etiquetas para usuarios</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+</pre></td>
+  <td class="code"><pre><span class="class">BEGIN</span>
+  SA_USER_ADMIN.SET_USER_LABELS(<span class="string"><span class="delimiter">'</span><span class="content">PRIVACY</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">MYCO_MGR</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">C</span><span class="delimiter">'</span></span>);
+  SA_USER_ADMIN.SET_USER_LABELS(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">MYCO_EMP</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">P</span><span class="delimiter">'</span></span>);
+  SA_USER_ADMIN.SET_USER_LABELS(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">MYCO_MGR</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">S::US,EU,ASIA</span><span class="delimiter">'</span></span>);
+  SA_USER_ADMIN.SET_USER_LABELS(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">MYCO_PLANNING</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">HS::GLOBAL</span><span class="delimiter">'</span></span>);.
+<span class="keyword">END</span>;
+</pre></td>
+</tr></table>
+</div>
+
+<p>6.- Actualizar la tabla locations con las nuevas etiquetas</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+<a href="#n11" name="n11">11</a>
+<a href="#n12" name="n12">12</a>
+</pre></td>
+  <td class="code"><pre><span class="class">BEGIN</span>
+  <span class="class">UPDATE</span> LOCATIONS
+    <span class="class">SET</span> FACLAB=CHAR_TO_LABEL(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">S::ASIA</span><span class="delimiter">'</span></span>)
+    <span class="keyword">WHERE</span> UPPER(CITY) <span class="keyword">IN</span> (<span class="string"><span class="delimiter">'</span><span class="content">BEIJING</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">TOKYO</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">SINGAPORE</span><span class="delimiter">'</span></span>);
+  <span class="class">UPDATE</span> LOCATIONS
+    <span class="class">SET</span> FACLAB=CHAR_TO_LABEL(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">HS::US</span><span class="delimiter">'</span></span>).
+    <span class="keyword">WHERE</span> UPPER(CITY) <span class="keyword">IN</span> (<span class="string"><span class="delimiter">'</span><span class="content">SOUTH SAN FRANCISCO</span><span class="delimiter">'</span></span>);
+  <span class="class">UPDATE</span> LOCATIONS
+    <span class="class">SET</span> FACLAB=CHAR_TO_LABEL(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">P</span><span class="delimiter">'</span></span>)
+    <span class="keyword">WHERE</span> FACLAB <span class="keyword">IS</span> <span class="predefined-constant">NULL</span>;
+  <span class="class">COMMIT</span>;
+<span class="keyword">END</span>;
+</pre></td>
+</tr></table>
+</div>
+
+<h4 id="video">Video</h4>
+
+<iframe class="youtube-player" type="text/html" width="640" height="385" src="https://www.youtube.com/embed/bTAn45ejjL0" allowfullscreen="" frameborder="0">
+</iframe>
 ]]></content>
   </entry>
   
@@ -218,174 +312,237 @@ frameborder="0"></p>
     <link href="http://merongivian.github.io/blog/2014/10/22/certificacion-de-bases-de-datos-clase-number-2/"/>
     <updated>2014-10-22T21:01:42-05:00</updated>
     <id>http://merongivian.github.io/blog/2014/10/22/certificacion-de-bases-de-datos-clase-number-2</id>
-    <content type="html"><![CDATA[<h3>Contexto de Aplicación</h3>
-
+    <content type="html"><![CDATA[<h3 id="contexto-de-aplicacin">Contexto de Aplicación</h3>
 <ul>
-<li>Contenedor en memoria con atributos de solo lectura, llamado namespace</li>
-<li>Namespace posee atributos nombrados</li>
-<li>Namespace son independientes</li>
-<li>Atributos son poblados a traves de un paquete pl/sql</li>
+  <li>Contenedor en memoria con atributos de solo lectura, llamado namespace</li>
+  <li>Namespace posee atributos nombrados</li>
+  <li>Namespace son independientes</li>
+  <li>Atributos son poblados a traves de un paquete pl/sql</li>
 </ul>
 
-
-<h3>Tipos de contextos</h3>
-
+<h3 id="tipos-de-contextos">Tipos de contextos</h3>
 <ul>
-<li><strong>Local:</strong> Seteado en un paquete pl/sql , se guarda en PGA(se usa para
+  <li><strong>Local:</strong> Seteado en un paquete pl/sql , se guarda en PGA(se usa para
 cada sesion)</li>
-<li><strong>Global:</strong> Seteado en SGA, se habilita para todas las sesiones
-
-<ul>
-<li>hrapp: namespace</li>
-<li>hr_context: package
-<code>sql
-create context hrapp using hr_context
-</code></li>
-</ul>
-</li>
+  <li><strong>Global:</strong> Seteado en SGA, se habilita para todas las sesiones
+    <ul>
+      <li>hrapp: namespace</li>
+      <li>hr_context: package</li>
+    </ul>
+  </li>
 </ul>
 
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre><span class="class">create</span> context hrapp <span class="keyword">using</span> hr_context
+</pre></td>
+</tr></table>
+</div>
 
 <!--more-->
 
-
-<h3>Control de acceso granular(FGAC)</h3>
-
+<h3 id="control-de-acceso-granularfgac">Control de acceso granular(FGAC)</h3>
 <ul>
-<li>Limita acceso a filas y columnas en bd</li>
-<li>Tipos de privilegios: objetos y sistemas</li>
-<li>Limita filas con predicados, las columnas se bloquean totalmente</li>
-<li>Se asocia a tabla o vista</li>
-<li>La funcion se llama con fgca antes de mostrar una consulta (genera un
+  <li>Limita acceso a filas y columnas en bd</li>
+  <li>Tipos de privilegios: objetos y sistemas</li>
+  <li>Limita filas con predicados, las columnas se bloquean totalmente</li>
+  <li>Se asocia a tabla o vista</li>
+  <li>La funcion se llama con fgca antes de mostrar una consulta (genera un
 predicado where a la consulta original)</li>
 </ul>
 
-
-<h4>Beneficios</h4>
-
+<h4 id="beneficios">Beneficios</h4>
 <ul>
-<li>Seguridad</li>
-<li>Simple (solo anade un predicado a la sentencia sql)</li>
+  <li>Seguridad</li>
+  <li>Simple (solo anade un predicado a la sentencia sql)</li>
 </ul>
 
-
-<h3>Bases de datos virtuales (VPD)</h3>
+<h3 id="bases-de-datos-virtuales-vpd">Bases de datos virtuales (VPD)</h3>
 
 <p><img src="/images/posts/vpd.png"></p>
 
 <ul>
-<li>Application context + FGAC</li>
-<li>Una base de datos especifica mostrada para un usuario, pero en
+  <li>Application context + FGAC</li>
+  <li>Una base de datos especifica mostrada para un usuario, pero en
 realidad es la misma base</li>
-<li>Recuperar context:
+  <li>Recuperar context:
+    <ul>
+      <li>CUST_ID: campo</li>
+      <li>OEAPP: contexto</li>
+    </ul>
+  </li>
+</ul>
 
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre>CUSTOMER_ID=SYS_CONTEXT(<span class="string"><span class="delimiter">'</span><span class="content">OEAPP</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">CUST_ID</span><span class="delimiter">'</span></span>)
+</pre></td>
+</tr></table>
+</div>
+
+<h4 id="implementacin-de-una-politica-vpd">Implementación de una politica VPD</h4>
 <ul>
-<li>CUST_ID: campo</li>
-<li>OEAPP: contexto
-<code>sql
-CUSTOMER_ID=SYS_CONTEXT('OEAPP','CUST_ID')
-</code></li>
-</ul>
-</li>
+  <li>Desarrollar estrategia</li>
+  <li>Analizar datos a proteger</li>
+  <li>Determinar politicas VPD para cubrir requerimientos anteriores</li>
+  <li>Revisar y documentar las politicas y la solucion</li>
 </ul>
 
+<h3 id="pasos-para-la-implementacin-de-vpd-con-triggers">Pasos para la implementación de VPD con triggers</h3>
+<p>1.- Declarar el procedure set_emp_info dentro del paquete current_emp</p>
 
-<h4>Implementación de una politica VPD</h4>
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+</pre></td>
+  <td class="code"><pre><span class="class">CREATE</span> <span class="keyword">OR</span> <span class="class">REPLACE</span> PACKAGE CURRENT_EMP <span class="keyword">IS</span>
+<span class="type">PROCEDURE</span> SET_EMP_INFO;
+<span class="keyword">END</span>
+</pre></td>
+</tr></table>
+</div>
 
-<ul>
-<li>Desarrollar estrategia</li>
-<li>Analizar datos a proteger</li>
-<li>Determinar politicas VPD para cubrir requerimientos anteriores</li>
-<li>Revisar y documentar las politicas y la solucion</li>
-</ul>
+<p>2.- Definir el procedure para la tabla employees</p>
 
-
-<h3>Pasos para la implementación de VPD con triggers</h3>
-
-<p>1.- Declarar el procedure set_emp_info dentro del paquete current_emp
-<code>sql
-  CREATE OR REPLACE PACKAGE CURRENT_EMP IS
-  PROCEDURE SET_EMP_INFO;
-  END;
-</code>
-2.- Definir el procedure para la tabla employees
-<code>sql
-CREATE OR REPLACE PACKAGE BODY current_emp IS PROCEDURE set_emp_info IS
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+<a href="#n11" name="n11">11</a>
+<a href="#n12" name="n12">12</a>
+<a href="#n13" name="n13">13</a>
+<a href="#n14" name="n14">14</a>
+<a href="#n15" name="n15">15</a>
+<a href="#n16" name="n16">16</a>
+<a href="#n17" name="n17">17</a>
+<a href="#n18" name="n18">18</a>
+<a href="#n19" name="n19">19</a>
+<strong><a href="#n20" name="n20">20</a></strong>
+</pre></td>
+  <td class="code"><pre><span class="class">CREATE</span> <span class="keyword">OR</span> <span class="class">REPLACE</span> PACKAGE BODY current_emp <span class="keyword">IS</span> <span class="type">PROCEDURE</span> set_emp_info <span class="keyword">IS</span>
  v_employee_id hr.employees.employee_id%TYPE;
  v_first_name  hr.employees.first_name%TYPE;
  v_last_name hr.employees.last_name%TYPE;
- BEGIN
-   SELECT employee_id,
+ <span class="class">BEGIN</span>
+   <span class="class">SELECT</span> employee_id,
           first_name,
           last_name
-   INTO v_employee_id,
+   <span class="class">INTO</span> v_employee_id,
         v_first_name,
         v_last_name
-   FROM hr.employees
-   WHERE email=SYS_CONTEXT('USERENV','SESSION_USER');
-         DBMS_SESSION.SET_CONTEXT('emp_user','id',v_employee_id);
-         DBMS_SESSION.SET_CONTEXT('emp_user','name',v_first_name ||' '|| v_last_name);
-         DBMS_SESSION.SET_CONTEXT('emp_user','email',SYS_CONTEXT('USERENV','SESSION_USER'));
+   <span class="keyword">FROM</span> hr.employees
+   <span class="keyword">WHERE</span> email=SYS_CONTEXT(<span class="string"><span class="delimiter">'</span><span class="content">USERENV</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">SESSION_USER</span><span class="delimiter">'</span></span>);
+         DBMS_SESSION.SET_CONTEXT(<span class="string"><span class="delimiter">'</span><span class="content">emp_user</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">id</span><span class="delimiter">'</span></span>,v_employee_id);
+         DBMS_SESSION.SET_CONTEXT(<span class="string"><span class="delimiter">'</span><span class="content">emp_user</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">name</span><span class="delimiter">'</span></span>,v_first_name ||<span class="string"><span class="delimiter">'</span><span class="content"> </span><span class="delimiter">'</span></span>|| v_last_name);
+         DBMS_SESSION.SET_CONTEXT(<span class="string"><span class="delimiter">'</span><span class="content">emp_user</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">email</span><span class="delimiter">'</span></span>,SYS_CONTEXT(<span class="string"><span class="delimiter">'</span><span class="content">USERENV</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">SESSION_USER</span><span class="delimiter">'</span></span>));
    EXCEPTION
-   WHEN no_data_found THEN NULL;
- END;
-END;
-</code>
-3.- Crear el trigger con el procedure creado, este se ejecutara cada que
-que se inicia sesion
-<code>sql
-CREATE OR REPLACE TRIGGER EMP_LOGON
-AFTER LOGON ON DATABASE
-BEGIN
+   <span class="keyword">WHEN</span> no_data_found <span class="keyword">THEN</span> <span class="predefined-constant">NULL</span>;
+ <span class="keyword">END</span>;
+<span class="keyword">END</span>;
+</pre></td>
+</tr></table>
+</div>
+
+<p>3.- Crear el trigger con el procedure creado, este se ejecutara cada que
+que se inicia sesion</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+</pre></td>
+  <td class="code"><pre><span class="class">CREATE</span> <span class="keyword">OR</span> <span class="class">REPLACE</span> <span class="type">TRIGGER</span> EMP_LOGON
+<span class="directive">AFTER</span> LOGON <span class="keyword">ON</span> <span class="type">DATABASE</span>
+<span class="class">BEGIN</span>
   CURRENT_EMP.SET_EMP_INFO;
-END;
+<span class="keyword">END</span>;
 /
-</code></p>
+</pre></td>
+</tr></table>
+</div>
 
-<h4>Video</h4>
+<h4 id="video">Video</h4>
 
-<iframe class="youtube-player" type="text/html" width="640" height="385"
-src="https://www.youtube.com/embed/CFNbfWktEKc" allowfullscreen
-frameborder="0">
+<iframe class="youtube-player" type="text/html" width="640" height="385" src="https://www.youtube.com/embed/CFNbfWktEKc" allowfullscreen="" frameborder="0">
 </iframe>
 
+<h3 id="pasos-para-la-implementacin-de-vpd-con-politicas">Pasos para la implementación de VPD con politicas</h3>
 
-<h3>Pasos para la implementación de VPD con politicas</h3>
+<p>1.- Declarar la politica en el paquete hr_policy_package</p>
 
-<p>1.- Declarar la politica en el paquete hr_policy_package
-<code>sql
-create or replace package hr_policy_pkg is
-function limit_emp_emp(
-object_schema in varchar2,
-object_name varchar2)
-return varchar2;
-end;
-</code>
-2.- Crear la politica con la funcion limit_emp_emp
-<code>sql
-create or replace package body hr_policy_pkg is
-  function limit_emp_emp( object_schema in varchar2, object_name varchar2)
-  return varchar2
-  is
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+</pre></td>
+  <td class="code"><pre><span class="class">create</span> <span class="keyword">or</span> <span class="class">replace</span> package hr_policy_pkg <span class="keyword">is</span>
+<span class="type">function</span> limit_emp_emp(
+object_schema <span class="keyword">in</span> <span class="predefined-type">varchar2</span>,
+object_name <span class="predefined-type">varchar2</span>)
+<span class="directive">return</span> <span class="predefined-type">varchar2</span>;
+<span class="keyword">end</span>;
+</pre></td>
+</tr></table>
+</div>
+
+<p>2.- Crear la politica con la funcion limit_emp_emp</p>
+
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+</pre></td>
+  <td class="code"><pre><span class="class">create</span> <span class="keyword">or</span> <span class="class">replace</span> package body hr_policy_pkg <span class="keyword">is</span>
+  <span class="type">function</span> limit_emp_emp( object_schema <span class="keyword">in</span> <span class="predefined-type">varchar2</span>, object_name <span class="predefined-type">varchar2</span>)
+  <span class="directive">return</span> <span class="predefined-type">varchar2</span>
+  <span class="keyword">is</span>
   v_emp_id number;
-  BEGIN
-   return 'employee_id=sys_context("emp_user","id")';
-  end;
-end;
-</code>
-3.- Anadir la politica a la tabla employees
-<code>sql
-exec dbms_rls.add_policy
-('HR','EMPLOYEES','HR_EMP_POL','SEC','HR_POLICY_PKG.LIMIT_EMP_EMP','SELECT');
-</code></p>
+  <span class="class">BEGIN</span>
+   <span class="directive">return</span> <span class="string"><span class="delimiter">'</span><span class="content">employee_id=sys_context(&quot;emp_user&quot;,&quot;id&quot;)</span><span class="delimiter">'</span></span>;
+  <span class="keyword">end</span>;
+<span class="keyword">end</span>;
+</pre></td>
+</tr></table>
+</div>
 
-<h4>Video</h4>
+<p>3.- Anadir la politica a la tabla employees</p>
 
-<iframe class="youtube-player" type="text/html" width="640" height="385"
-src="https://www.youtube.com/embed/mmws2ZdHkuA" allowfullscreen
-frameborder="0">
+<div><table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+</pre></td>
+  <td class="code"><pre>exec dbms_rls.add_policy
+(<span class="string"><span class="delimiter">'</span><span class="content">HR</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">EMPLOYEES</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">HR_EMP_POL</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">SEC</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">HR_POLICY_PKG.LIMIT_EMP_EMP</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">SELECT</span><span class="delimiter">'</span></span>);
+</pre></td>
+</tr></table>
+</div>
+
+<h4 id="video-1">Video</h4>
+
+<iframe class="youtube-player" type="text/html" width="640" height="385" src="https://www.youtube.com/embed/mmws2ZdHkuA" allowfullscreen="" frameborder="0">
 </iframe>
-
 ]]></content>
   </entry>
   
@@ -394,158 +551,131 @@ frameborder="0">
     <link href="http://merongivian.github.io/blog/2014/10/22/certificacion-de-bases-de-datos-clase-number-1/"/>
     <updated>2014-10-22T18:39:32-05:00</updated>
     <id>http://merongivian.github.io/blog/2014/10/22/certificacion-de-bases-de-datos-clase-number-1</id>
-    <content type="html"><![CDATA[<h3>Triada CIA</h3>
+    <content type="html"><![CDATA[<h3 id="triada-cia">Triada CIA</h3>
 
-<p>  <img src="/images/posts/triada.png"></p>
+<p><img src="/images/posts/triada.png"></p>
 
 <ul>
-<li><strong>Confidentiality:</strong> Permiso por cada usuario</li>
-<li><strong>Integrity:</strong> Información verídica, consistente y que no sea alterada</li>
-<li><strong>Availability:</strong> Capacidad, disponibilidad de la base</li>
+  <li><strong>Confidentiality:</strong> Permiso por cada usuario</li>
+  <li><strong>Integrity:</strong> Información verídica, consistente y que no sea alterada</li>
+  <li><strong>Availability:</strong> Capacidad, disponibilidad de la base</li>
 </ul>
-
 
 <!--more-->
 
-
-<h3>Preocupaciones sobre la Seguridad de los Datos</h3>
-
+<h3 id="preocupaciones-sobre-la-seguridad-de-los-datos">Preocupaciones sobre la Seguridad de los Datos</h3>
 <ul>
-<li><strong>Industrial Espionage:</strong> Generalmente causado por empresas en busca de
+  <li><strong>Industrial Espionage:</strong> Generalmente causado por empresas en busca de
 información confidencial</li>
-<li><strong>Identity Theft:</strong> Suplantación de identidad</li>
-<li><strong>Insider Threats:</strong> Causado por malos elementos internos con acceso a la
+  <li><strong>Identity Theft:</strong> Suplantación de identidad</li>
+  <li><strong>Insider Threats:</strong> Causado por malos elementos internos con acceso a la
 base</li>
 </ul>
 
-
-<h3>Organismos</h3>
-
+<h3 id="organismos">Organismos</h3>
 <ul>
-<li>SOX</li>
-<li>PCI: Mastercard, Visa, HIPAA</li>
-<li>HIPAA</li>
-<li>Basel II</li>
-<li>EU Directives</li>
-<li>FDA</li>
-<li>GLBA</li>
+  <li>SOX</li>
+  <li>PCI: Mastercard, Visa, HIPAA</li>
+  <li>HIPAA</li>
+  <li>Basel II</li>
+  <li>EU Directives</li>
+  <li>FDA</li>
+  <li>GLBA</li>
 </ul>
 
-
-<h3>Estandares de Seguridad</h3>
-
+<h3 id="estandares-de-seguridad">Estandares de Seguridad</h3>
 <ul>
-<li>CERT</li>
-<li>ISO 17700/27002</li>
+  <li>CERT</li>
+  <li>ISO 17700/27002</li>
 </ul>
 
+<h3 id="riesgos-de-seguridad">Riesgos de Seguridad</h3>
 
-<h3>Riesgos de Seguridad</h3>
-
-<h4>Externos</h4>
-
+<h4 id="externos">Externos</h4>
 <ul>
-<li>Usuario no autorizado</li>
-<li>Ataque ddos</li>
-<li>Acceso no autorizado</li>
-<li>Sql Injection</li>
+  <li>Usuario no autorizado</li>
+  <li>Ataque ddos</li>
+  <li>Acceso no autorizado</li>
+  <li>Sql Injection</li>
 </ul>
 
-
-<h4>Internos</h4>
-
+<h4 id="internos">Internos</h4>
 <ul>
-<li>Robos de información</li>
-<li>Corrupción del servicio o información</li>
-<li>Complejidad</li>
-<li>Omisiones</li>
+  <li>Robos de información</li>
+  <li>Corrupción del servicio o información</li>
+  <li>Complejidad</li>
+  <li>Omisiones</li>
 </ul>
 
-
-<h3>Desarrollo Política de seguridad</h3>
-
+<h3 id="desarrollo-poltica-de-seguridad">Desarrollo Política de seguridad</h3>
 <ul>
-<li>Formar equipo de seguridad</li>
-<li>Definir requerimientos de seguridad</li>
-<li>Desarrollar políticas, procedimientos y sistemas para cubrir los
+  <li>Formar equipo de seguridad</li>
+  <li>Definir requerimientos de seguridad</li>
+  <li>Desarrollar políticas, procedimientos y sistemas para cubrir los
 requerimientos de seguridad</li>
-<li>Auditar el cumplimiento</li>
+  <li>Auditar el cumplimiento</li>
 </ul>
 
-
-<h3>Técnicas para reforzar seguridad</h3>
-
+<h3 id="tcnicas-para-reforzar-seguridad">Técnicas para reforzar seguridad</h3>
 <ul>
-<li>Autenticación: Quien</li>
-<li>Autorización: Que puede hacer el usuario (permiso de ejecución,
+  <li>Autenticación: Quien</li>
+  <li>Autorización: Que puede hacer el usuario (permiso de ejecución,
 depuración, etc)</li>
-<li>Control de acceso: Como lo puede hacer, Solo puede ejecutar ciertos métodos (mas granular,
+  <li>Control de acceso: Como lo puede hacer, Solo puede ejecutar ciertos métodos (mas granular,
 especifico)</li>
 </ul>
 
+<h3 id="amenazas-comunes">Amenazas comunes</h3>
 
-<h3>Amenazas comunes</h3>
-
-<p>  <img src="/images/posts/ataques.png"></p>
-
-<ul>
-<li>Phishing: Capturar información con un elemento intermedio</li>
-<li>Credenciales por defecto (no se hace cambio de la clave)</li>
-<li>Backdoors</li>
-<li>Código de depuración</li>
-<li>Cross-scripting</li>
-<li>Sql-Injection</li>
-</ul>
-
-
-<h3>Opciones de Seguridad Oracle 11g</h3>
-
-<h4>Proactiva</h4>
+<p><img src="/images/posts/ataques.png"></p>
 
 <ul>
-<li>Database Vault</li>
-<li>Oracle Advanced Security</li>
-<li>Enmascaramiento de Datos</li>
-<li>Seguridad a nivel de filos</li>
-<li>Encriptación de respaldos</li>
-<li>Encriptación de columnas</li>
+  <li>Phishing: Capturar información con un elemento intermedio</li>
+  <li>Credenciales por defecto (no se hace cambio de la clave)</li>
+  <li>Backdoors</li>
+  <li>Código de depuración</li>
+  <li>Cross-scripting</li>
+  <li>Sql-Injection</li>
 </ul>
 
+<h3 id="opciones-de-seguridad-oracle-11g">Opciones de Seguridad Oracle 11g</h3>
 
-<h4>Reactiva</h4>
-
+<h4 id="proactiva">Proactiva</h4>
 <ul>
-<li>Pistas de Auditoria</li>
+  <li>Database Vault</li>
+  <li>Oracle Advanced Security</li>
+  <li>Enmascaramiento de Datos</li>
+  <li>Seguridad a nivel de filos</li>
+  <li>Encriptación de respaldos</li>
+  <li>Encriptación de columnas</li>
 </ul>
 
-
-<h3>Escenarios de Aplicación</h3>
-
-<h4>Autenticación</h4>
-
+<h4 id="reactiva">Reactiva</h4>
 <ul>
-<li>Gestión de identidad centralizada</li>
-<li>Strong authentication</li>
+  <li>Pistas de Auditoria</li>
 </ul>
 
+<h3 id="escenarios-de-aplicacin">Escenarios de Aplicación</h3>
 
-<h4>Control de Acceso</h4>
-
+<h4 id="autenticacin">Autenticación</h4>
 <ul>
-<li>Discretionary access control</li>
-<li>Virtual private database</li>
-<li>Oracle label security</li>
-<li>Oracle database vault</li>
+  <li>Gestión de identidad centralizada</li>
+  <li>Strong authentication</li>
 </ul>
 
-
-<h4>Monitoreo</h4>
-
+<h4 id="control-de-acceso">Control de Acceso</h4>
 <ul>
-<li>Auditoria</li>
-<li>Oracle Audit Vault</li>
+  <li>Discretionary access control</li>
+  <li>Virtual private database</li>
+  <li>Oracle label security</li>
+  <li>Oracle database vault</li>
 </ul>
 
+<h4 id="monitoreo">Monitoreo</h4>
+<ul>
+  <li>Auditoria</li>
+  <li>Oracle Audit Vault</li>
+</ul>
 ]]></content>
   </entry>
   
