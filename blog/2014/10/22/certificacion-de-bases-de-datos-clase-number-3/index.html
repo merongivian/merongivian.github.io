@@ -182,115 +182,70 @@ centralizada de definiciones de políticas</li>
 
 <p>1.- Crear la politica facility</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-</pre></td>
-  <td class="code"><pre><span class="class">BEGIN</span>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="class">BEGIN</span>
   SA_SYSDBA.CREATE_POLICY(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">FACLAB</span><span class="delimiter">'</span></span>,
   <span class="string"><span class="delimiter">'</span><span class="content">READ_CONTROL,CHECK_CONTROL,LABEL_DEFAULT,HIDE</span><span class="delimiter">'</span></span>);
 <span class="keyword">END</span>;
-</pre></td>
-</tr></table>
+</pre></div>
+</div>
 </div>
 
 <p>2.- Crear los niveles para la politica</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-</pre></td>
-  <td class="code"><pre><span class="class">BEGIN</span>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="class">BEGIN</span>
   SA_COMPONENTS.CREATE_LEVEL(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">1000</span>,<span class="string"><span class="delimiter">'</span><span class="content">P</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">PUBLIC</span><span class="delimiter">'</span></span>);
   SA_COMPONENTS.CREATE_LEVEL(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">2000</span>,<span class="string"><span class="delimiter">'</span><span class="content">S</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">SENSITIVE</span><span class="delimiter">'</span></span>);
   SA_COMPONENTS.CREATE_LEVEL(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">3000</span>,<span class="string"><span class="delimiter">'</span><span class="content">HS</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">HIGHLY_SENSITIVE</span><span class="delimiter">'</span></span>);
 <span class="keyword">END</span>;
-</pre></td>
-</tr></table>
+</pre></div>
+</div>
 </div>
 
 <p>3.- Crear los grupos para la politica</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-</pre></td>
-  <td class="code"><pre><span class="class">BEGIN</span>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="class">BEGIN</span>
   SA_COMPONENTS.CREATE_GROUP(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">1000</span>,<span class="string"><span class="delimiter">'</span><span class="content">Global</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">Global</span><span class="delimiter">'</span></span>);
   SA_COMPONENTS.CREATE_GROUP(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">101</span>,<span class="string"><span class="delimiter">'</span><span class="content">US</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">United States</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">GLOBAL</span><span class="delimiter">'</span></span>);
   SA_COMPONENTS.CREATE_GROUP(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">102</span>,<span class="string"><span class="delimiter">'</span><span class="content">EU</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">Europe</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">GLOBAL</span><span class="delimiter">'</span></span>);
   SA_COMPONENTS.CREATE_GROUP(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">103</span>,<span class="string"><span class="delimiter">'</span><span class="content">Asia</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">Asia</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">GLOBAL</span><span class="delimiter">'</span></span>);
 <span class="keyword">END</span>;
-</pre></td>
-</tr></table>
+</pre></div>
+</div>
 </div>
 
 <p>4.- Crear las etiquetas, juntando los niveles y grupos</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-</pre></td>
-  <td class="code"><pre><span class="class">BEGIN</span>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="class">BEGIN</span>
   SA_LABEL_ADMIN.CREATE_LABEL(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">1000</span>,<span class="string"><span class="delimiter">'</span><span class="content">P</span><span class="delimiter">'</span></span>);
   SA_LABEL_ADMIN.CREATE_LABEL(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">2101</span>,<span class="string"><span class="delimiter">'</span><span class="content">S::US</span><span class="delimiter">'</span></span>);.
   SA_LABEL_ADMIN.CREATE_LABEL(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">3101</span>,<span class="string"><span class="delimiter">'</span><span class="content">HS::US</span><span class="delimiter">'</span></span>);
   SA_LABEL_ADMIN.CREATE_LABEL(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">3103</span>,<span class="string"><span class="delimiter">'</span><span class="content">HS::ASIA</span><span class="delimiter">'</span></span>);
 <span class="keyword">END</span>;
-</pre></td>
-</tr></table>
+</pre></div>
+</div>
 </div>
 
 <p>5.- Crear etiquetas para usuarios</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-</pre></td>
-  <td class="code"><pre><span class="class">BEGIN</span>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="class">BEGIN</span>
   SA_USER_ADMIN.SET_USER_LABELS(<span class="string"><span class="delimiter">'</span><span class="content">PRIVACY</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">MYCO_MGR</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">C</span><span class="delimiter">'</span></span>);
   SA_USER_ADMIN.SET_USER_LABELS(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">MYCO_EMP</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">P</span><span class="delimiter">'</span></span>);
   SA_USER_ADMIN.SET_USER_LABELS(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">MYCO_MGR</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">S::US,EU,ASIA</span><span class="delimiter">'</span></span>);
   SA_USER_ADMIN.SET_USER_LABELS(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">MYCO_PLANNING</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">HS::GLOBAL</span><span class="delimiter">'</span></span>);.
 <span class="keyword">END</span>;
-</pre></td>
-</tr></table>
+</pre></div>
+</div>
 </div>
 
 <p>6.- Actualizar la tabla locations con las nuevas etiquetas</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-</pre></td>
-  <td class="code"><pre><span class="class">BEGIN</span>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="class">BEGIN</span>
   <span class="class">UPDATE</span> LOCATIONS
     <span class="class">SET</span> FACLAB=CHAR_TO_LABEL(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">S::ASIA</span><span class="delimiter">'</span></span>)
     <span class="keyword">WHERE</span> UPPER(CITY) <span class="keyword">IN</span> (<span class="string"><span class="delimiter">'</span><span class="content">BEIJING</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">TOKYO</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">SINGAPORE</span><span class="delimiter">'</span></span>);
@@ -302,8 +257,8 @@ centralizada de definiciones de políticas</li>
     <span class="keyword">WHERE</span> FACLAB <span class="keyword">IS</span> <span class="predefined-constant">NULL</span>;
   <span class="class">COMMIT</span>;
 <span class="keyword">END</span>;
-</pre></td>
-</tr></table>
+</pre></div>
+</div>
 </div>
 
 <h4 id="video">Video</h4>
@@ -392,6 +347,8 @@ centralizada de definiciones de políticas</li>
   </div>
   
   <div id="recent_posts" class="list-group">
+    
+    <a class="list-group-item " href="/blog/2014/11/18/defining-methods-dinamycally-metaprogramming/">Defining Methods Dinamycally (Metaprogramming)</a>
     
   </div>
 </section>

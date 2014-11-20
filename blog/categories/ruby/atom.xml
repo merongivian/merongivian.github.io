@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Ruby | Merongivian]]></title>
+  <link href="http://merongivian.github.io/blog/categories/ruby/atom.xml" rel="self"/>
+  <link href="http://merongivian.github.io/"/>
+  <updated>2014-11-20T16:03:19-05:00</updated>
+  <id>http://merongivian.github.io/</id>
+  <author>
+    <name><![CDATA[Jose Añasco]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Defining Methods Dinamycally (Metaprogramming)]]></title>
+    <link href="http://merongivian.github.io/blog/2014/11/18/defining-methods-dinamycally-metaprogramming/"/>
+    <updated>2014-11-18T11:00:57-05:00</updated>
+    <id>http://merongivian.github.io/blog/2014/11/18/defining-methods-dinamycally-metaprogramming</id>
+    <content type="html"><![CDATA[<p>In ruby, we have the power to create code that generates code. This can
+be useful in some situations (let’s say we have a hash response from an
+API and we want to create a method for each key dinamycally).</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="comment"># really long response with data for a person</span>
+
+{ <span class="key">address</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">06482 Wallingford CT</span><span class="delimiter">&quot;</span></span>, <span class="key">age</span>: <span class="integer">12</span>, <span class="key">nacionality</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">german</span><span class="delimiter">&quot;</span></span>, <span class="key">gender</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">male</span><span class="delimiter">&quot;</span></span>,
+  <span class="key">religion</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Buddhism</span><span class="delimiter">&quot;</span></span>, <span class="key">city</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">UIO</span><span class="delimiter">&quot;</span></span> }
+</pre></div>
+</div>
+</div>
+
+<p>Since the code for fetching an specific value is the same for all
+values: <code>fetch_from_response(key)</code>, we can use <code>define_method</code> for each key we know</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="keyword">class</span> <span class="class">Person</span>
+  <span class="constant">KEYS</span> = <span class="symbol"><span class="delimiter">%i(</span><span class="content">address, age, nacionality, gender, religion, city</span><span class="delimiter">)</span></span>
+
+  <span class="keyword">def</span> <span class="function">initialize</span>(id, request)
+    <span class="instance-variable">@id</span> = id
+    <span class="instance-variable">@response</span> = request
+  <span class="keyword">end</span>
+
+  <span class="constant">KEYS</span>.each <span class="keyword">do</span> |key|
+    define_method(key) { fetch_from_response key }
+  <span class="keyword">end</span>
+
+  private
+
+  <span class="keyword">def</span> <span class="function">fetch_from_response</span>(name)
+    <span class="instance-variable">@request</span>.response.fetch(name)
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre></div>
+</div>
+</div>
+
+<p>This will create new methods for <code>Person</code>, depending on what keys we have</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>request = <span class="constant">Request</span>.new <span class="key">api_key</span>: <span class="string"><span class="delimiter">'</span><span class="content">any key</span><span class="delimiter">'</span></span>
+
+any_person = <span class="constant">Person</span>.new(<span class="string"><span class="delimiter">&quot;</span><span class="content">1234</span><span class="delimiter">&quot;</span></span>, request)
+any_person.methods - <span class="constant">Object</span>.methods
+<span class="comment"># =&gt; [:address, :age, :nacionality, :gender, :religion, :city]</span>
+
+any_person.address <span class="comment"># =&gt; &quot;06482 Wallingford CT&quot;</span>
+</pre></div>
+</div>
+</div>
+
+<p>Ruby also provides this and other usefull methods for defining
+object/instance and class methods</p>
+
+<h2 id="object-methods">Object Methods</h2>
+<p>As we saw early, we can use <code>define_method</code> for creating new object methods, but since it is a private method it can
+only be used inside a class definition. If we want to define it outside
+we can use <code>class_eval</code></p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="constant">Person</span>.class_eval <span class="keyword">do</span>
+  <span class="keyword">def</span> <span class="function">name</span>
+    <span class="comment"># more code</span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+
+<span class="comment"># defining multiple methods</span>
+
+<span class="constant">Person</span>.class_eval <span class="keyword">do</span>
+  <span class="constant">KEYS</span>.each <span class="keyword">do</span> |key|
+    define_method(key) <span class="keyword">do</span>
+      <span class="comment"># code...</span>
+    <span class="keyword">end</span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre></div>
+</div>
+</div>
+
+<p>Inside the block the code is evaluated as if we were inside the class</p>
+
+<h3 id="instance-methods">Instance Methods</h3>
+
+<p>Defining a method over an instance creates a method for that
+specific ‘object’</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="comment"># we're using the same instance we created before</span>
+any_person.is_a? <span class="constant">Person</span> <span class="comment"># =&gt; True</span>
+
+<span class="keyword">def</span> any_person.<span class="function">name</span>
+  <span class="comment"># code code code!!!</span>
+<span class="keyword">end</span>
+</pre></div>
+</div>
+</div>
+
+<p>The same can be achieved opening it’s eigennclass</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="keyword">class</span> &lt;&lt; <span class="class">any_person</span>
+  <span class="keyword">def</span> <span class="function">name</span>
+    <span class="comment"># coooode....</span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre></div>
+</div>
+</div>
+
+<p>This method lives as long as that instance exists</p>
+
+<h2 id="class-methods">Class Methods</h2>
+
+<p>Similar to instance methods we can define a new one over the class or
+with an eigennclass</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="keyword">def</span> <span class="constant">Person</span>.<span class="function">name</span>
+  <span class="comment"># code code code!!!</span>
+<span class="keyword">end</span>
+
+<span class="comment"># or</span>
+
+<span class="keyword">class</span> &lt;&lt; <span class="class">Person</span>
+  <span class="keyword">def</span> <span class="function">name</span>
+    <span class="comment"># coooode....</span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre></div>
+</div>
+</div>
+
+<p>Last but not least, I should remind you that defining methods with metaprogramming can be
+<a href="http://tenderlovemaking.com/2013/03/03/dynamic_method_definitions.html">slow</a>, even <a href="http://justinleitgeb.com/ruby/safer-programming-in-ruby/">DANGEROUS!!!!!!</a>, so use it wisely, remember :</p>
+
+<blockquote>
+  <p>With great power comes great responsability</p>
+</blockquote>
+]]></content>
+  </entry>
+  
+</feed>

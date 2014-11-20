@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Aci040 | Merongivian]]></title>
   <link href="http://merongivian.github.io/blog/categories/aci040/atom.xml" rel="self"/>
   <link href="http://merongivian.github.io/"/>
-  <updated>2014-11-15T18:05:34-05:00</updated>
+  <updated>2014-11-20T16:03:19-05:00</updated>
   <id>http://merongivian.github.io/</id>
   <author>
     <name><![CDATA[Jose Añasco]]></name>
@@ -58,62 +58,50 @@ transparente</li>
 <p>1.- Subir base de datos oracle vault
 2.- Creat usuario en base remota</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre><span class="class">create</span> user avagusr01 identified <span class="keyword">by</span> oracle_4U
-</pre></td>
-</tr></table>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="class">create</span> user avagusr01 identified <span class="keyword">by</span> oracle_4U
+</pre></div>
+</div>
 </div>
 
 <p>3.- Ejecutar permisos con scriptk</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre><span class="error">@</span>/home/oracle/oracle/product/<span class="float">10.3</span><span class="float">.0</span>/av_agent_1/av/scripts/streams/source/zarsspriv.sql
-</pre></td>
-</tr></table>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="error">@</span>/home/oracle/oracle/product/<span class="float">10.3</span><span class="float">.0</span>/av_agent_1/av/scripts/streams/source/zarsspriv.sql
+</pre></div>
+</div>
 </div>
 
 <p>4.- Setear Oracle Home</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre>export ORACLE_HOME=/home/oracle/oracle/product/<span class="float">10.3</span><span class="float">.0</span>/agent
-</pre></td>
-</tr></table>
+<div><div class="CodeRay">
+  <div class="code"><pre>export ORACLE_HOME=/home/oracle/oracle/product/<span class="float">10.3</span><span class="float">.0</span>/agent
+</pre></div>
+</div>
 </div>
 
 <p>5.- Arrancar el agent en el directorio $ORACLE_HOME/bin</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre>./avctl start_agent
-</pre></td>
-</tr></table>
+<div><div class="CodeRay">
+  <div class="code"><pre>./avctl start_agent
+</pre></div>
+</div>
 </div>
 
 <p>6.- Cambiamos el sourcename</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre>./avorcldb setup -srcname aci040_db
-</pre></td>
-</tr></table>
+<div><div class="CodeRay">
+  <div class="code"><pre>./avorcldb setup -srcname aci040_db
+</pre></div>
+</div>
 </div>
 
 <p>7.- Creamos el collector en la base de datos audit volt</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre>avorcldb add_collector -srcname aci040_db -agentname agaci040lab -colltype DBAUD -collname colaci040lab
-</pre></td>
-</tr></table>
+<div><div class="CodeRay">
+  <div class="code"><pre>avorcldb add_collector -srcname aci040_db -agentname agaci040lab -colltype DBAUD -collname colaci040lab
+</pre></div>
+</div>
 </div>
 
 <iframe class="youtube-player" type="text/html" width="640" height="385" src="https://www.youtube.com/embed/4ZE8-ds4-2w" allowfullscreen="" frameborder="0">
@@ -176,115 +164,70 @@ centralizada de definiciones de políticas</li>
 
 <p>1.- Crear la politica facility</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-</pre></td>
-  <td class="code"><pre><span class="class">BEGIN</span>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="class">BEGIN</span>
   SA_SYSDBA.CREATE_POLICY(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">FACLAB</span><span class="delimiter">'</span></span>,
   <span class="string"><span class="delimiter">'</span><span class="content">READ_CONTROL,CHECK_CONTROL,LABEL_DEFAULT,HIDE</span><span class="delimiter">'</span></span>);
 <span class="keyword">END</span>;
-</pre></td>
-</tr></table>
+</pre></div>
+</div>
 </div>
 
 <p>2.- Crear los niveles para la politica</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-</pre></td>
-  <td class="code"><pre><span class="class">BEGIN</span>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="class">BEGIN</span>
   SA_COMPONENTS.CREATE_LEVEL(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">1000</span>,<span class="string"><span class="delimiter">'</span><span class="content">P</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">PUBLIC</span><span class="delimiter">'</span></span>);
   SA_COMPONENTS.CREATE_LEVEL(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">2000</span>,<span class="string"><span class="delimiter">'</span><span class="content">S</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">SENSITIVE</span><span class="delimiter">'</span></span>);
   SA_COMPONENTS.CREATE_LEVEL(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">3000</span>,<span class="string"><span class="delimiter">'</span><span class="content">HS</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">HIGHLY_SENSITIVE</span><span class="delimiter">'</span></span>);
 <span class="keyword">END</span>;
-</pre></td>
-</tr></table>
+</pre></div>
+</div>
 </div>
 
 <p>3.- Crear los grupos para la politica</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-</pre></td>
-  <td class="code"><pre><span class="class">BEGIN</span>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="class">BEGIN</span>
   SA_COMPONENTS.CREATE_GROUP(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">1000</span>,<span class="string"><span class="delimiter">'</span><span class="content">Global</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">Global</span><span class="delimiter">'</span></span>);
   SA_COMPONENTS.CREATE_GROUP(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">101</span>,<span class="string"><span class="delimiter">'</span><span class="content">US</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">United States</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">GLOBAL</span><span class="delimiter">'</span></span>);
   SA_COMPONENTS.CREATE_GROUP(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">102</span>,<span class="string"><span class="delimiter">'</span><span class="content">EU</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">Europe</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">GLOBAL</span><span class="delimiter">'</span></span>);
   SA_COMPONENTS.CREATE_GROUP(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">103</span>,<span class="string"><span class="delimiter">'</span><span class="content">Asia</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">Asia</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">GLOBAL</span><span class="delimiter">'</span></span>);
 <span class="keyword">END</span>;
-</pre></td>
-</tr></table>
+</pre></div>
+</div>
 </div>
 
 <p>4.- Crear las etiquetas, juntando los niveles y grupos</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-</pre></td>
-  <td class="code"><pre><span class="class">BEGIN</span>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="class">BEGIN</span>
   SA_LABEL_ADMIN.CREATE_LABEL(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">1000</span>,<span class="string"><span class="delimiter">'</span><span class="content">P</span><span class="delimiter">'</span></span>);
   SA_LABEL_ADMIN.CREATE_LABEL(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">2101</span>,<span class="string"><span class="delimiter">'</span><span class="content">S::US</span><span class="delimiter">'</span></span>);.
   SA_LABEL_ADMIN.CREATE_LABEL(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">3101</span>,<span class="string"><span class="delimiter">'</span><span class="content">HS::US</span><span class="delimiter">'</span></span>);
   SA_LABEL_ADMIN.CREATE_LABEL(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">3103</span>,<span class="string"><span class="delimiter">'</span><span class="content">HS::ASIA</span><span class="delimiter">'</span></span>);
 <span class="keyword">END</span>;
-</pre></td>
-</tr></table>
+</pre></div>
+</div>
 </div>
 
 <p>5.- Crear etiquetas para usuarios</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-</pre></td>
-  <td class="code"><pre><span class="class">BEGIN</span>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="class">BEGIN</span>
   SA_USER_ADMIN.SET_USER_LABELS(<span class="string"><span class="delimiter">'</span><span class="content">PRIVACY</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">MYCO_MGR</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">C</span><span class="delimiter">'</span></span>);
   SA_USER_ADMIN.SET_USER_LABELS(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">MYCO_EMP</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">P</span><span class="delimiter">'</span></span>);
   SA_USER_ADMIN.SET_USER_LABELS(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">MYCO_MGR</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">S::US,EU,ASIA</span><span class="delimiter">'</span></span>);
   SA_USER_ADMIN.SET_USER_LABELS(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">MYCO_PLANNING</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">HS::GLOBAL</span><span class="delimiter">'</span></span>);.
 <span class="keyword">END</span>;
-</pre></td>
-</tr></table>
+</pre></div>
+</div>
 </div>
 
 <p>6.- Actualizar la tabla locations con las nuevas etiquetas</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-</pre></td>
-  <td class="code"><pre><span class="class">BEGIN</span>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="class">BEGIN</span>
   <span class="class">UPDATE</span> LOCATIONS
     <span class="class">SET</span> FACLAB=CHAR_TO_LABEL(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">S::ASIA</span><span class="delimiter">'</span></span>)
     <span class="keyword">WHERE</span> UPPER(CITY) <span class="keyword">IN</span> (<span class="string"><span class="delimiter">'</span><span class="content">BEIJING</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">TOKYO</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">SINGAPORE</span><span class="delimiter">'</span></span>);
@@ -296,8 +239,8 @@ centralizada de definiciones de políticas</li>
     <span class="keyword">WHERE</span> FACLAB <span class="keyword">IS</span> <span class="predefined-constant">NULL</span>;
   <span class="class">COMMIT</span>;
 <span class="keyword">END</span>;
-</pre></td>
-</tr></table>
+</pre></div>
+</div>
 </div>
 
 <h4 id="video">Video</h4>
@@ -332,12 +275,10 @@ cada sesion)</li>
   </li>
 </ul>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre><span class="class">create</span> context hrapp <span class="keyword">using</span> hr_context
-</pre></td>
-</tr></table>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="class">create</span> context hrapp <span class="keyword">using</span> hr_context
+</pre></div>
+</div>
 </div>
 
 <!--more-->
@@ -374,12 +315,10 @@ realidad es la misma base</li>
   </li>
 </ul>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre>CUSTOMER_ID=SYS_CONTEXT(<span class="string"><span class="delimiter">'</span><span class="content">OEAPP</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">CUST_ID</span><span class="delimiter">'</span></span>)
-</pre></td>
-</tr></table>
+<div><div class="CodeRay">
+  <div class="code"><pre>CUSTOMER_ID=SYS_CONTEXT(<span class="string"><span class="delimiter">'</span><span class="content">OEAPP</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">CUST_ID</span><span class="delimiter">'</span></span>)
+</pre></div>
+</div>
 </div>
 
 <h4 id="implementacin-de-una-politica-vpd">Implementación de una politica VPD</h4>
@@ -393,43 +332,18 @@ realidad es la misma base</li>
 <h3 id="pasos-para-la-implementacin-de-vpd-con-triggers">Pasos para la implementación de VPD con triggers</h3>
 <p>1.- Declarar el procedure set_emp_info dentro del paquete current_emp</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-</pre></td>
-  <td class="code"><pre><span class="class">CREATE</span> <span class="keyword">OR</span> <span class="class">REPLACE</span> PACKAGE CURRENT_EMP <span class="keyword">IS</span>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="class">CREATE</span> <span class="keyword">OR</span> <span class="class">REPLACE</span> PACKAGE CURRENT_EMP <span class="keyword">IS</span>
 <span class="type">PROCEDURE</span> SET_EMP_INFO;
 <span class="keyword">END</span>
-</pre></td>
-</tr></table>
+</pre></div>
+</div>
 </div>
 
 <p>2.- Definir el procedure para la tabla employees</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-<a href="#n14" name="n14">14</a>
-<a href="#n15" name="n15">15</a>
-<a href="#n16" name="n16">16</a>
-<a href="#n17" name="n17">17</a>
-<a href="#n18" name="n18">18</a>
-<a href="#n19" name="n19">19</a>
-<strong><a href="#n20" name="n20">20</a></strong>
-</pre></td>
-  <td class="code"><pre><span class="class">CREATE</span> <span class="keyword">OR</span> <span class="class">REPLACE</span> PACKAGE BODY current_emp <span class="keyword">IS</span> <span class="type">PROCEDURE</span> set_emp_info <span class="keyword">IS</span>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="class">CREATE</span> <span class="keyword">OR</span> <span class="class">REPLACE</span> PACKAGE BODY current_emp <span class="keyword">IS</span> <span class="type">PROCEDURE</span> set_emp_info <span class="keyword">IS</span>
  v_employee_id hr.employees.employee_id%TYPE;
  v_first_name  hr.employees.first_name%TYPE;
  v_last_name hr.employees.last_name%TYPE;
@@ -449,29 +363,22 @@ realidad es la misma base</li>
    <span class="keyword">WHEN</span> no_data_found <span class="keyword">THEN</span> <span class="predefined-constant">NULL</span>;
  <span class="keyword">END</span>;
 <span class="keyword">END</span>;
-</pre></td>
-</tr></table>
+</pre></div>
+</div>
 </div>
 
 <p>3.- Crear el trigger con el procedure creado, este se ejecutara cada que
 que se inicia sesion</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-</pre></td>
-  <td class="code"><pre><span class="class">CREATE</span> <span class="keyword">OR</span> <span class="class">REPLACE</span> <span class="type">TRIGGER</span> EMP_LOGON
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="class">CREATE</span> <span class="keyword">OR</span> <span class="class">REPLACE</span> <span class="type">TRIGGER</span> EMP_LOGON
 <span class="directive">AFTER</span> LOGON <span class="keyword">ON</span> <span class="type">DATABASE</span>
 <span class="class">BEGIN</span>
   CURRENT_EMP.SET_EMP_INFO;
 <span class="keyword">END</span>;
 /
-</pre></td>
-</tr></table>
+</pre></div>
+</div>
 </div>
 
 <h4 id="video">Video</h4>
@@ -483,38 +390,21 @@ que se inicia sesion</p>
 
 <p>1.- Declarar la politica en el paquete hr_policy_package</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-</pre></td>
-  <td class="code"><pre><span class="class">create</span> <span class="keyword">or</span> <span class="class">replace</span> package hr_policy_pkg <span class="keyword">is</span>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="class">create</span> <span class="keyword">or</span> <span class="class">replace</span> package hr_policy_pkg <span class="keyword">is</span>
 <span class="type">function</span> limit_emp_emp(
 object_schema <span class="keyword">in</span> <span class="predefined-type">varchar2</span>,
 object_name <span class="predefined-type">varchar2</span>)
 <span class="directive">return</span> <span class="predefined-type">varchar2</span>;
 <span class="keyword">end</span>;
-</pre></td>
-</tr></table>
+</pre></div>
+</div>
 </div>
 
 <p>2.- Crear la politica con la funcion limit_emp_emp</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-</pre></td>
-  <td class="code"><pre><span class="class">create</span> <span class="keyword">or</span> <span class="class">replace</span> package body hr_policy_pkg <span class="keyword">is</span>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="class">create</span> <span class="keyword">or</span> <span class="class">replace</span> package body hr_policy_pkg <span class="keyword">is</span>
   <span class="type">function</span> limit_emp_emp( object_schema <span class="keyword">in</span> <span class="predefined-type">varchar2</span>, object_name <span class="predefined-type">varchar2</span>)
   <span class="directive">return</span> <span class="predefined-type">varchar2</span>
   <span class="keyword">is</span>
@@ -523,20 +413,17 @@ object_name <span class="predefined-type">varchar2</span>)
    <span class="directive">return</span> <span class="string"><span class="delimiter">'</span><span class="content">employee_id=sys_context(&quot;emp_user&quot;,&quot;id&quot;)</span><span class="delimiter">'</span></span>;
   <span class="keyword">end</span>;
 <span class="keyword">end</span>;
-</pre></td>
-</tr></table>
+</pre></div>
+</div>
 </div>
 
 <p>3.- Anadir la politica a la tabla employees</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-</pre></td>
-  <td class="code"><pre>exec dbms_rls.add_policy
+<div><div class="CodeRay">
+  <div class="code"><pre>exec dbms_rls.add_policy
 (<span class="string"><span class="delimiter">'</span><span class="content">HR</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">EMPLOYEES</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">HR_EMP_POL</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">SEC</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">HR_POLICY_PKG.LIMIT_EMP_EMP</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">SELECT</span><span class="delimiter">'</span></span>);
-</pre></td>
-</tr></table>
+</pre></div>
+</div>
 </div>
 
 <h4 id="video-1">Video</h4>

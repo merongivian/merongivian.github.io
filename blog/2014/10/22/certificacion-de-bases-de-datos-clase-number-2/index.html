@@ -167,12 +167,10 @@ cada sesion)</li>
   </li>
 </ul>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre><span class="class">create</span> context hrapp <span class="keyword">using</span> hr_context
-</pre></td>
-</tr></table>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="class">create</span> context hrapp <span class="keyword">using</span> hr_context
+</pre></div>
+</div>
 </div>
 
 <!--more-->
@@ -209,12 +207,10 @@ realidad es la misma base</li>
   </li>
 </ul>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre>CUSTOMER_ID=SYS_CONTEXT(<span class="string"><span class="delimiter">'</span><span class="content">OEAPP</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">CUST_ID</span><span class="delimiter">'</span></span>)
-</pre></td>
-</tr></table>
+<div><div class="CodeRay">
+  <div class="code"><pre>CUSTOMER_ID=SYS_CONTEXT(<span class="string"><span class="delimiter">'</span><span class="content">OEAPP</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">CUST_ID</span><span class="delimiter">'</span></span>)
+</pre></div>
+</div>
 </div>
 
 <h4 id="implementacin-de-una-politica-vpd">Implementación de una politica VPD</h4>
@@ -228,43 +224,18 @@ realidad es la misma base</li>
 <h3 id="pasos-para-la-implementacin-de-vpd-con-triggers">Pasos para la implementación de VPD con triggers</h3>
 <p>1.- Declarar el procedure set_emp_info dentro del paquete current_emp</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-</pre></td>
-  <td class="code"><pre><span class="class">CREATE</span> <span class="keyword">OR</span> <span class="class">REPLACE</span> PACKAGE CURRENT_EMP <span class="keyword">IS</span>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="class">CREATE</span> <span class="keyword">OR</span> <span class="class">REPLACE</span> PACKAGE CURRENT_EMP <span class="keyword">IS</span>
 <span class="type">PROCEDURE</span> SET_EMP_INFO;
 <span class="keyword">END</span>
-</pre></td>
-</tr></table>
+</pre></div>
+</div>
 </div>
 
 <p>2.- Definir el procedure para la tabla employees</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-<strong><a href="#n10" name="n10">10</a></strong>
-<a href="#n11" name="n11">11</a>
-<a href="#n12" name="n12">12</a>
-<a href="#n13" name="n13">13</a>
-<a href="#n14" name="n14">14</a>
-<a href="#n15" name="n15">15</a>
-<a href="#n16" name="n16">16</a>
-<a href="#n17" name="n17">17</a>
-<a href="#n18" name="n18">18</a>
-<a href="#n19" name="n19">19</a>
-<strong><a href="#n20" name="n20">20</a></strong>
-</pre></td>
-  <td class="code"><pre><span class="class">CREATE</span> <span class="keyword">OR</span> <span class="class">REPLACE</span> PACKAGE BODY current_emp <span class="keyword">IS</span> <span class="type">PROCEDURE</span> set_emp_info <span class="keyword">IS</span>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="class">CREATE</span> <span class="keyword">OR</span> <span class="class">REPLACE</span> PACKAGE BODY current_emp <span class="keyword">IS</span> <span class="type">PROCEDURE</span> set_emp_info <span class="keyword">IS</span>
  v_employee_id hr.employees.employee_id%TYPE;
  v_first_name  hr.employees.first_name%TYPE;
  v_last_name hr.employees.last_name%TYPE;
@@ -284,29 +255,22 @@ realidad es la misma base</li>
    <span class="keyword">WHEN</span> no_data_found <span class="keyword">THEN</span> <span class="predefined-constant">NULL</span>;
  <span class="keyword">END</span>;
 <span class="keyword">END</span>;
-</pre></td>
-</tr></table>
+</pre></div>
+</div>
 </div>
 
 <p>3.- Crear el trigger con el procedure creado, este se ejecutara cada que
 que se inicia sesion</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-</pre></td>
-  <td class="code"><pre><span class="class">CREATE</span> <span class="keyword">OR</span> <span class="class">REPLACE</span> <span class="type">TRIGGER</span> EMP_LOGON
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="class">CREATE</span> <span class="keyword">OR</span> <span class="class">REPLACE</span> <span class="type">TRIGGER</span> EMP_LOGON
 <span class="directive">AFTER</span> LOGON <span class="keyword">ON</span> <span class="type">DATABASE</span>
 <span class="class">BEGIN</span>
   CURRENT_EMP.SET_EMP_INFO;
 <span class="keyword">END</span>;
 /
-</pre></td>
-</tr></table>
+</pre></div>
+</div>
 </div>
 
 <h4 id="video">Video</h4>
@@ -318,38 +282,21 @@ que se inicia sesion</p>
 
 <p>1.- Declarar la politica en el paquete hr_policy_package</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-</pre></td>
-  <td class="code"><pre><span class="class">create</span> <span class="keyword">or</span> <span class="class">replace</span> package hr_policy_pkg <span class="keyword">is</span>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="class">create</span> <span class="keyword">or</span> <span class="class">replace</span> package hr_policy_pkg <span class="keyword">is</span>
 <span class="type">function</span> limit_emp_emp(
 object_schema <span class="keyword">in</span> <span class="predefined-type">varchar2</span>,
 object_name <span class="predefined-type">varchar2</span>)
 <span class="directive">return</span> <span class="predefined-type">varchar2</span>;
 <span class="keyword">end</span>;
-</pre></td>
-</tr></table>
+</pre></div>
+</div>
 </div>
 
 <p>2.- Crear la politica con la funcion limit_emp_emp</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-<a href="#n4" name="n4">4</a>
-<a href="#n5" name="n5">5</a>
-<a href="#n6" name="n6">6</a>
-<a href="#n7" name="n7">7</a>
-<a href="#n8" name="n8">8</a>
-<a href="#n9" name="n9">9</a>
-</pre></td>
-  <td class="code"><pre><span class="class">create</span> <span class="keyword">or</span> <span class="class">replace</span> package body hr_policy_pkg <span class="keyword">is</span>
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="class">create</span> <span class="keyword">or</span> <span class="class">replace</span> package body hr_policy_pkg <span class="keyword">is</span>
   <span class="type">function</span> limit_emp_emp( object_schema <span class="keyword">in</span> <span class="predefined-type">varchar2</span>, object_name <span class="predefined-type">varchar2</span>)
   <span class="directive">return</span> <span class="predefined-type">varchar2</span>
   <span class="keyword">is</span>
@@ -358,20 +305,17 @@ object_name <span class="predefined-type">varchar2</span>)
    <span class="directive">return</span> <span class="string"><span class="delimiter">'</span><span class="content">employee_id=sys_context(&quot;emp_user&quot;,&quot;id&quot;)</span><span class="delimiter">'</span></span>;
   <span class="keyword">end</span>;
 <span class="keyword">end</span>;
-</pre></td>
-</tr></table>
+</pre></div>
+</div>
 </div>
 
 <p>3.- Anadir la politica a la tabla employees</p>
 
-<div><table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-</pre></td>
-  <td class="code"><pre>exec dbms_rls.add_policy
+<div><div class="CodeRay">
+  <div class="code"><pre>exec dbms_rls.add_policy
 (<span class="string"><span class="delimiter">'</span><span class="content">HR</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">EMPLOYEES</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">HR_EMP_POL</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">SEC</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">HR_POLICY_PKG.LIMIT_EMP_EMP</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">SELECT</span><span class="delimiter">'</span></span>);
-</pre></td>
-</tr></table>
+</pre></div>
+</div>
 </div>
 
 <h4 id="video-1">Video</h4>
@@ -460,6 +404,8 @@ object_name <span class="predefined-type">varchar2</span>)
   </div>
   
   <div id="recent_posts" class="list-group">
+    
+    <a class="list-group-item " href="/blog/2014/11/18/defining-methods-dinamycally-metaprogramming/">Defining Methods Dinamycally (Metaprogramming)</a>
     
   </div>
 </section>
