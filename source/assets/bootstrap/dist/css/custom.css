@@ -50,6 +50,15 @@ body {
   }
 }
 
+@media screen and (max-width: 400px) {
+  .page-header .entry-title {
+    font-size: 9.4vw;
+  }
+  footer .sharing .fb_iframe_widget {
+    display: none;
+  }
+}
+
 .page-content {
   float: right;
 }
