@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Metaprogramming | Merongivian]]></title>
   <link href="http://merongivian.github.io/blog/categories/metaprogramming/atom.xml" rel="self"/>
   <link href="http://merongivian.github.io/"/>
-  <updated>2014-11-21T17:45:53-05:00</updated>
+  <updated>2014-11-21T17:47:38-05:00</updated>
   <id>http://merongivian.github.io/</id>
   <author>
     <name><![CDATA[Jose Añasco]]></name>
@@ -20,7 +20,7 @@
     <id>http://merongivian.github.io/blog/2014/11/18/defining-methods-dynamically-metaprogramming</id>
     <content type="html"><![CDATA[<p>In ruby, we have the power to create code that generates code. This can
 be useful in some situations (let’s say we have a hash response from an
-API and we want to create a method for each key dinamycally).</p>
+API and we want to create a method for each key dynamically).</p>
 
 <div><div class="CodeRay">
   <div class="code"><pre><span class="comment"># really long response with data for a person</span>
