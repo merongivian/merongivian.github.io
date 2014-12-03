@@ -11,6 +11,7 @@ Candy.Preloader.prototype = {
 		this.load.setPreloadSprite(this.preloadBar);
 		// load images
 		this.load.image('background', 'juego/img/background.png');
+		this.load.image('instrucciones', 'juego/img/instrucciones.png');
 		this.load.image('floor', 'juego/img/floor.png');
 		this.load.image('monster-cover', 'juego/img/monster-cover.png');
 		this.load.image('title', 'juego/img/title.png');
@@ -21,6 +22,7 @@ Candy.Preloader.prototype = {
 		this.load.spritesheet('candy', 'juego/img/candy.png', 82, 98);
 		this.load.spritesheet('monster-idle', 'juego/img/monster-idle.png', 103, 131);
 		this.load.spritesheet('button-start', 'juego/img/button-start.png', 401, 143);
+		this.load.spritesheet('button-instrucciones', 'juego/img/button-instrucciones.png', 401, 143);
 	},
 	create: function(){
 		// start the MainMenu state
