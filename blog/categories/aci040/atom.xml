@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Aci040 | Merongivian]]></title>
   <link href="http://merongivian.github.io/blog/categories/aci040/atom.xml" rel="self"/>
   <link href="http://merongivian.github.io/"/>
-  <updated>2014-12-03T09:01:08-05:00</updated>
+  <updated>2014-12-11T17:55:56-05:00</updated>
   <id>http://merongivian.github.io/</id>
   <author>
     <name><![CDATA[Jose Añasco]]></name>
@@ -12,6 +12,313 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Enmascaramiento De Datos (Data Masking)]]></title>
+    <link href="http://merongivian.github.io/blog/2014/12/11/enmascaramiento-de-datos-data-masking/"/>
+    <updated>2014-12-11T15:12:18-05:00</updated>
+    <id>http://merongivian.github.io/blog/2014/12/11/enmascaramiento-de-datos-data-masking</id>
+    <content type="html"><![CDATA[<p><img class="center" src="http://www.toadworld.com/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-03/SJH_2D00_060414_2D00_1.png"></p>
+
+<h3 id="introduccion">Introduccion</h3>
+
+<p>Se calcula que más del 50% de los datos almacenados en bases de datos podría clasificarse como
+confidencial. Por otro lado, el riesgo asociado a las filtraciones de datos no hace más que aumentar
+a medida que los departamentos de IT recogen y almacenan de manera cada vez más prolongada un
+número creciente de datos.</p>
+
+<!--more-->
+
+<p>Las soluciones para garantizar la seguridad de las bases de datos son difíciles de configurar y de
+administrar. Las soluciones de codificación manual, por su parte, requieren mucho trabajo y dan pie
+a la comisión de errores. No obstante, su organización de IT necesita automatizar los procesos de
+enmascaramiento de datos para aumentar la productividad y reducir los costes.
+Oracle® Data Masking™ es un software completo, flexible y escalable que se emplea para gestionar
+el acceso a datos sensibles de aplicaciones (p.ej., información de tarjetas de crédito, números de la
+Seguridad Social, nombres, direcciones, números de teléfono, etc.). Este software evita la exposición
+involuntaria de información confidencial y disminuye el riesgo de filtración de datos.
+Oracle Data Masking minimiza el riesgo de filtración de datos enmascarando los entornos de
+desarrollo y de pruebas creados a partir de copias o subconjuntos de datos de producción. Gracias
+a este software, los equipos de IT pueden contar con reglas de enmascaramiento sofisticadas pero
+flexibles a la vez, que les permiten aplicar distintas clases de máscaras a diversos tipos de datos
+empleados en entornos de no producción (de pruebas, formación, etc.).</p>
+
+<p>Informatica Data Masking resulta idónea para reducir el riesgo de filtración de datos; mejorar la calidad
+de las actividades de desarrollo, pruebas y formación; y respaldar el cumplimiento de normativas y
+disposiciones internas, industriales y gubernamentales relacionadas con la privacidad de los datos.</p>
+
+<p><img class="center" src="http://www.digora.com/wp-content/uploads/2013/09/11-2-0-4-c.png"></p>
+
+<h3 id="limitaciones">Limitaciones</h3>
+
+<p>Por un lado, se ha de tener en cuenta que los procesos de data masking están diseñados para ser irreversibles, en el sentido de que no se podría volver a recuperar el dato inicial.</p>
+
+<p>No obstante, cabe decir que mediante el cruce de información o el múltiple acceso a datos enmascarados y realizando un gran esfuerzo se podrían llegar a obtener de alguna manera los datos sensibles que han sido enmascarados. Aplicando un proceso de enmascaramiento de datos la idea es que sea difícil realizarlo, pero con esfuerzo es importante señalar que se podría llegar a lograr.</p>
+
+<p>Hay que tener en cuenta también que en cuanto al desarrollo de sistemas siempre se necesita un acceso a producción para casos puntuales que requiere conectarse a los datos reales, eso no se puede abolir ya que incidencias siempre existen y se necesitan reparar datos reales de producción. No obstante, lo que se deberá hacer en estos casos es que las personas que están gobernando los datos puedan verificar la información de producción a la que están accediendo y que no deberían ver para evitar de esta manera filtraciones de información.</p>
+
+<iframe class="youtube-player" type="text/html" width="640" height="385" src="https://www.youtube.com/embed/dcldnaukpcI" allowfullscreen="" frameborder="0">
+</iframe>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Oracle Database Vault (DV)]]></title>
+    <link href="http://merongivian.github.io/blog/2014/12/11/oracle-database-vault-dv/"/>
+    <updated>2014-12-11T11:27:18-05:00</updated>
+    <id>http://merongivian.github.io/blog/2014/12/11/oracle-database-vault-dv</id>
+    <content type="html"><![CDATA[<p><img class="center" src="http://tinyurl.com/pgcue32"></p>
+
+<h3 id="introduccion">Introduccion</h3>
+
+<p>Oracle Database Vault es la solución principal de la seguridad de la base de datos de la industria para tratar conformidad y preocupaciones reguladoras por la amenaza del iniciado. Las ayudas Oracle Database Vault tratan los requisitos del control de acceso asociados a regulaciones tales como PCI y Sarbanes-Oxley. Oracle Database Vault está disponible para el lanzamiento 2 de la base de datos 9i de Oracle, el lanzamiento 2 de la base de datos 10g de Oracle y el lanzamiento 1 de la base de datos 11g de Oracle. Oracle Database Vault se ha validado con los usos de Oracle PeopleSoft. La validación con usos adicionales, incluyendo la habitación del de Oracle E-Business Suite y Siebel, está actualmente en curso. Usando Oracle Database Vault, los usuarios altamente privilegiados de la base de datos pueden ser prevenidos de datos del uso que tienen acceso. Además, el acceso a los usos, a las bases de datos y a los datos puede estar rigurosamente controlado basado en las variables tales como la época del día, del IP address o del subnet. Resumiendo, Oracle Database Vault proporciona los controles flexibles, transparentes y altamente adaptables de la seguridad requeridos en economía global de hoy.</p>
+
+<!--more-->
+
+<h3 id="descripcion-general">Descripcion General</h3>
+
+<ul>
+  <li>Implementa controles preventivos en accesos de usuarios privilegiados a los datos de la aplicación</li>
+  <li>Controla el acceso a la base de datos con políticas de múltiples factores que están basadas en factores integrados como hora del día, dirección IP, nombre de la aplicación y método de autenticación</li>
+  <li>Consolida bases de datos y usuarios privilegiados de forma segura para proteger los datos de la empresa</li>
+  <li>Descubre y reporta cargos y privilegios de los usuarios capturados en el tiempo de ejecución usado en la base de datos</li>
+</ul>
+
+<h3 id="beneficios">Beneficios</h3>
+
+<ul>
+  <li>Protege de forma proactiva los datos de aplicaciones almacenados en la base de datos de Oracle</li>
+  <li>Restringe el acceso ad hoc a datos de aplicaciones al prevenir que los usuarios ronden la aplicación</li>
+  <li>Usa políticas de múltiples factores que están reforzadas en la base de datos para mayor seguridad y rendimiento</li>
+  <li>Políticas predeterminadas certificadas para Oracle E-Business Suite, Oracle’s PeopleSoft y Siebel CRM; y aplicaciones SAP</li>
+  <li>Permite la reducción de la superficie de ataque sin interrumpir la actividad empresarial</li>
+</ul>
+
+<h3 id="regulaciones">Regulaciones</h3>
+
+<p>Oracle Database Vault Realms, separación de tareas, reglas de comando y factores son aplicables a la reducción del riesgo general asociado con la disposición específica de las regulaciones en todo el mundo. Las regulaciones como Sarbanes-Oxley (SOX), la Ley de Portabilidad y Responsabilidad de Seguros de Salud (HIPAA), Basilea II y PCI tienen temas comunes que incluyen controles internos, separación de tareas y estrictos controles de acceso a la información sensible. A pesar de que muchos requerimientos de las regulaciones como SOX y HIPAA son procesales por naturaleza, se necesitan soluciones técnicas para mitigar los riesgos asociados con procesos como la modificación no autorizada de datos y el acceso no autorizado</p>
+
+<h3 id="realms">Realms</h3>
+
+<p><img class="center" src="https://wilsonaraujoudla.files.wordpress.com/2014/12/realm.png?w=630" width="400" height="400">
+<img class="center" src="http://image.slidesharecdn.com/dbsec-asodbv-web-cast-v4-130404042554-phpapp02/95/partner-webcast-oracle-database-security-insideout-part-1-advanced-security-and-database-vault-40-638.jpg?cb=1365067774"></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Oracle Advanced Security (ASO)]]></title>
+    <link href="http://merongivian.github.io/blog/2014/12/11/oracle-advanced-security-aso/"/>
+    <updated>2014-12-11T11:26:50-05:00</updated>
+    <id>http://merongivian.github.io/blog/2014/12/11/oracle-advanced-security-aso</id>
+    <content type="html"><![CDATA[<p><img class="center" src="http://www.sysage.com.tw/Guest/FCKUploadFile/ADS.JPG"></p>
+
+<h3 id="introduccion">Introduccion</h3>
+
+<p>La encriptación es un componente clave del principio defensa-en-profundidad y es
+importante para proteger los datos en tránsito y en reposo. Oracle primero introdujo
+las API para la encriptación de base de datos en Oracle8i. Actualmente, las API para
+encriptación de base de datos Oracle son utilizadas por muchos clientes para
+encriptar los datos de aplicaciones sensibles. Lograr la transparencia y utilizar una
+API de encriptación requiere la incorporación de llamadas de función dentro de la
+propia aplicación o el uso de triggers de base de datos previamente insertados.</p>
+
+<!--more-->
+
+<p>También se pueden necesitar visualizaciones de las aplicaciones para decodificar los
+datos antes de que lleguen a la aplicación. Asimismo, la administración de claves
+debe manejarse de manera programática.
+Oracle Advanced Security Transparent Data Encryption (TDE), primero
+introducido en Oracle Database 10g versión 2, es la solución más avanzada del
+sector para la encriptación. TDE ofrece administración clave y transparencia
+completa de encriptación de datos de aplicaciones sensibles. El proceso de
+encriptación de base de datos es activado mediante el uso de comandos DDL,
+eliminando por completo la necesidad de cambios en las aplicaciones, la
+administración programática de claves, los triggers de base de datos y las
+visualizaciones.</p>
+
+<h3 id="caracteristicas">Caracteristicas</h3>
+
+<ul>
+  <li>Proporciona cifrado de datos transparente y redacción dentro de la base de datos Oracle.</li>
+  <li>Ayuda a los requisitos reglamentarios de dirección, incluyendo PCI DSS y HIPAA HiTech.</li>
+  <li>Sobrecarga de rendimiento mínimo y no hay cambios en las aplicaciones.</li>
+  <li>Se integra con las tecnologías de Oracle, incluyendo Oracle Exadata, Oracle Advanced Compression, Oracle GoldenGate, etc.</li>
+</ul>
+
+<h3 id="encriptacion-de-la-aplicacion">Encriptacion de la aplicacion</h3>
+
+<p>Cada usuatio tiene una palabra secreta para desencriptar la informacion que le pertence, en la base, el rato que se registra lo hace de manera encriptada</p>
+
+<p>Oracle ofrece dos paquetes para esto:</p>
+
+<p><img class="center" src="https://wilsonaraujoudla.files.wordpress.com/2014/12/diapositiva1.gif" width="600" height="600"></p>
+
+<h3 id="transparent-data-encryption-tde">Transparent Data Encryption (TDE)</h3>
+
+<p><img class="center" src="http://www.oracle.com/ocom/groups/public/@otn/documents/webcontent/1964796.png" width="1000" height="600"></p>
+
+<p>TDE encripta los datos antes de que se escriban en el disco y los decodifica antes de
+que vuelvan a la aplicación. El proceso de codificación y decodificación es realizado
+en el nivel SQL, de manera completamente transparente para las aplicaciones y los
+usuarios. Los backups subsiguientes de los archivos de base de datos en disco o
+cinta tendrán los datos de aplicaciones sensibles encriptados. En forma opcional,
+TDE puede utilizarse junto con Oracle RMAN para encriptar toda la base de datos
+Oracle durante el backup a disco.</p>
+
+<ul>
+  <li>
+    <p><strong>Protección de datos confidenciales mediante cifrado TDE Column</strong></p>
+
+    <p>Se puede utilizar para cifrar los datos específicos de las tablas de aplicación tales como números de tarjetas de crédito.</p>
+
+    <p>Es útil cuando las tablas de bases de datos son grandes, sólo un pequeño número de columnas debe estar encriptada, y las columnas son conocidas.</p>
+  </li>
+  <li>
+    <p><strong>Protección de aplicaciones enteras con el uso de tablas de cifrado TDE</strong></p>
+
+    <p>Protege tablas de aplicaciones enteras mediante la encriptación los espacios de tabla subyacentes. Cifra de tablas de aplicación independientemente de la sensibilidad de los datos y con independencia de su tipo de datos.</p>
+
+    <p>Es útil cuando la base de datos contiene una gran cantidad datos de sensibles a ser cifrados y las columnas residen en muchos lugares diferentes.</p>
+
+    <p>El cifrado de tablas se integra con Oracle Recovery Manager (copia de seguridad y restauración), Oracle Data Pump (movimiento de datos), Oracle Active Data Guard (redundancia y conmutación por error), y Oracle Golden Gate (replicación). TDE también se integra con las características internas de la base de datos como la de rehacer para evitar posibles fugas de datos en los registros.</p>
+  </li>
+</ul>
+
+<h3 id="generacion-llaves-de-encriptacion">Generacion llaves de encriptacion</h3>
+
+<h4 id="generacion-de-llave">- Generacion de llave</h4>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>raw_key := dbms_crypto.randombytes (
+             number_bytes =&gt; <span class="integer">24</span> );
+</pre></div>
+</div>
+</div>
+
+<h4 id="encriptacion-de-datos">- Encriptacion de datos</h4>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>encrypted_raw := dbms_crypto.encrypt (
+             src =&gt; raw_input,
+             typ =&gt; DBMS_CRYPTO.DES3_CBC_PKCS5,
+             <span class="type">KEY</span> =&gt; raw_key );
+</pre></div>
+</div>
+</div>
+
+<h3 id="uso-de-decrypt">Uso de Decrypt</h3>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>decrypted_raw := dbms_crypto.Decrypt (
+             encrypted_raw,
+             dbms_crypto.DES3_CBC_PKCS5,
+             raw_key );
+</pre></div>
+</div>
+</div>
+
+<h3 id="encriptacion-por-columna-y-por-tablespace">Encriptacion por columna y por tablespace</h3>
+
+<h4 id="columna">- Columna</h4>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="comment">/* Crear columna encriptada */</span>
+
+<span class="class">CREATE</span> <span class="type">TABLE</span> cust_payment_info
+   (first_name <span class="predefined-type">VARCHAR</span>(<span class="integer">11</span>),
+    last_name <span class="predefined-type">VARCHAR</span>(<span class="integer">10</span>),
+    order_number NUMBER(<span class="integer">13</span>),
+    credit_card_number <span class="predefined-type">VARCHAR2</span>(<span class="integer">20</span>)
+            ENCRYPT NO SALT);
+
+<span class="comment">/* Retiro de la encriptacion */</span>
+
+<span class="class">ALTER</span> <span class="type">TABLE</span> cust_payment_info
+MODIFY credit_card_number DECRYPT
+
+<span class="comment">/* Cambio en el algoritmo y en SALT */</span>
+
+<span class="class">ALTER</span> <span class="type">TABLE</span> cust_payment_info
+MODIFY credit_card_number ENCRYPT
+<span class="keyword">USING</span> <span class="string"><span class="delimiter">'</span><span class="content">AES256</span><span class="delimiter">'</span></span> SALT
+</pre></div>
+</div>
+</div>
+
+<h4 id="tablespace">- Tablespace</h4>
+
+<p><img class="center" src="https://docs.oracle.com/cd/E15586_01/network.1111/e10746/img/transdata_1.gif" width="500" height="500"></p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="comment">/* Crear tablespace encriptado */</span>
+
+<span class="class">CREATE</span> TABLESPACE encrypt_ts
+DATAFILE <span class="string"><span class="delimiter">'</span><span class="content">$ORACLE_HOME/dbs/encrypt.dat</span><span class="delimiter">'</span></span> SIZE <span class="integer">100</span>M
+ENCRYPTION <span class="keyword">USING</span> <span class="string"><span class="delimiter">'</span><span class="content">3DES168</span><span class="delimiter">'</span></span>
+<span class="directive">DEFAULT</span> STORAGE (ENCRYPT);
+</pre></div>
+</div>
+</div>
+
+<h3 id="pasos-para-encriptacion-con-wallet">Pasos para encriptacion con wallet</h3>
+
+<p><img class="center" src="http://sunkupuli.files.wordpress.com/2014/04/image-5.png?w=640" width="500" height="500"></p>
+
+<ol>
+  <li>Crear una wallet con Oracle Wallet Manager</li>
+</ol>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>ENCRYPTION_WALLET_LOCATION=
+ (SOURCE=(METHOD=FILE) (METHOD_DATA=
+ (DIRECTORY=/opt/oracle/product/<span class="float">11.2</span><span class="float">.0</span>/dbhome_1)))
+</pre></div>
+</div>
+</div>
+
+<ol>
+  <li>Abrir el wallet</li>
+</ol>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="class">ALTER</span> SYSTEM <span class="class">SET</span> ENCRYPTION WALLET OPEN IDENTIFIED <span class="keyword">BY</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">password</span><span class="delimiter">&quot;</span></span>;
+</pre></div>
+</div>
+</div>
+
+<ol>
+  <li>Setear la llave maestra</li>
+</ol>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="class">ALTER</span> SYSTEM <span class="class">SET</span> ENCRYPTION <span class="type">KEY</span> IDENTIFIED <span class="keyword">BY</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">password</span><span class="delimiter">&quot;</span></span>;
+</pre></div>
+</div>
+</div>
+
+<h3 id="creacion-de-wallet-com-mkstore">Creacion de wallet com mkstore</h3>
+
+<h4 id="para-creacion-del-wallet">- Para creacion del wallet</h4>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>mkstore -wrl <span class="error">$</span>HOME/admin/orcl/wallets -<span class="class">create</span>
+</pre></div>
+</div>
+</div>
+
+<h4 id="para-anadir-credenciales-al-wallet">- Para anadir credenciales al wallet</h4>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>mkstore -wrl <span class="error">$</span>HOME/admin/orcl/wallets
+-createCredential dev hr [hr]
+</pre></div>
+</div>
+</div>
+
+<iframe class="youtube-player" type="text/html" width="640" height="385" src="https://www.youtube.com/embed/bTAn45ejjL0" allowfullscreen="" frameborder="0">
+</iframe>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Oracle Audit Vault]]></title>
@@ -247,322 +554,6 @@ centralizada de definiciones de políticas</li>
 
 <iframe class="youtube-player" type="text/html" width="640" height="385" src="https://www.youtube.com/embed/bTAn45ejjL0" allowfullscreen="" frameborder="0">
 </iframe>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Oracle VPD (Virtual Private Database)]]></title>
-    <link href="http://merongivian.github.io/blog/2014/10/22/certificacion-de-bases-de-datos-clase-number-2/"/>
-    <updated>2014-10-22T21:01:42-05:00</updated>
-    <id>http://merongivian.github.io/blog/2014/10/22/certificacion-de-bases-de-datos-clase-number-2</id>
-    <content type="html"><![CDATA[<h3 id="contexto-de-aplicacin">Contexto de Aplicación</h3>
-<ul>
-  <li>Contenedor en memoria con atributos de solo lectura, llamado namespace</li>
-  <li>Namespace posee atributos nombrados</li>
-  <li>Namespace son independientes</li>
-  <li>Atributos son poblados a traves de un paquete pl/sql</li>
-</ul>
-
-<h3 id="tipos-de-contextos">Tipos de contextos</h3>
-<ul>
-  <li><strong>Local:</strong> Seteado en un paquete pl/sql , se guarda en PGA(se usa para
-cada sesion)</li>
-  <li><strong>Global:</strong> Seteado en SGA, se habilita para todas las sesiones
-    <ul>
-      <li>hrapp: namespace</li>
-      <li>hr_context: package</li>
-    </ul>
-  </li>
-</ul>
-
-<div><div class="CodeRay">
-  <div class="code"><pre><span class="class">create</span> context hrapp <span class="keyword">using</span> hr_context
-</pre></div>
-</div>
-</div>
-
-<!--more-->
-
-<h3 id="control-de-acceso-granularfgac">Control de acceso granular(FGAC)</h3>
-<ul>
-  <li>Limita acceso a filas y columnas en bd</li>
-  <li>Tipos de privilegios: objetos y sistemas</li>
-  <li>Limita filas con predicados, las columnas se bloquean totalmente</li>
-  <li>Se asocia a tabla o vista</li>
-  <li>La funcion se llama con fgca antes de mostrar una consulta (genera un
-predicado where a la consulta original)</li>
-</ul>
-
-<h4 id="beneficios">Beneficios</h4>
-<ul>
-  <li>Seguridad</li>
-  <li>Simple (solo anade un predicado a la sentencia sql)</li>
-</ul>
-
-<h3 id="bases-de-datos-virtuales-vpd">Bases de datos virtuales (VPD)</h3>
-
-<p><img src="/images/posts/vpd.png"></p>
-
-<ul>
-  <li>Application context + FGAC</li>
-  <li>Una base de datos especifica mostrada para un usuario, pero en
-realidad es la misma base</li>
-  <li>Recuperar context:
-    <ul>
-      <li>CUST_ID: campo</li>
-      <li>OEAPP: contexto</li>
-    </ul>
-  </li>
-</ul>
-
-<div><div class="CodeRay">
-  <div class="code"><pre>CUSTOMER_ID=SYS_CONTEXT(<span class="string"><span class="delimiter">'</span><span class="content">OEAPP</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">CUST_ID</span><span class="delimiter">'</span></span>)
-</pre></div>
-</div>
-</div>
-
-<h4 id="implementacin-de-una-politica-vpd">Implementación de una politica VPD</h4>
-<ul>
-  <li>Desarrollar estrategia</li>
-  <li>Analizar datos a proteger</li>
-  <li>Determinar politicas VPD para cubrir requerimientos anteriores</li>
-  <li>Revisar y documentar las politicas y la solucion</li>
-</ul>
-
-<h3 id="pasos-para-la-implementacin-de-vpd-con-triggers">Pasos para la implementación de VPD con triggers</h3>
-<p>1.- Declarar el procedure set_emp_info dentro del paquete current_emp</p>
-
-<div><div class="CodeRay">
-  <div class="code"><pre><span class="class">CREATE</span> <span class="keyword">OR</span> <span class="class">REPLACE</span> PACKAGE CURRENT_EMP <span class="keyword">IS</span>
-<span class="type">PROCEDURE</span> SET_EMP_INFO;
-<span class="keyword">END</span>
-</pre></div>
-</div>
-</div>
-
-<p>2.- Definir el procedure para la tabla employees</p>
-
-<div><div class="CodeRay">
-  <div class="code"><pre><span class="class">CREATE</span> <span class="keyword">OR</span> <span class="class">REPLACE</span> PACKAGE BODY current_emp <span class="keyword">IS</span> <span class="type">PROCEDURE</span> set_emp_info <span class="keyword">IS</span>
- v_employee_id hr.employees.employee_id%TYPE;
- v_first_name  hr.employees.first_name%TYPE;
- v_last_name hr.employees.last_name%TYPE;
- <span class="class">BEGIN</span>
-   <span class="class">SELECT</span> employee_id,
-          first_name,
-          last_name
-   <span class="class">INTO</span> v_employee_id,
-        v_first_name,
-        v_last_name
-   <span class="keyword">FROM</span> hr.employees
-   <span class="keyword">WHERE</span> email=SYS_CONTEXT(<span class="string"><span class="delimiter">'</span><span class="content">USERENV</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">SESSION_USER</span><span class="delimiter">'</span></span>);
-         DBMS_SESSION.SET_CONTEXT(<span class="string"><span class="delimiter">'</span><span class="content">emp_user</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">id</span><span class="delimiter">'</span></span>,v_employee_id);
-         DBMS_SESSION.SET_CONTEXT(<span class="string"><span class="delimiter">'</span><span class="content">emp_user</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">name</span><span class="delimiter">'</span></span>,v_first_name ||<span class="string"><span class="delimiter">'</span><span class="content"> </span><span class="delimiter">'</span></span>|| v_last_name);
-         DBMS_SESSION.SET_CONTEXT(<span class="string"><span class="delimiter">'</span><span class="content">emp_user</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">email</span><span class="delimiter">'</span></span>,SYS_CONTEXT(<span class="string"><span class="delimiter">'</span><span class="content">USERENV</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">SESSION_USER</span><span class="delimiter">'</span></span>));
-   EXCEPTION
-   <span class="keyword">WHEN</span> no_data_found <span class="keyword">THEN</span> <span class="predefined-constant">NULL</span>;
- <span class="keyword">END</span>;
-<span class="keyword">END</span>;
-</pre></div>
-</div>
-</div>
-
-<p>3.- Crear el trigger con el procedure creado, este se ejecutara cada que
-que se inicia sesion</p>
-
-<div><div class="CodeRay">
-  <div class="code"><pre><span class="class">CREATE</span> <span class="keyword">OR</span> <span class="class">REPLACE</span> <span class="type">TRIGGER</span> EMP_LOGON
-<span class="directive">AFTER</span> LOGON <span class="keyword">ON</span> <span class="type">DATABASE</span>
-<span class="class">BEGIN</span>
-  CURRENT_EMP.SET_EMP_INFO;
-<span class="keyword">END</span>;
-/
-</pre></div>
-</div>
-</div>
-
-<h4 id="video">Video</h4>
-
-<iframe class="youtube-player" type="text/html" width="640" height="385" src="https://www.youtube.com/embed/CFNbfWktEKc" allowfullscreen="" frameborder="0">
-</iframe>
-
-<h3 id="pasos-para-la-implementacin-de-vpd-con-politicas">Pasos para la implementación de VPD con politicas</h3>
-
-<p>1.- Declarar la politica en el paquete hr_policy_package</p>
-
-<div><div class="CodeRay">
-  <div class="code"><pre><span class="class">create</span> <span class="keyword">or</span> <span class="class">replace</span> package hr_policy_pkg <span class="keyword">is</span>
-<span class="type">function</span> limit_emp_emp(
-object_schema <span class="keyword">in</span> <span class="predefined-type">varchar2</span>,
-object_name <span class="predefined-type">varchar2</span>)
-<span class="directive">return</span> <span class="predefined-type">varchar2</span>;
-<span class="keyword">end</span>;
-</pre></div>
-</div>
-</div>
-
-<p>2.- Crear la politica con la funcion limit_emp_emp</p>
-
-<div><div class="CodeRay">
-  <div class="code"><pre><span class="class">create</span> <span class="keyword">or</span> <span class="class">replace</span> package body hr_policy_pkg <span class="keyword">is</span>
-  <span class="type">function</span> limit_emp_emp( object_schema <span class="keyword">in</span> <span class="predefined-type">varchar2</span>, object_name <span class="predefined-type">varchar2</span>)
-  <span class="directive">return</span> <span class="predefined-type">varchar2</span>
-  <span class="keyword">is</span>
-  v_emp_id number;
-  <span class="class">BEGIN</span>
-   <span class="directive">return</span> <span class="string"><span class="delimiter">'</span><span class="content">employee_id=sys_context(&quot;emp_user&quot;,&quot;id&quot;)</span><span class="delimiter">'</span></span>;
-  <span class="keyword">end</span>;
-<span class="keyword">end</span>;
-</pre></div>
-</div>
-</div>
-
-<p>3.- Anadir la politica a la tabla employees</p>
-
-<div><div class="CodeRay">
-  <div class="code"><pre>exec dbms_rls.add_policy
-(<span class="string"><span class="delimiter">'</span><span class="content">HR</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">EMPLOYEES</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">HR_EMP_POL</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">SEC</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">HR_POLICY_PKG.LIMIT_EMP_EMP</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">SELECT</span><span class="delimiter">'</span></span>);
-</pre></div>
-</div>
-</div>
-
-<h4 id="video-1">Video</h4>
-
-<iframe class="youtube-player" type="text/html" width="640" height="385" src="https://www.youtube.com/embed/mmws2ZdHkuA" allowfullscreen="" frameborder="0">
-</iframe>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Factores De Seguridad]]></title>
-    <link href="http://merongivian.github.io/blog/2014/10/22/certificacion-de-bases-de-datos-clase-number-1/"/>
-    <updated>2014-10-22T18:39:32-05:00</updated>
-    <id>http://merongivian.github.io/blog/2014/10/22/certificacion-de-bases-de-datos-clase-number-1</id>
-    <content type="html"><![CDATA[<h3 id="triada-cia">Triada CIA</h3>
-
-<p><img src="/images/posts/triada.png"></p>
-
-<ul>
-  <li><strong>Confidentiality:</strong> Permiso por cada usuario</li>
-  <li><strong>Integrity:</strong> Información verídica, consistente y que no sea alterada</li>
-  <li><strong>Availability:</strong> Capacidad, disponibilidad de la base</li>
-</ul>
-
-<!--more-->
-
-<h3 id="preocupaciones-sobre-la-seguridad-de-los-datos">Preocupaciones sobre la Seguridad de los Datos</h3>
-<ul>
-  <li><strong>Industrial Espionage:</strong> Generalmente causado por empresas en busca de
-información confidencial</li>
-  <li><strong>Identity Theft:</strong> Suplantación de identidad</li>
-  <li><strong>Insider Threats:</strong> Causado por malos elementos internos con acceso a la
-base</li>
-</ul>
-
-<h3 id="organismos">Organismos</h3>
-<ul>
-  <li>SOX</li>
-  <li>PCI: Mastercard, Visa, HIPAA</li>
-  <li>HIPAA</li>
-  <li>Basel II</li>
-  <li>EU Directives</li>
-  <li>FDA</li>
-  <li>GLBA</li>
-</ul>
-
-<h3 id="estandares-de-seguridad">Estandares de Seguridad</h3>
-<ul>
-  <li>CERT</li>
-  <li>ISO 17700/27002</li>
-</ul>
-
-<h3 id="riesgos-de-seguridad">Riesgos de Seguridad</h3>
-
-<h4 id="externos">Externos</h4>
-<ul>
-  <li>Usuario no autorizado</li>
-  <li>Ataque ddos</li>
-  <li>Acceso no autorizado</li>
-  <li>Sql Injection</li>
-</ul>
-
-<h4 id="internos">Internos</h4>
-<ul>
-  <li>Robos de información</li>
-  <li>Corrupción del servicio o información</li>
-  <li>Complejidad</li>
-  <li>Omisiones</li>
-</ul>
-
-<h3 id="desarrollo-poltica-de-seguridad">Desarrollo Política de seguridad</h3>
-<ul>
-  <li>Formar equipo de seguridad</li>
-  <li>Definir requerimientos de seguridad</li>
-  <li>Desarrollar políticas, procedimientos y sistemas para cubrir los
-requerimientos de seguridad</li>
-  <li>Auditar el cumplimiento</li>
-</ul>
-
-<h3 id="tcnicas-para-reforzar-seguridad">Técnicas para reforzar seguridad</h3>
-<ul>
-  <li>Autenticación: Quien</li>
-  <li>Autorización: Que puede hacer el usuario (permiso de ejecución,
-depuración, etc)</li>
-  <li>Control de acceso: Como lo puede hacer, Solo puede ejecutar ciertos métodos (mas granular,
-especifico)</li>
-</ul>
-
-<h3 id="amenazas-comunes">Amenazas comunes</h3>
-
-<p><img src="/images/posts/ataques.png"></p>
-
-<ul>
-  <li>Phishing: Capturar información con un elemento intermedio</li>
-  <li>Credenciales por defecto (no se hace cambio de la clave)</li>
-  <li>Backdoors</li>
-  <li>Código de depuración</li>
-  <li>Cross-scripting</li>
-  <li>Sql-Injection</li>
-</ul>
-
-<h3 id="opciones-de-seguridad-oracle-11g">Opciones de Seguridad Oracle 11g</h3>
-
-<h4 id="proactiva">Proactiva</h4>
-<ul>
-  <li>Database Vault</li>
-  <li>Oracle Advanced Security</li>
-  <li>Enmascaramiento de Datos</li>
-  <li>Seguridad a nivel de filos</li>
-  <li>Encriptación de respaldos</li>
-  <li>Encriptación de columnas</li>
-</ul>
-
-<h4 id="reactiva">Reactiva</h4>
-<ul>
-  <li>Pistas de Auditoria</li>
-</ul>
-
-<h3 id="escenarios-de-aplicacin">Escenarios de Aplicación</h3>
-
-<h4 id="autenticacin">Autenticación</h4>
-<ul>
-  <li>Gestión de identidad centralizada</li>
-  <li>Strong authentication</li>
-</ul>
-
-<h4 id="control-de-acceso">Control de Acceso</h4>
-<ul>
-  <li>Discretionary access control</li>
-  <li>Virtual private database</li>
-  <li>Oracle label security</li>
-  <li>Oracle database vault</li>
-</ul>
-
-<h4 id="monitoreo">Monitoreo</h4>
-<ul>
-  <li>Auditoria</li>
-  <li>Oracle Audit Vault</li>
-</ul>
 ]]></content>
   </entry>
   

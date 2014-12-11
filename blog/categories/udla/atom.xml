@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Udla | Merongivian]]></title>
   <link href="http://merongivian.github.io/blog/categories/udla/atom.xml" rel="self"/>
   <link href="http://merongivian.github.io/"/>
-  <updated>2014-12-03T09:01:08-05:00</updated>
+  <updated>2014-12-11T17:55:56-05:00</updated>
   <id>http://merongivian.github.io/</id>
   <author>
     <name><![CDATA[Jose Añasco]]></name>
@@ -12,6 +12,313 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Enmascaramiento De Datos (Data Masking)]]></title>
+    <link href="http://merongivian.github.io/blog/2014/12/11/enmascaramiento-de-datos-data-masking/"/>
+    <updated>2014-12-11T15:12:18-05:00</updated>
+    <id>http://merongivian.github.io/blog/2014/12/11/enmascaramiento-de-datos-data-masking</id>
+    <content type="html"><![CDATA[<p><img class="center" src="http://www.toadworld.com/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-03/SJH_2D00_060414_2D00_1.png"></p>
+
+<h3 id="introduccion">Introduccion</h3>
+
+<p>Se calcula que más del 50% de los datos almacenados en bases de datos podría clasificarse como
+confidencial. Por otro lado, el riesgo asociado a las filtraciones de datos no hace más que aumentar
+a medida que los departamentos de IT recogen y almacenan de manera cada vez más prolongada un
+número creciente de datos.</p>
+
+<!--more-->
+
+<p>Las soluciones para garantizar la seguridad de las bases de datos son difíciles de configurar y de
+administrar. Las soluciones de codificación manual, por su parte, requieren mucho trabajo y dan pie
+a la comisión de errores. No obstante, su organización de IT necesita automatizar los procesos de
+enmascaramiento de datos para aumentar la productividad y reducir los costes.
+Oracle® Data Masking™ es un software completo, flexible y escalable que se emplea para gestionar
+el acceso a datos sensibles de aplicaciones (p.ej., información de tarjetas de crédito, números de la
+Seguridad Social, nombres, direcciones, números de teléfono, etc.). Este software evita la exposición
+involuntaria de información confidencial y disminuye el riesgo de filtración de datos.
+Oracle Data Masking minimiza el riesgo de filtración de datos enmascarando los entornos de
+desarrollo y de pruebas creados a partir de copias o subconjuntos de datos de producción. Gracias
+a este software, los equipos de IT pueden contar con reglas de enmascaramiento sofisticadas pero
+flexibles a la vez, que les permiten aplicar distintas clases de máscaras a diversos tipos de datos
+empleados en entornos de no producción (de pruebas, formación, etc.).</p>
+
+<p>Informatica Data Masking resulta idónea para reducir el riesgo de filtración de datos; mejorar la calidad
+de las actividades de desarrollo, pruebas y formación; y respaldar el cumplimiento de normativas y
+disposiciones internas, industriales y gubernamentales relacionadas con la privacidad de los datos.</p>
+
+<p><img class="center" src="http://www.digora.com/wp-content/uploads/2013/09/11-2-0-4-c.png"></p>
+
+<h3 id="limitaciones">Limitaciones</h3>
+
+<p>Por un lado, se ha de tener en cuenta que los procesos de data masking están diseñados para ser irreversibles, en el sentido de que no se podría volver a recuperar el dato inicial.</p>
+
+<p>No obstante, cabe decir que mediante el cruce de información o el múltiple acceso a datos enmascarados y realizando un gran esfuerzo se podrían llegar a obtener de alguna manera los datos sensibles que han sido enmascarados. Aplicando un proceso de enmascaramiento de datos la idea es que sea difícil realizarlo, pero con esfuerzo es importante señalar que se podría llegar a lograr.</p>
+
+<p>Hay que tener en cuenta también que en cuanto al desarrollo de sistemas siempre se necesita un acceso a producción para casos puntuales que requiere conectarse a los datos reales, eso no se puede abolir ya que incidencias siempre existen y se necesitan reparar datos reales de producción. No obstante, lo que se deberá hacer en estos casos es que las personas que están gobernando los datos puedan verificar la información de producción a la que están accediendo y que no deberían ver para evitar de esta manera filtraciones de información.</p>
+
+<iframe class="youtube-player" type="text/html" width="640" height="385" src="https://www.youtube.com/embed/dcldnaukpcI" allowfullscreen="" frameborder="0">
+</iframe>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Oracle Database Vault (DV)]]></title>
+    <link href="http://merongivian.github.io/blog/2014/12/11/oracle-database-vault-dv/"/>
+    <updated>2014-12-11T11:27:18-05:00</updated>
+    <id>http://merongivian.github.io/blog/2014/12/11/oracle-database-vault-dv</id>
+    <content type="html"><![CDATA[<p><img class="center" src="http://tinyurl.com/pgcue32"></p>
+
+<h3 id="introduccion">Introduccion</h3>
+
+<p>Oracle Database Vault es la solución principal de la seguridad de la base de datos de la industria para tratar conformidad y preocupaciones reguladoras por la amenaza del iniciado. Las ayudas Oracle Database Vault tratan los requisitos del control de acceso asociados a regulaciones tales como PCI y Sarbanes-Oxley. Oracle Database Vault está disponible para el lanzamiento 2 de la base de datos 9i de Oracle, el lanzamiento 2 de la base de datos 10g de Oracle y el lanzamiento 1 de la base de datos 11g de Oracle. Oracle Database Vault se ha validado con los usos de Oracle PeopleSoft. La validación con usos adicionales, incluyendo la habitación del de Oracle E-Business Suite y Siebel, está actualmente en curso. Usando Oracle Database Vault, los usuarios altamente privilegiados de la base de datos pueden ser prevenidos de datos del uso que tienen acceso. Además, el acceso a los usos, a las bases de datos y a los datos puede estar rigurosamente controlado basado en las variables tales como la época del día, del IP address o del subnet. Resumiendo, Oracle Database Vault proporciona los controles flexibles, transparentes y altamente adaptables de la seguridad requeridos en economía global de hoy.</p>
+
+<!--more-->
+
+<h3 id="descripcion-general">Descripcion General</h3>
+
+<ul>
+  <li>Implementa controles preventivos en accesos de usuarios privilegiados a los datos de la aplicación</li>
+  <li>Controla el acceso a la base de datos con políticas de múltiples factores que están basadas en factores integrados como hora del día, dirección IP, nombre de la aplicación y método de autenticación</li>
+  <li>Consolida bases de datos y usuarios privilegiados de forma segura para proteger los datos de la empresa</li>
+  <li>Descubre y reporta cargos y privilegios de los usuarios capturados en el tiempo de ejecución usado en la base de datos</li>
+</ul>
+
+<h3 id="beneficios">Beneficios</h3>
+
+<ul>
+  <li>Protege de forma proactiva los datos de aplicaciones almacenados en la base de datos de Oracle</li>
+  <li>Restringe el acceso ad hoc a datos de aplicaciones al prevenir que los usuarios ronden la aplicación</li>
+  <li>Usa políticas de múltiples factores que están reforzadas en la base de datos para mayor seguridad y rendimiento</li>
+  <li>Políticas predeterminadas certificadas para Oracle E-Business Suite, Oracle’s PeopleSoft y Siebel CRM; y aplicaciones SAP</li>
+  <li>Permite la reducción de la superficie de ataque sin interrumpir la actividad empresarial</li>
+</ul>
+
+<h3 id="regulaciones">Regulaciones</h3>
+
+<p>Oracle Database Vault Realms, separación de tareas, reglas de comando y factores son aplicables a la reducción del riesgo general asociado con la disposición específica de las regulaciones en todo el mundo. Las regulaciones como Sarbanes-Oxley (SOX), la Ley de Portabilidad y Responsabilidad de Seguros de Salud (HIPAA), Basilea II y PCI tienen temas comunes que incluyen controles internos, separación de tareas y estrictos controles de acceso a la información sensible. A pesar de que muchos requerimientos de las regulaciones como SOX y HIPAA son procesales por naturaleza, se necesitan soluciones técnicas para mitigar los riesgos asociados con procesos como la modificación no autorizada de datos y el acceso no autorizado</p>
+
+<h3 id="realms">Realms</h3>
+
+<p><img class="center" src="https://wilsonaraujoudla.files.wordpress.com/2014/12/realm.png?w=630" width="400" height="400">
+<img class="center" src="http://image.slidesharecdn.com/dbsec-asodbv-web-cast-v4-130404042554-phpapp02/95/partner-webcast-oracle-database-security-insideout-part-1-advanced-security-and-database-vault-40-638.jpg?cb=1365067774"></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Oracle Advanced Security (ASO)]]></title>
+    <link href="http://merongivian.github.io/blog/2014/12/11/oracle-advanced-security-aso/"/>
+    <updated>2014-12-11T11:26:50-05:00</updated>
+    <id>http://merongivian.github.io/blog/2014/12/11/oracle-advanced-security-aso</id>
+    <content type="html"><![CDATA[<p><img class="center" src="http://www.sysage.com.tw/Guest/FCKUploadFile/ADS.JPG"></p>
+
+<h3 id="introduccion">Introduccion</h3>
+
+<p>La encriptación es un componente clave del principio defensa-en-profundidad y es
+importante para proteger los datos en tránsito y en reposo. Oracle primero introdujo
+las API para la encriptación de base de datos en Oracle8i. Actualmente, las API para
+encriptación de base de datos Oracle son utilizadas por muchos clientes para
+encriptar los datos de aplicaciones sensibles. Lograr la transparencia y utilizar una
+API de encriptación requiere la incorporación de llamadas de función dentro de la
+propia aplicación o el uso de triggers de base de datos previamente insertados.</p>
+
+<!--more-->
+
+<p>También se pueden necesitar visualizaciones de las aplicaciones para decodificar los
+datos antes de que lleguen a la aplicación. Asimismo, la administración de claves
+debe manejarse de manera programática.
+Oracle Advanced Security Transparent Data Encryption (TDE), primero
+introducido en Oracle Database 10g versión 2, es la solución más avanzada del
+sector para la encriptación. TDE ofrece administración clave y transparencia
+completa de encriptación de datos de aplicaciones sensibles. El proceso de
+encriptación de base de datos es activado mediante el uso de comandos DDL,
+eliminando por completo la necesidad de cambios en las aplicaciones, la
+administración programática de claves, los triggers de base de datos y las
+visualizaciones.</p>
+
+<h3 id="caracteristicas">Caracteristicas</h3>
+
+<ul>
+  <li>Proporciona cifrado de datos transparente y redacción dentro de la base de datos Oracle.</li>
+  <li>Ayuda a los requisitos reglamentarios de dirección, incluyendo PCI DSS y HIPAA HiTech.</li>
+  <li>Sobrecarga de rendimiento mínimo y no hay cambios en las aplicaciones.</li>
+  <li>Se integra con las tecnologías de Oracle, incluyendo Oracle Exadata, Oracle Advanced Compression, Oracle GoldenGate, etc.</li>
+</ul>
+
+<h3 id="encriptacion-de-la-aplicacion">Encriptacion de la aplicacion</h3>
+
+<p>Cada usuatio tiene una palabra secreta para desencriptar la informacion que le pertence, en la base, el rato que se registra lo hace de manera encriptada</p>
+
+<p>Oracle ofrece dos paquetes para esto:</p>
+
+<p><img class="center" src="https://wilsonaraujoudla.files.wordpress.com/2014/12/diapositiva1.gif" width="600" height="600"></p>
+
+<h3 id="transparent-data-encryption-tde">Transparent Data Encryption (TDE)</h3>
+
+<p><img class="center" src="http://www.oracle.com/ocom/groups/public/@otn/documents/webcontent/1964796.png" width="1000" height="600"></p>
+
+<p>TDE encripta los datos antes de que se escriban en el disco y los decodifica antes de
+que vuelvan a la aplicación. El proceso de codificación y decodificación es realizado
+en el nivel SQL, de manera completamente transparente para las aplicaciones y los
+usuarios. Los backups subsiguientes de los archivos de base de datos en disco o
+cinta tendrán los datos de aplicaciones sensibles encriptados. En forma opcional,
+TDE puede utilizarse junto con Oracle RMAN para encriptar toda la base de datos
+Oracle durante el backup a disco.</p>
+
+<ul>
+  <li>
+    <p><strong>Protección de datos confidenciales mediante cifrado TDE Column</strong></p>
+
+    <p>Se puede utilizar para cifrar los datos específicos de las tablas de aplicación tales como números de tarjetas de crédito.</p>
+
+    <p>Es útil cuando las tablas de bases de datos son grandes, sólo un pequeño número de columnas debe estar encriptada, y las columnas son conocidas.</p>
+  </li>
+  <li>
+    <p><strong>Protección de aplicaciones enteras con el uso de tablas de cifrado TDE</strong></p>
+
+    <p>Protege tablas de aplicaciones enteras mediante la encriptación los espacios de tabla subyacentes. Cifra de tablas de aplicación independientemente de la sensibilidad de los datos y con independencia de su tipo de datos.</p>
+
+    <p>Es útil cuando la base de datos contiene una gran cantidad datos de sensibles a ser cifrados y las columnas residen en muchos lugares diferentes.</p>
+
+    <p>El cifrado de tablas se integra con Oracle Recovery Manager (copia de seguridad y restauración), Oracle Data Pump (movimiento de datos), Oracle Active Data Guard (redundancia y conmutación por error), y Oracle Golden Gate (replicación). TDE también se integra con las características internas de la base de datos como la de rehacer para evitar posibles fugas de datos en los registros.</p>
+  </li>
+</ul>
+
+<h3 id="generacion-llaves-de-encriptacion">Generacion llaves de encriptacion</h3>
+
+<h4 id="generacion-de-llave">- Generacion de llave</h4>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>raw_key := dbms_crypto.randombytes (
+             number_bytes =&gt; <span class="integer">24</span> );
+</pre></div>
+</div>
+</div>
+
+<h4 id="encriptacion-de-datos">- Encriptacion de datos</h4>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>encrypted_raw := dbms_crypto.encrypt (
+             src =&gt; raw_input,
+             typ =&gt; DBMS_CRYPTO.DES3_CBC_PKCS5,
+             <span class="type">KEY</span> =&gt; raw_key );
+</pre></div>
+</div>
+</div>
+
+<h3 id="uso-de-decrypt">Uso de Decrypt</h3>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>decrypted_raw := dbms_crypto.Decrypt (
+             encrypted_raw,
+             dbms_crypto.DES3_CBC_PKCS5,
+             raw_key );
+</pre></div>
+</div>
+</div>
+
+<h3 id="encriptacion-por-columna-y-por-tablespace">Encriptacion por columna y por tablespace</h3>
+
+<h4 id="columna">- Columna</h4>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="comment">/* Crear columna encriptada */</span>
+
+<span class="class">CREATE</span> <span class="type">TABLE</span> cust_payment_info
+   (first_name <span class="predefined-type">VARCHAR</span>(<span class="integer">11</span>),
+    last_name <span class="predefined-type">VARCHAR</span>(<span class="integer">10</span>),
+    order_number NUMBER(<span class="integer">13</span>),
+    credit_card_number <span class="predefined-type">VARCHAR2</span>(<span class="integer">20</span>)
+            ENCRYPT NO SALT);
+
+<span class="comment">/* Retiro de la encriptacion */</span>
+
+<span class="class">ALTER</span> <span class="type">TABLE</span> cust_payment_info
+MODIFY credit_card_number DECRYPT
+
+<span class="comment">/* Cambio en el algoritmo y en SALT */</span>
+
+<span class="class">ALTER</span> <span class="type">TABLE</span> cust_payment_info
+MODIFY credit_card_number ENCRYPT
+<span class="keyword">USING</span> <span class="string"><span class="delimiter">'</span><span class="content">AES256</span><span class="delimiter">'</span></span> SALT
+</pre></div>
+</div>
+</div>
+
+<h4 id="tablespace">- Tablespace</h4>
+
+<p><img class="center" src="https://docs.oracle.com/cd/E15586_01/network.1111/e10746/img/transdata_1.gif" width="500" height="500"></p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="comment">/* Crear tablespace encriptado */</span>
+
+<span class="class">CREATE</span> TABLESPACE encrypt_ts
+DATAFILE <span class="string"><span class="delimiter">'</span><span class="content">$ORACLE_HOME/dbs/encrypt.dat</span><span class="delimiter">'</span></span> SIZE <span class="integer">100</span>M
+ENCRYPTION <span class="keyword">USING</span> <span class="string"><span class="delimiter">'</span><span class="content">3DES168</span><span class="delimiter">'</span></span>
+<span class="directive">DEFAULT</span> STORAGE (ENCRYPT);
+</pre></div>
+</div>
+</div>
+
+<h3 id="pasos-para-encriptacion-con-wallet">Pasos para encriptacion con wallet</h3>
+
+<p><img class="center" src="http://sunkupuli.files.wordpress.com/2014/04/image-5.png?w=640" width="500" height="500"></p>
+
+<ol>
+  <li>Crear una wallet con Oracle Wallet Manager</li>
+</ol>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>ENCRYPTION_WALLET_LOCATION=
+ (SOURCE=(METHOD=FILE) (METHOD_DATA=
+ (DIRECTORY=/opt/oracle/product/<span class="float">11.2</span><span class="float">.0</span>/dbhome_1)))
+</pre></div>
+</div>
+</div>
+
+<ol>
+  <li>Abrir el wallet</li>
+</ol>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="class">ALTER</span> SYSTEM <span class="class">SET</span> ENCRYPTION WALLET OPEN IDENTIFIED <span class="keyword">BY</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">password</span><span class="delimiter">&quot;</span></span>;
+</pre></div>
+</div>
+</div>
+
+<ol>
+  <li>Setear la llave maestra</li>
+</ol>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="class">ALTER</span> SYSTEM <span class="class">SET</span> ENCRYPTION <span class="type">KEY</span> IDENTIFIED <span class="keyword">BY</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">password</span><span class="delimiter">&quot;</span></span>;
+</pre></div>
+</div>
+</div>
+
+<h3 id="creacion-de-wallet-com-mkstore">Creacion de wallet com mkstore</h3>
+
+<h4 id="para-creacion-del-wallet">- Para creacion del wallet</h4>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>mkstore -wrl <span class="error">$</span>HOME/admin/orcl/wallets -<span class="class">create</span>
+</pre></div>
+</div>
+</div>
+
+<h4 id="para-anadir-credenciales-al-wallet">- Para anadir credenciales al wallet</h4>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>mkstore -wrl <span class="error">$</span>HOME/admin/orcl/wallets
+-createCredential dev hr [hr]
+</pre></div>
+</div>
+</div>
+
+<iframe class="youtube-player" type="text/html" width="640" height="385" src="https://www.youtube.com/embed/bTAn45ejjL0" allowfullscreen="" frameborder="0">
+</iframe>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Acta De Constitución De Un Proyecto]]></title>
@@ -151,318 +458,6 @@ aplicar</li>
     2014 de http://www.planificacion.gob.ec/author/planificacion/
   - CFN. (2014). Corporación Financiera Nacional. Recuperado el 26 Octubre
     del 2014 de http://www.cfn.fin.ec</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Arbol De Problemas Y Objetivos]]></title>
-    <link href="http://merongivian.github.io/blog/2014/10/26/arbol-de-problemas-y-objetivos/"/>
-    <updated>2014-10-26T18:32:27-05:00</updated>
-    <id>http://merongivian.github.io/blog/2014/10/26/arbol-de-problemas-y-objetivos</id>
-    <content type="html"><![CDATA[<p>El análisis de problemas es una de las herramientas fundamentales en la
-planificación, especialmente en proyectos. El análisis del árbol de
-problemas, llamado también análisis situacional o simplemente análisis
-de problemas, ayuda a encontrar soluciones a través del mapeo del
-problema. Identifica en la vertiente superior, las causas o
-determinantes y en la vertiente inferior las consecuencias o efectos</p>
-
-<h3 id="ventajas">Ventajas</h3>
-
-<ul>
-  <li>Esta relaciona e identifica problemas reales y presentes mas que
-problemas aparentes, futuros o pasados</li>
-  <li>El problema se puede desglosar en proporciones mas manejables y
-definibles. Esto permite priorizar mas claramente en relación a que
-problema o tema es mas importante y esto a su vez, permite enfocar los
-objetivos haciendo mas efectiva su influencia</li>
-  <li>Hay un mayor entendimiento del problema y por lo general, nos
-interconecta con las causas mas contradictorias</li>
-</ul>
-
-<!--more-->
-
-<h3 id="propsito">Propósito</h3>
-
-<p>Contar con una herramienta visual multipropósito para identificar y
-priorizar problemas, objetivos o decisiones. El problema principal es
-representado como el tronco de un árbol y los factores relevantes,
-influencias y resultados se reflejan como raíces y ramas</p>
-
-<p><img class="center" src="http://sorprendeatucorazon.com/wordpress/wp-content/uploads/2012/06/ARBOL1-300x235.jpg" width="400" height="320"></p>
-
-<p><img src="https://raw.githubusercontent.com/arvida/emoji-cheat-sheet.com/master/public/graphics/emojis/pushpin.png" width="40" height="40"><em>lecciones aprendidas:</em></p>
-
-<ul>
-  <li>Un árbol de decisiones puede usarse para ilustrar los costos y
-beneficios asociados con decisiones</li>
-  <li>Un árbol de problemas ilustra las variables dependientes e
-independientes que afectan un problema en particular y es muy útil
-para entender las causas subyacentes de problemas complejos</li>
-  <li>Un árbol de objetivos puede ser usado para discernir necesidades
-prioritarias. Los arboles de problemas y objetivos</li>
-</ul>
-
-<p>&lt;/br&gt;
-&lt;/br&gt;
-#### <strong>Bibliografía</strong>
-  - Canales F.(2005). El árbol de problemas. Recuperado el 25/10/2014 de
-    http://www.sswm.info/sites/default/files/reference_attachments/SECRETARIA%20TECNICA%20DE%20PLANIFICACION%20El%20arbol%20De%20Problemas-SPANISH.pdf
-  - Strategic Planning for Local Government. Gerald L. Gordon.
-    International City/County Management Association. Julio 2005..</p>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Gestión De Proyectos]]></title>
-    <link href="http://merongivian.github.io/blog/2014/10/26/gestion-de-proyectos/"/>
-    <updated>2014-10-26T14:17:07-05:00</updated>
-    <id>http://merongivian.github.io/blog/2014/10/26/gestion-de-proyectos</id>
-    <content type="html"><![CDATA[<h3 id="introduccin">Introducción</h3>
-
-<p>La <strong>gestión de proyectos</strong> también conocida como gerencia o administración
-de proyectos es la disciplina que guía e integra los procesos de
-<strong>planificar, captar, dinamizar, organizar</strong> talentos y administrar
-recursos, con el fin de culminar todo el <strong>trabajo requerido</strong> para
-<strong>desarrollar un proyecto</strong> y cumplir con el alcance, dentro de límites de
-tiempo, y costo definidos: sin estrés y con buen clima interpersonal.
-Todo lo cual requiere liderar los talentos, evaluar y regular
-continuamente las acciones necesarias y suficientes.</p>
-
-<h3 id="qu-es-un-proyecto">Qué es un Proyecto?</h3>
-<p>Las organización desarrollan trabajos. Generalmente los trabajos
-envuelve operaciones y/o proyectos. Estas operaciones y proyectos
-comparten ciertas características:
-- Son desarrollados por personas
-- Están restringidos por recursos limitados
-- Son planificados, ejecutados y controlados
-La diferencia entre las operación y los proyectos es que en las primeras
-los trabajos son repetitivos y continuos mientras que en los segundos,
-el trabajo es temporal y único. Se entiende por proyecto a <strong>un esfuerzo
-temporal para crear un único producto o servicio</strong></p>
-
-<!--more-->
-
-<p><img class="center" src="http://project.eprowin.com/images/esquema.jpg"></p>
-
-<h3 id="qu-es-un-portafolio-">Qué es un Portafolio ?</h3>
-<p>Un portafolio es un <strong>conjunto de proyectos, programas y/o operaciones</strong> que
-tienen un objetivo/tema en común</p>
-
-<h3 id="qu-es-un-programa-">Qué es un Programa ?</h3>
-<p>Un programa es un <strong>conjunto de proyectos</strong> relacionados</p>
-
-<h3 id="qu-es-la-direccin-">Qué es la Dirección ?</h3>
-<p>Es la <strong>orientación</strong> dada a un proyecto, programa, portafolio,
-hacia un fin determinado</p>
-
-<p>&lt;/br&gt;
-  <img src="https://raw.githubusercontent.com/arvida/emoji-cheat-sheet.com/master/public/graphics/emojis/pushpin.png" width="40" height="40"><em>Tips:</em></p>
-
-<ul>
-  <li>Una vez que un proyecto se acaba y se convierte en un proceso, debe pasar
-a formar parte del portafolio de proyectos de la empresa</li>
-</ul>
-
-<h3 id="estructura-para-la-gestin-de-proyectos">Estructura para la Gestión de Proyectos</h3>
-
-<ul>
-  <li>
-    <p><strong>Fases y Ciclo de Vida</strong></p>
-
-    <p>Como los proyectos son iniciativas únicas, envuelven un cierto grado de
-incertidumbre. Las organizaciones que realizan proyectos generalmente
-los dividen en fases para proveer un mejor control administrativo y
-mejores accesos a las diferentes operaciones que se realizan en los
-proyectos.</p>
-
-    <p>Cada fase de un proyecto esta marcada por la finalización de uno o
-algunos entregables. Un entregable es un trabajo tangible y verificable
-como un estudio realizado, un diseño detallado o un prototipo. Los
-entregables son parte de una secuencia lógica general diseñada para
-garantizar la definición apropiada del producto del proyecto</p>
-  </li>
-  <li>
-    <p><strong>Tipos de Procesos Existentes</strong></p>
-
-    <p>El PMBOK describe la gestión de proyectos en términos de sus procesos
-componentes y de sus interacciones con la finalidad de enfatizar la
-importancia de la integración.
-Se entiende como proceso a una serie de acciones que dan un resultado.
-Los procesos de un proyecto son desarrollados por personas y
-generalmente caen en una de las siguientes categorías:
-  + <strong><em>Procesos de gestión de proyectos</em></strong>, que están enfocados a describir y
-    organizar el trabajo de un proyecto
-  + <strong><em>Procesos orientados a productos</em></strong>, enfocados en especificar y crear el
-    producto del proyecto</p>
-  </li>
-  <li>
-    <p><strong>Procesos de Gestión de Proyectos</strong></p>
-
-    <p>Los procesos de gestión de proyectos y los orientados a productos
-interactúan entre si a lo largo del proyecto para lograr los objetivos
-planteados</p>
-
-    <p><img class="center" src="http://blog.iedge.eu/wp-content/uploads/2011/09/IEDGE-SITI-19.jpg" width="480" height="180"></p>
-
-    <ul>
-      <li>
-        <p><strong><em>Iniciación</em></strong></p>
-
-        <p>Se reconoce que un proyecto o una fase debe comenzar</p>
-      </li>
-      <li>
-        <p><strong><em>Planificación</em></strong></p>
-
-        <p>Se mantiene un esquema trabajable para cumplir las necesidades del
-negocio sobre las cuales el proyecto debe tratar</p>
-      </li>
-      <li>
-        <p><strong><em>Ejecución</em></strong></p>
-
-        <p>Se coordinan personas y otros recursos para llevar a cabo el plan</p>
-      </li>
-      <li>
-        <p><strong><em>Control</em></strong></p>
-
-        <p>Se asegura que los objetivos del proyecto están siendo satisfechos
-mediante el monitoreo y medición progresiva y tomando acciones cuando
-sea necesario</p>
-      </li>
-      <li>
-        <p><strong><em>Cierre</em></strong></p>
-
-        <p>Se formaliza la aceptación del proyecto o de la fase siendo llevada a
-una finalización ordenada</p>
-
-        <p><img src="https://raw.githubusercontent.com/arvida/emoji-cheat-sheet.com/master/public/graphics/emojis/pushpin.png" width="40" height="40"><em>Tips:</em>
-* Se debe prestar mayor atención a las etapas de ejecución y
-  control, son las importantes y en las que se realiza una mayor
-  inversión de tiempo/dinero</p>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<p>&lt;/br&gt;
-&lt;/br&gt;
-#### <strong>Bibliografía</strong>
-  - Castillo J.(2012). resumen PMBOK. Recuperado el 25/10/2014 de
-    http://www.cc.uah.es/jlcastillo/PP/media/PMBOK-RESUMEN.pdf
-  - Gestión de Proyectos. Recuperado el 25/10/2014 de
-    http://es.wikibooks.org/wiki/Gesti%C3%B3n_de_proyectos#Partes_interesadas</p>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Oracle Audit Vault]]></title>
-    <link href="http://merongivian.github.io/blog/2014/10/23/certificacion-de-bases-de-datos-clase-number-4/"/>
-    <updated>2014-10-23T05:56:02-05:00</updated>
-    <id>http://merongivian.github.io/blog/2014/10/23/certificacion-de-bases-de-datos-clase-number-4</id>
-    <content type="html"><![CDATA[<h3 id="oracle-audit-vault">Oracle Audit Vault</h3>
-
-<p><img class="right" src="/images/posts/audit-vault-principal.png"></p>
-
-<ul>
-  <li>Recopila y consolida los datos de auditorías de manera transparente, brindando valiosos conocimientos respecto de quién hizo qué a cuáles datos y cuándo lo hizo</li>
-  <li>Con los informes de Audit Vault, las notificaciones de alertas, y la administración depolíticas de auditoría centralizada, los
-riesgos de amenazas internas y el costo de cumplimiento son altamente
-reducidos.</li>
-  <li>Aprovecha la seguridad de la base de datos líder del sector de Oracle y
-la tecnología de data warehousing para administrar, analizar, almacenar, y archivar grandes
-volúmenes de datos de auditoría.</li>
-</ul>
-
-<!--more-->
-
-<h3 id="caracteristicas">Caracteristicas</h3>
-
-<ul>
-  <li>Recopilación y Consolidación de Datos de Auditoria de manera
-transparente</li>
-  <li>
-    <p>Informe Simplificado de cumplimiento</p>
-
-    <p><img src="/images/posts/audit-vault-informe.png"></p>
-  </li>
-  <li>
-    <p>Detección Anticipada de Amenazas con Alertas</p>
-
-    <p><img src="/images/posts/audit-vault-alerta.png"></p>
-  </li>
-  <li>Seguridad y Escalabilidad</li>
-  <li>Reducción los costos de IT con las políticas de Oracle Audit Vault</li>
-</ul>
-
-<h3 id="pasos-para-la-implementacin-de-audit-volt">Pasos para la implementación de Audit Volt</h3>
-
-<p>1.- Subir base de datos oracle vault
-2.- Creat usuario en base remota</p>
-
-<div><div class="CodeRay">
-  <div class="code"><pre><span class="class">create</span> user avagusr01 identified <span class="keyword">by</span> oracle_4U
-</pre></div>
-</div>
-</div>
-
-<p>3.- Ejecutar permisos con scriptk</p>
-
-<div><div class="CodeRay">
-  <div class="code"><pre><span class="error">@</span>/home/oracle/oracle/product/<span class="float">10.3</span><span class="float">.0</span>/av_agent_1/av/scripts/streams/source/zarsspriv.sql
-</pre></div>
-</div>
-</div>
-
-<p>4.- Setear Oracle Home</p>
-
-<div><div class="CodeRay">
-  <div class="code"><pre>export ORACLE_HOME=/home/oracle/oracle/product/<span class="float">10.3</span><span class="float">.0</span>/agent
-</pre></div>
-</div>
-</div>
-
-<p>5.- Arrancar el agent en el directorio $ORACLE_HOME/bin</p>
-
-<div><div class="CodeRay">
-  <div class="code"><pre>./avctl start_agent
-</pre></div>
-</div>
-</div>
-
-<p>6.- Cambiamos el sourcename</p>
-
-<div><div class="CodeRay">
-  <div class="code"><pre>./avorcldb setup -srcname aci040_db
-</pre></div>
-</div>
-</div>
-
-<p>7.- Creamos el collector en la base de datos audit volt</p>
-
-<div><div class="CodeRay">
-  <div class="code"><pre>avorcldb add_collector -srcname aci040_db -agentname agaci040lab -colltype DBAUD -collname colaci040lab
-</pre></div>
-</div>
-</div>
-
-<iframe class="youtube-player" type="text/html" width="640" height="385" src="https://www.youtube.com/embed/4ZE8-ds4-2w" allowfullscreen="" frameborder="0">
-</iframe>
-
-<h3 id="conclucin">Conclución</h3>
-
-<ul>
-  <li>Brinda una avanzada solución de auditoría que a ayuda
-a simplificar los informes de cumplimiento, detectar las amenazas con
-alertas anticipadas, reducir el costo de cumplimiento y garantizar los
-datos de Auditoría</li>
-  <li>Automatiza el proceso de análisis y consolidación, convirtiendo los
-datos de auditoría en un recurso de seguridad clave para ayudar a
-superar los desafios de cumplimiento y seguridad del mismo</li>
-  <li>Aprovecha las capacidades comprobadas de particionamiento y
-depósito de datos para alcanzar escalibilidad y almacenamiento
-masivo</li>
-</ul>
 ]]></content>
   </entry>
   
