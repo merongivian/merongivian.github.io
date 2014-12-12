@@ -149,7 +149,7 @@
 
 <div class="entry-content clearfix" itemprop="articleBody description"><p><img class="center" src="http://www.sysage.com.tw/Guest/FCKUploadFile/ADS.JPG" /></p>
 
-<h3 id="introduccion">Introduccion</h3>
+<h3 id="introduccin">Introducción</h3>
 
 <p>La encriptación es un componente clave del principio defensa-en-profundidad y es
 importante para proteger los datos en tránsito y en reposo. Oracle primero introdujo
@@ -173,7 +173,7 @@ eliminando por completo la necesidad de cambios en las aplicaciones, la
 administración programática de claves, los triggers de base de datos y las
 visualizaciones.</p>
 
-<h3 id="caracteristicas">Caracteristicas</h3>
+<h3 id="caractersticas">Características</h3>
 
 <ul>
   <li>Proporciona cifrado de datos transparente y redacción dentro de la base de datos Oracle.</li>
@@ -182,9 +182,9 @@ visualizaciones.</p>
   <li>Se integra con las tecnologías de Oracle, incluyendo Oracle Exadata, Oracle Advanced Compression, Oracle GoldenGate, etc.</li>
 </ul>
 
-<h3 id="encriptacion-de-la-aplicacion">Encriptacion de la aplicacion</h3>
+<h3 id="encriptacin-de-la-aplicacin">Encriptación de la aplicación</h3>
 
-<p>Cada usuatio tiene una palabra secreta para desencriptar la informacion que le pertence, en la base, el rato que se registra lo hace de manera encriptada</p>
+<p>Cada usuario tiene una palabra secreta para desencriptar la información que le pertenece, en la base, el rato que se registra lo hace de manera encriptada</p>
 
 <p>Oracle ofrece dos paquetes para esto:</p>
 
@@ -221,9 +221,9 @@ Oracle durante el backup a disco.</p>
   </li>
 </ul>
 
-<h3 id="generacion-llaves-de-encriptacion">Generacion llaves de encriptacion</h3>
+<h3 id="generacin-llaves-de-encriptacion">Generación llaves de encriptacion</h3>
 
-<h4 id="generacion-de-llave">- Generacion de llave</h4>
+<h4 id="generacin-de-llave">- Generación de llave</h4>
 
 <div><div class="CodeRay">
   <div class="code"><pre>raw_key := dbms_crypto.randombytes (
@@ -232,7 +232,7 @@ Oracle durante el backup a disco.</p>
 </div>
 </div>
 
-<h4 id="encriptacion-de-datos">- Encriptacion de datos</h4>
+<h4 id="encriptacin-de-datos">- Encriptación de datos</h4>
 
 <div><div class="CodeRay">
   <div class="code"><pre>encrypted_raw := dbms_crypto.encrypt (
@@ -254,7 +254,7 @@ Oracle durante el backup a disco.</p>
 </div>
 </div>
 
-<h3 id="encriptacion-por-columna-y-por-tablespace">Encriptacion por columna y por tablespace</h3>
+<h3 id="encriptacin-por-columna-y-por-tablespace">Encriptación por columna y por tablespace</h3>
 
 <h4 id="columna">- Columna</h4>
 
@@ -268,7 +268,7 @@ Oracle durante el backup a disco.</p>
     credit_card_number <span class="predefined-type">VARCHAR2</span>(<span class="integer">20</span>)
             ENCRYPT NO SALT);
 
-<span class="comment">/* Retiro de la encriptacion */</span>
+<span class="comment">/* Retiro de la encriptación */</span>
 
 <span class="class">ALTER</span> <span class="type">TABLE</span> cust_payment_info
 MODIFY credit_card_number DECRYPT
@@ -297,7 +297,7 @@ ENCRYPTION <span class="keyword">USING</span> <span class="string"><span class="
 </div>
 </div>
 
-<h3 id="pasos-para-encriptacion-con-wallet">Pasos para encriptacion con wallet</h3>
+<h3 id="pasos-para-encriptacin-con-wallet">Pasos para encriptación con wallet</h3>
 
 <p><img class="center" src="http://sunkupuli.files.wordpress.com/2014/04/image-5.png?w=640" width="500" height="500" /></p>
 
@@ -333,9 +333,9 @@ ENCRYPTION <span class="keyword">USING</span> <span class="string"><span class="
 </div>
 </div>
 
-<h3 id="creacion-de-wallet-com-mkstore">Creacion de wallet com mkstore</h3>
+<h3 id="creacin-de-wallet-com-mkstore">Creación de wallet com mkstore</h3>
 
-<h4 id="para-creacion-del-wallet">- Para creacion del wallet</h4>
+<h4 id="para-creacin-del-wallet">- Para creación del wallet</h4>
 
 <div><div class="CodeRay">
   <div class="code"><pre>mkstore -wrl <span class="error">$</span>HOME/admin/orcl/wallets -<span class="class">create</span>
@@ -343,7 +343,7 @@ ENCRYPTION <span class="keyword">USING</span> <span class="string"><span class="
 </div>
 </div>
 
-<h4 id="para-anadir-credenciales-al-wallet">- Para anadir credenciales al wallet</h4>
+<h4 id="para-aadir-credenciales-al-wallet">- Para añadir credenciales al wallet</h4>
 
 <div><div class="CodeRay">
   <div class="code"><pre>mkstore -wrl <span class="error">$</span>HOME/admin/orcl/wallets
@@ -352,7 +352,10 @@ ENCRYPTION <span class="keyword">USING</span> <span class="string"><span class="
 </div>
 </div>
 
-<iframe class="youtube-player" type="text/html" width="640" height="385" src="https://www.youtube.com/embed/bTAn45ejjL0" allowfullscreen="" frameborder="0">
+<h3 id="video-prctica">Video práctica</h3>
+
+<iframe class="youtube-player" type="text/html" width="640" height="385" src="https://www.youtube.com/embed/I2HTtoQSOok" allowfullscreen="" frameborder="0">
+
 </iframe>
 </div>
 
@@ -405,7 +408,7 @@ ENCRYPTION <span class="keyword">USING</span> <span class="string"><span class="
         
           <ul class="meta text-muted pager">
             
-            <li class="previous"><a href="/blog/2014/11/18/defining-methods-dynamically-metaprogramming/" title="Previous Post: Defining methods dynamically (metaprogramming)">&laquo; Defining methods dynamically (metaprogramming)</a></li>
+            <li class="previous"><a href="/blog/2014/10/23/certificacion-de-bases-de-datos-clase-number-4/" title="Previous Post: Oracle Audit Vault">&laquo; Oracle Audit Vault</a></li>
             
             
             <li class="next"><a href="/blog/2014/12/11/oracle-database-vault-dv/" title="Next Post: Oracle Database Vault (DV)">Oracle Database Vault (DV) &raquo;</a></li>
@@ -436,8 +439,6 @@ ENCRYPTION <span class="keyword">USING</span> <span class="string"><span class="
   </div>
   
   <div id="recent_posts" class="list-group">
-    
-    <a class="list-group-item " href="/blog/2014/11/18/defining-methods-dynamically-metaprogramming/">Defining Methods Dynamically (Metaprogramming)</a>
     
   </div>
 </section>

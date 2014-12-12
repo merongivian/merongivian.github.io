@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Aci040 | Merongivian]]></title>
   <link href="http://merongivian.github.io/blog/categories/aci040/atom.xml" rel="self"/>
   <link href="http://merongivian.github.io/"/>
-  <updated>2014-12-11T17:55:56-05:00</updated>
+  <updated>2014-12-12T17:51:03-05:00</updated>
   <id>http://merongivian.github.io/</id>
   <author>
     <name><![CDATA[Jose Añasco]]></name>
@@ -20,7 +20,7 @@
     <id>http://merongivian.github.io/blog/2014/12/11/enmascaramiento-de-datos-data-masking</id>
     <content type="html"><![CDATA[<p><img class="center" src="http://www.toadworld.com/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-03/SJH_2D00_060414_2D00_1.png"></p>
 
-<h3 id="introduccion">Introduccion</h3>
+<h3 id="introduccin">Introducción</h3>
 
 <p>Se calcula que más del 50% de los datos almacenados en bases de datos podría clasificarse como
 confidencial. Por otro lado, el riesgo asociado a las filtraciones de datos no hace más que aumentar
@@ -43,7 +43,7 @@ a este software, los equipos de IT pueden contar con reglas de enmascaramiento s
 flexibles a la vez, que les permiten aplicar distintas clases de máscaras a diversos tipos de datos
 empleados en entornos de no producción (de pruebas, formación, etc.).</p>
 
-<p>Informatica Data Masking resulta idónea para reducir el riesgo de filtración de datos; mejorar la calidad
+<p>Oracle Data Masking resulta idónea para reducir el riesgo de filtración de datos; mejorar la calidad
 de las actividades de desarrollo, pruebas y formación; y respaldar el cumplimiento de normativas y
 disposiciones internas, industriales y gubernamentales relacionadas con la privacidad de los datos.</p>
 
@@ -58,6 +58,7 @@ disposiciones internas, industriales y gubernamentales relacionadas con la priva
 <p>Hay que tener en cuenta también que en cuanto al desarrollo de sistemas siempre se necesita un acceso a producción para casos puntuales que requiere conectarse a los datos reales, eso no se puede abolir ya que incidencias siempre existen y se necesitan reparar datos reales de producción. No obstante, lo que se deberá hacer en estos casos es que las personas que están gobernando los datos puedan verificar la información de producción a la que están accediendo y que no deberían ver para evitar de esta manera filtraciones de información.</p>
 
 <iframe class="youtube-player" type="text/html" width="640" height="385" src="https://www.youtube.com/embed/dcldnaukpcI" allowfullscreen="" frameborder="0">
+
 </iframe>
 ]]></content>
   </entry>
@@ -69,13 +70,13 @@ disposiciones internas, industriales y gubernamentales relacionadas con la priva
     <id>http://merongivian.github.io/blog/2014/12/11/oracle-database-vault-dv</id>
     <content type="html"><![CDATA[<p><img class="center" src="http://tinyurl.com/pgcue32"></p>
 
-<h3 id="introduccion">Introduccion</h3>
+<h3 id="introduccin">Introducción</h3>
 
 <p>Oracle Database Vault es la solución principal de la seguridad de la base de datos de la industria para tratar conformidad y preocupaciones reguladoras por la amenaza del iniciado. Las ayudas Oracle Database Vault tratan los requisitos del control de acceso asociados a regulaciones tales como PCI y Sarbanes-Oxley. Oracle Database Vault está disponible para el lanzamiento 2 de la base de datos 9i de Oracle, el lanzamiento 2 de la base de datos 10g de Oracle y el lanzamiento 1 de la base de datos 11g de Oracle. Oracle Database Vault se ha validado con los usos de Oracle PeopleSoft. La validación con usos adicionales, incluyendo la habitación del de Oracle E-Business Suite y Siebel, está actualmente en curso. Usando Oracle Database Vault, los usuarios altamente privilegiados de la base de datos pueden ser prevenidos de datos del uso que tienen acceso. Además, el acceso a los usos, a las bases de datos y a los datos puede estar rigurosamente controlado basado en las variables tales como la época del día, del IP address o del subnet. Resumiendo, Oracle Database Vault proporciona los controles flexibles, transparentes y altamente adaptables de la seguridad requeridos en economía global de hoy.</p>
 
 <!--more-->
 
-<h3 id="descripcion-general">Descripcion General</h3>
+<h3 id="descripcin-general">Descripción General</h3>
 
 <ul>
   <li>Implementa controles preventivos en accesos de usuarios privilegiados a los datos de la aplicación</li>
@@ -102,6 +103,12 @@ disposiciones internas, industriales y gubernamentales relacionadas con la priva
 
 <p><img class="center" src="https://wilsonaraujoudla.files.wordpress.com/2014/12/realm.png?w=630" width="400" height="400">
 <img class="center" src="http://image.slidesharecdn.com/dbsec-asodbv-web-cast-v4-130404042554-phpapp02/95/partner-webcast-oracle-database-security-insideout-part-1-advanced-security-and-database-vault-40-638.jpg?cb=1365067774"></p>
+
+<h3 id="video-prctica">Video práctica</h3>
+
+<iframe class="youtube-player" type="text/html" width="640" height="385" src="https://www.youtube.com/embed/VHGFbuiqUv8" allowfullscreen="" frameborder="0">
+
+</iframe>
 ]]></content>
   </entry>
   
@@ -112,7 +119,7 @@ disposiciones internas, industriales y gubernamentales relacionadas con la priva
     <id>http://merongivian.github.io/blog/2014/12/11/oracle-advanced-security-aso</id>
     <content type="html"><![CDATA[<p><img class="center" src="http://www.sysage.com.tw/Guest/FCKUploadFile/ADS.JPG"></p>
 
-<h3 id="introduccion">Introduccion</h3>
+<h3 id="introduccin">Introducción</h3>
 
 <p>La encriptación es un componente clave del principio defensa-en-profundidad y es
 importante para proteger los datos en tránsito y en reposo. Oracle primero introdujo
@@ -136,7 +143,7 @@ eliminando por completo la necesidad de cambios en las aplicaciones, la
 administración programática de claves, los triggers de base de datos y las
 visualizaciones.</p>
 
-<h3 id="caracteristicas">Caracteristicas</h3>
+<h3 id="caractersticas">Características</h3>
 
 <ul>
   <li>Proporciona cifrado de datos transparente y redacción dentro de la base de datos Oracle.</li>
@@ -145,9 +152,9 @@ visualizaciones.</p>
   <li>Se integra con las tecnologías de Oracle, incluyendo Oracle Exadata, Oracle Advanced Compression, Oracle GoldenGate, etc.</li>
 </ul>
 
-<h3 id="encriptacion-de-la-aplicacion">Encriptacion de la aplicacion</h3>
+<h3 id="encriptacin-de-la-aplicacin">Encriptación de la aplicación</h3>
 
-<p>Cada usuatio tiene una palabra secreta para desencriptar la informacion que le pertence, en la base, el rato que se registra lo hace de manera encriptada</p>
+<p>Cada usuario tiene una palabra secreta para desencriptar la información que le pertenece, en la base, el rato que se registra lo hace de manera encriptada</p>
 
 <p>Oracle ofrece dos paquetes para esto:</p>
 
@@ -184,9 +191,9 @@ Oracle durante el backup a disco.</p>
   </li>
 </ul>
 
-<h3 id="generacion-llaves-de-encriptacion">Generacion llaves de encriptacion</h3>
+<h3 id="generacin-llaves-de-encriptacion">Generación llaves de encriptacion</h3>
 
-<h4 id="generacion-de-llave">- Generacion de llave</h4>
+<h4 id="generacin-de-llave">- Generación de llave</h4>
 
 <div><div class="CodeRay">
   <div class="code"><pre>raw_key := dbms_crypto.randombytes (
@@ -195,7 +202,7 @@ Oracle durante el backup a disco.</p>
 </div>
 </div>
 
-<h4 id="encriptacion-de-datos">- Encriptacion de datos</h4>
+<h4 id="encriptacin-de-datos">- Encriptación de datos</h4>
 
 <div><div class="CodeRay">
   <div class="code"><pre>encrypted_raw := dbms_crypto.encrypt (
@@ -217,7 +224,7 @@ Oracle durante el backup a disco.</p>
 </div>
 </div>
 
-<h3 id="encriptacion-por-columna-y-por-tablespace">Encriptacion por columna y por tablespace</h3>
+<h3 id="encriptacin-por-columna-y-por-tablespace">Encriptación por columna y por tablespace</h3>
 
 <h4 id="columna">- Columna</h4>
 
@@ -231,7 +238,7 @@ Oracle durante el backup a disco.</p>
     credit_card_number <span class="predefined-type">VARCHAR2</span>(<span class="integer">20</span>)
             ENCRYPT NO SALT);
 
-<span class="comment">/* Retiro de la encriptacion */</span>
+<span class="comment">/* Retiro de la encriptación */</span>
 
 <span class="class">ALTER</span> <span class="type">TABLE</span> cust_payment_info
 MODIFY credit_card_number DECRYPT
@@ -260,7 +267,7 @@ ENCRYPTION <span class="keyword">USING</span> <span class="string"><span class="
 </div>
 </div>
 
-<h3 id="pasos-para-encriptacion-con-wallet">Pasos para encriptacion con wallet</h3>
+<h3 id="pasos-para-encriptacin-con-wallet">Pasos para encriptación con wallet</h3>
 
 <p><img class="center" src="http://sunkupuli.files.wordpress.com/2014/04/image-5.png?w=640" width="500" height="500"></p>
 
@@ -296,9 +303,9 @@ ENCRYPTION <span class="keyword">USING</span> <span class="string"><span class="
 </div>
 </div>
 
-<h3 id="creacion-de-wallet-com-mkstore">Creacion de wallet com mkstore</h3>
+<h3 id="creacin-de-wallet-com-mkstore">Creación de wallet com mkstore</h3>
 
-<h4 id="para-creacion-del-wallet">- Para creacion del wallet</h4>
+<h4 id="para-creacin-del-wallet">- Para creación del wallet</h4>
 
 <div><div class="CodeRay">
   <div class="code"><pre>mkstore -wrl <span class="error">$</span>HOME/admin/orcl/wallets -<span class="class">create</span>
@@ -306,7 +313,7 @@ ENCRYPTION <span class="keyword">USING</span> <span class="string"><span class="
 </div>
 </div>
 
-<h4 id="para-anadir-credenciales-al-wallet">- Para anadir credenciales al wallet</h4>
+<h4 id="para-aadir-credenciales-al-wallet">- Para añadir credenciales al wallet</h4>
 
 <div><div class="CodeRay">
   <div class="code"><pre>mkstore -wrl <span class="error">$</span>HOME/admin/orcl/wallets
@@ -315,7 +322,10 @@ ENCRYPTION <span class="keyword">USING</span> <span class="string"><span class="
 </div>
 </div>
 
-<iframe class="youtube-player" type="text/html" width="640" height="385" src="https://www.youtube.com/embed/bTAn45ejjL0" allowfullscreen="" frameborder="0">
+<h3 id="video-prctica">Video práctica</h3>
+
+<iframe class="youtube-player" type="text/html" width="640" height="385" src="https://www.youtube.com/embed/I2HTtoQSOok" allowfullscreen="" frameborder="0">
+
 </iframe>
 ]]></content>
   </entry>
