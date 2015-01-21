@@ -182,7 +182,7 @@ centralizada de definiciones de políticas</li>
 
 <p>1.- Crear la politica facility</p>
 
-<div><div class="CodeRay">
+<div class="highlighter-coderay"><div class="CodeRay">
   <div class="code"><pre><span class="class">BEGIN</span>
   SA_SYSDBA.CREATE_POLICY(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">FACLAB</span><span class="delimiter">'</span></span>,
   <span class="string"><span class="delimiter">'</span><span class="content">READ_CONTROL,CHECK_CONTROL,LABEL_DEFAULT,HIDE</span><span class="delimiter">'</span></span>);
@@ -193,7 +193,7 @@ centralizada de definiciones de políticas</li>
 
 <p>2.- Crear los niveles para la politica</p>
 
-<div><div class="CodeRay">
+<div class="highlighter-coderay"><div class="CodeRay">
   <div class="code"><pre><span class="class">BEGIN</span>
   SA_COMPONENTS.CREATE_LEVEL(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">1000</span>,<span class="string"><span class="delimiter">'</span><span class="content">P</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">PUBLIC</span><span class="delimiter">'</span></span>);
   SA_COMPONENTS.CREATE_LEVEL(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">2000</span>,<span class="string"><span class="delimiter">'</span><span class="content">S</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">SENSITIVE</span><span class="delimiter">'</span></span>);
@@ -205,7 +205,7 @@ centralizada de definiciones de políticas</li>
 
 <p>3.- Crear los grupos para la politica</p>
 
-<div><div class="CodeRay">
+<div class="highlighter-coderay"><div class="CodeRay">
   <div class="code"><pre><span class="class">BEGIN</span>
   SA_COMPONENTS.CREATE_GROUP(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">1000</span>,<span class="string"><span class="delimiter">'</span><span class="content">Global</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">Global</span><span class="delimiter">'</span></span>);
   SA_COMPONENTS.CREATE_GROUP(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">101</span>,<span class="string"><span class="delimiter">'</span><span class="content">US</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">United States</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">GLOBAL</span><span class="delimiter">'</span></span>);
@@ -218,7 +218,7 @@ centralizada de definiciones de políticas</li>
 
 <p>4.- Crear las etiquetas, juntando los niveles y grupos</p>
 
-<div><div class="CodeRay">
+<div class="highlighter-coderay"><div class="CodeRay">
   <div class="code"><pre><span class="class">BEGIN</span>
   SA_LABEL_ADMIN.CREATE_LABEL(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">1000</span>,<span class="string"><span class="delimiter">'</span><span class="content">P</span><span class="delimiter">'</span></span>);
   SA_LABEL_ADMIN.CREATE_LABEL(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">2101</span>,<span class="string"><span class="delimiter">'</span><span class="content">S::US</span><span class="delimiter">'</span></span>);.
@@ -231,7 +231,7 @@ centralizada de definiciones de políticas</li>
 
 <p>5.- Crear etiquetas para usuarios</p>
 
-<div><div class="CodeRay">
+<div class="highlighter-coderay"><div class="CodeRay">
   <div class="code"><pre><span class="class">BEGIN</span>
   SA_USER_ADMIN.SET_USER_LABELS(<span class="string"><span class="delimiter">'</span><span class="content">PRIVACY</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">MYCO_MGR</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">C</span><span class="delimiter">'</span></span>);
   SA_USER_ADMIN.SET_USER_LABELS(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">MYCO_EMP</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">P</span><span class="delimiter">'</span></span>);
@@ -244,7 +244,7 @@ centralizada de definiciones de políticas</li>
 
 <p>6.- Actualizar la tabla locations con las nuevas etiquetas</p>
 
-<div><div class="CodeRay">
+<div class="highlighter-coderay"><div class="CodeRay">
   <div class="code"><pre><span class="class">BEGIN</span>
   <span class="class">UPDATE</span> LOCATIONS
     <span class="class">SET</span> FACLAB=CHAR_TO_LABEL(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">S::ASIA</span><span class="delimiter">'</span></span>)
@@ -413,7 +413,7 @@ centralizada de definiciones de políticas</li>
     </div>
     <footer role="contentinfo"><div class="container">
     <p class="text-muted credits">
-  Copyright &copy; 2014 - Jose Añasco<br>
+  Copyright &copy; 2015 - Jose Añasco<br>
 </p>
 
 </div>

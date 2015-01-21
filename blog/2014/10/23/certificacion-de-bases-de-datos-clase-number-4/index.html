@@ -187,7 +187,7 @@ transparente</li>
 <p>1.- Subir base de datos oracle vault
 2.- Creat usuario en base remota</p>
 
-<div><div class="CodeRay">
+<div class="highlighter-coderay"><div class="CodeRay">
   <div class="code"><pre><span class="class">create</span> user avagusr01 identified <span class="keyword">by</span> oracle_4U
 </pre></div>
 </div>
@@ -195,7 +195,7 @@ transparente</li>
 
 <p>3.- Ejecutar permisos con scriptk</p>
 
-<div><div class="CodeRay">
+<div class="highlighter-coderay"><div class="CodeRay">
   <div class="code"><pre><span class="error">@</span>/home/oracle/oracle/product/<span class="float">10.3</span><span class="float">.0</span>/av_agent_1/av/scripts/streams/source/zarsspriv.sql
 </pre></div>
 </div>
@@ -203,7 +203,7 @@ transparente</li>
 
 <p>4.- Setear Oracle Home</p>
 
-<div><div class="CodeRay">
+<div class="highlighter-coderay"><div class="CodeRay">
   <div class="code"><pre>export ORACLE_HOME=/home/oracle/oracle/product/<span class="float">10.3</span><span class="float">.0</span>/agent
 </pre></div>
 </div>
@@ -211,7 +211,7 @@ transparente</li>
 
 <p>5.- Arrancar el agent en el directorio $ORACLE_HOME/bin</p>
 
-<div><div class="CodeRay">
+<div class="highlighter-coderay"><div class="CodeRay">
   <div class="code"><pre>./avctl start_agent
 </pre></div>
 </div>
@@ -219,7 +219,7 @@ transparente</li>
 
 <p>6.- Cambiamos el sourcename</p>
 
-<div><div class="CodeRay">
+<div class="highlighter-coderay"><div class="CodeRay">
   <div class="code"><pre>./avorcldb setup -srcname aci040_db
 </pre></div>
 </div>
@@ -227,7 +227,7 @@ transparente</li>
 
 <p>7.- Creamos el collector en la base de datos audit volt</p>
 
-<div><div class="CodeRay">
+<div class="highlighter-coderay"><div class="CodeRay">
   <div class="code"><pre>avorcldb add_collector -srcname aci040_db -agentname agaci040lab -colltype DBAUD -collname colaci040lab
 </pre></div>
 </div>
@@ -304,7 +304,7 @@ masivo</li>
             <li class="previous"><a href="/blog/2014/10/22/certificacion-de-bases-de-datos-clase-number-3/" title="Previous Post: Oracle Label Security (OLS)">&laquo; Oracle Label Security (OLS)</a></li>
             
             
-            <li class="next"><a href="/blog/2014/12/11/oracle-advanced-security-aso/" title="Next Post: Oracle Advanced Security (ASO)">Oracle Advanced Security (ASO) &raquo;</a></li>
+            <li class="next"><a href="/blog/2015/01/21/oracle-advanced-security-aso/" title="Next Post: Oracle Advanced Security (ASO)">Oracle Advanced Security (ASO) &raquo;</a></li>
             
           </ul>
         
@@ -398,7 +398,7 @@ masivo</li>
     </div>
     <footer role="contentinfo"><div class="container">
     <p class="text-muted credits">
-  Copyright &copy; 2014 - Jose Añasco<br>
+  Copyright &copy; 2015 - Jose Añasco<br>
 </p>
 
 </div>

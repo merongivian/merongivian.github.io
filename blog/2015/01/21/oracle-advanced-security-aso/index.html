@@ -14,14 +14,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://merongivian.github.io/blog/2014/12/11/oracle-advanced-security-aso">
+  <link rel="canonical" href="http://merongivian.github.io/blog/2015/01/21/oracle-advanced-security-aso">
   <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="Merongivian" type="application/atom+xml">
 
   <!-- http://opengraphprotocol.org/ -->
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="http://merongivian.github.io/blog/2014/12/11/oracle-advanced-security-aso">
+  <meta property="og:url" content="http://merongivian.github.io/blog/2015/01/21/oracle-advanced-security-aso">
   <meta property="og:title" content="Oracle Advanced Security (ASO) - Merongivian">
   
 
@@ -134,7 +134,7 @@
 
 
 
-</span> <time datetime="2014-12-11T11:26:50-05:00"  itemprop="datePublished dateCreated"><time class='entry-date' datetime='2014-12-11T11:26:50-05:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>11</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>11:26 am</span></time></time>
+</span> <time datetime="2015-01-21T07:52:44-05:00"  itemprop="datePublished dateCreated"><time class='entry-date' datetime='2015-01-21T07:52:44-05:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>21</span><span class='date-suffix'>st</span>, <span class='date-year'>2015</span></span> <span class='time'>7:52 am</span></time></time>
         
       </p>
     
@@ -150,28 +150,11 @@
 <div class="entry-content clearfix" itemprop="articleBody description"><p><img class="center" src="http://www.sysage.com.tw/Guest/FCKUploadFile/ADS.JPG" /></p>
 
 <h3 id="introduccin">Introducción</h3>
-
-<p>La encriptación es un componente clave del principio defensa-en-profundidad y es
-importante para proteger los datos en tránsito y en reposo. Oracle primero introdujo
-las API para la encriptación de base de datos en Oracle8i. Actualmente, las API para
-encriptación de base de datos Oracle son utilizadas por muchos clientes para
-encriptar los datos de aplicaciones sensibles. Lograr la transparencia y utilizar una
-API de encriptación requiere la incorporación de llamadas de función dentro de la
-propia aplicación o el uso de triggers de base de datos previamente insertados.</p>
+<p>La encriptación es un componente clave del principio defensa-en-profundidad y es importante para proteger los datos en tránsito y en reposo. Oracle primero introdujo las API para la encriptación de base de datos en Oracle8i. Actualmente, las API para encriptación de base de datos Oracle son utilizadas por muchos clientes para encriptar los datos de aplicaciones sensibles. Lograr la transparencia y utilizar una API de encriptación requiere la incorporación de llamadas de función dentro de la propia aplicación o el uso de triggers de base de datos previamente insertados.</p>
 
 <!--more-->
 
-<p>También se pueden necesitar visualizaciones de las aplicaciones para decodificar los
-datos antes de que lleguen a la aplicación. Asimismo, la administración de claves
-debe manejarse de manera programática.
-Oracle Advanced Security Transparent Data Encryption (TDE), primero
-introducido en Oracle Database 10g versión 2, es la solución más avanzada del
-sector para la encriptación. TDE ofrece administración clave y transparencia
-completa de encriptación de datos de aplicaciones sensibles. El proceso de
-encriptación de base de datos es activado mediante el uso de comandos DDL,
-eliminando por completo la necesidad de cambios en las aplicaciones, la
-administración programática de claves, los triggers de base de datos y las
-visualizaciones.</p>
+<p>También se pueden necesitar visualizaciones de las aplicaciones para decodificar los datos antes de que lleguen a la aplicación. Asimismo, la administración de claves debe manejarse de manera programática. Oracle Advanced Security Transparent Data Encryption (TDE), primero introducido en Oracle Database 10g versión 2, es la solución más avanzada del sector para la encriptación. TDE ofrece administración clave y transparencia completa de encriptación de datos de aplicaciones sensibles. El proceso de encriptación de base de datos es activado mediante el uso de comandos DDL, eliminando por completo la necesidad de cambios en las aplicaciones, la administración programática de claves, los triggers de base de datos y las visualizaciones.</p>
 
 <h3 id="caractersticas">Características</h3>
 
@@ -188,19 +171,13 @@ visualizaciones.</p>
 
 <p>Oracle ofrece dos paquetes para esto:</p>
 
-<p><img class="center" src="https://wilsonaraujoudla.files.wordpress.com/2014/12/diapositiva1.gif" width="600" height="600" /></p>
+<p><img class="center" src="https://wilsonaraujoudla.files.wordpress.com/2014/12/diapositiva1.gif" width="520" height="520" /></p>
 
 <h3 id="transparent-data-encryption-tde">Transparent Data Encryption (TDE)</h3>
 
-<p><img class="center" src="http://www.oracle.com/ocom/groups/public/@otn/documents/webcontent/1964796.png" width="1000" height="600" /></p>
+<p><img class="center" src="http://www.oracle.com/ocom/groups/public/@otn/documents/webcontent/1964796.png" width="500" height="100" /></p>
 
-<p>TDE encripta los datos antes de que se escriban en el disco y los decodifica antes de
-que vuelvan a la aplicación. El proceso de codificación y decodificación es realizado
-en el nivel SQL, de manera completamente transparente para las aplicaciones y los
-usuarios. Los backups subsiguientes de los archivos de base de datos en disco o
-cinta tendrán los datos de aplicaciones sensibles encriptados. En forma opcional,
-TDE puede utilizarse junto con Oracle RMAN para encriptar toda la base de datos
-Oracle durante el backup a disco.</p>
+<p>TDE encripta los datos antes de que se escriban en el disco y los decodifica antes de que vuelvan a la aplicación. El proceso de codificación y decodificación es realizado en el nivel SQL, de manera completamente transparente para las aplicaciones y los usuarios. Los backups subsiguientes de los archivos de base de datos en disco o cinta tendrán los datos de aplicaciones sensibles encriptados. En forma opcional, TDE puede utilizarse junto con Oracle RMAN para encriptar toda la base de datos Oracle durante el backup a disco.</p>
 
 <ul>
   <li>
@@ -223,42 +200,50 @@ Oracle durante el backup a disco.</p>
 
 <h3 id="generacin-llaves-de-encriptacion">Generación llaves de encriptacion</h3>
 
-<h4 id="generacin-de-llave">- Generación de llave</h4>
+<ul>
+  <li>
+    <p>Generación de llave</p>
 
-<div><div class="CodeRay">
+    <div class="highlighter-coderay"><div class="CodeRay">
   <div class="code"><pre>raw_key := dbms_crypto.randombytes (
              number_bytes =&gt; <span class="integer">24</span> );
 </pre></div>
 </div>
-</div>
+    </div>
+  </li>
+  <li>
+    <p>Encriptación de datos</p>
 
-<h4 id="encriptacin-de-datos">- Encriptación de datos</h4>
-
-<div><div class="CodeRay">
+    <div class="highlighter-coderay"><div class="CodeRay">
   <div class="code"><pre>encrypted_raw := dbms_crypto.encrypt (
              src =&gt; raw_input,
              typ =&gt; DBMS_CRYPTO.DES3_CBC_PKCS5,
              <span class="type">KEY</span> =&gt; raw_key );
 </pre></div>
 </div>
-</div>
+    </div>
+  </li>
+  <li>
+    <p>Uso de Decrypt</p>
 
-<h3 id="uso-de-decrypt">Uso de Decrypt</h3>
-
-<div><div class="CodeRay">
+    <div class="highlighter-coderay"><div class="CodeRay">
   <div class="code"><pre>decrypted_raw := dbms_crypto.Decrypt (
              encrypted_raw,
              dbms_crypto.DES3_CBC_PKCS5,
              raw_key );
 </pre></div>
 </div>
-</div>
+    </div>
+  </li>
+</ul>
 
 <h3 id="encriptacin-por-columna-y-por-tablespace">Encriptación por columna y por tablespace</h3>
 
-<h4 id="columna">- Columna</h4>
+<ul>
+  <li>
+    <p>Columna</p>
 
-<div><div class="CodeRay">
+    <div class="highlighter-coderay"><div class="CodeRay">
   <div class="code"><pre><span class="comment">/* Crear columna encriptada */</span>
 
 <span class="class">CREATE</span> <span class="type">TABLE</span> cust_payment_info
@@ -280,13 +265,14 @@ MODIFY credit_card_number ENCRYPT
 <span class="keyword">USING</span> <span class="string"><span class="delimiter">'</span><span class="content">AES256</span><span class="delimiter">'</span></span> SALT
 </pre></div>
 </div>
-</div>
+    </div>
+  </li>
+  <li>
+    <p>Tablespace</p>
 
-<h4 id="tablespace">- Tablespace</h4>
+    <p><img class="center" src="https://docs.oracle.com/cd/E15586_01/network.1111/e10746/img/transdata_1.gif" width="500" height="500" /></p>
 
-<p><img class="center" src="https://docs.oracle.com/cd/E15586_01/network.1111/e10746/img/transdata_1.gif" width="500" height="500" /></p>
-
-<div><div class="CodeRay">
+    <div class="highlighter-coderay"><div class="CodeRay">
   <div class="code"><pre><span class="comment">/* Crear tablespace encriptado */</span>
 
 <span class="class">CREATE</span> TABLESPACE encrypt_ts
@@ -295,67 +281,73 @@ ENCRYPTION <span class="keyword">USING</span> <span class="string"><span class="
 <span class="directive">DEFAULT</span> STORAGE (ENCRYPT);
 </pre></div>
 </div>
-</div>
+    </div>
+  </li>
+</ul>
 
 <h3 id="pasos-para-encriptacin-con-wallet">Pasos para encriptación con wallet</h3>
 
-<p><img class="center" src="http://sunkupuli.files.wordpress.com/2014/04/image-5.png?w=640" width="500" height="500" /></p>
+<p><img class="center" src="http://sunkupuli.files.wordpress.com/2014/04/image-5.png?w=640" /></p>
 
-<ol>
-  <li>Crear una wallet con Oracle Wallet Manager</li>
-</ol>
+<ul>
+  <li>
+    <p>(1) Crear una wallet con Oracle Wallet Manager</p>
 
-<div><div class="CodeRay">
+    <div class="highlighter-coderay"><div class="CodeRay">
   <div class="code"><pre>ENCRYPTION_WALLET_LOCATION=
  (SOURCE=(METHOD=FILE) (METHOD_DATA=
  (DIRECTORY=/opt/oracle/product/<span class="float">11.2</span><span class="float">.0</span>/dbhome_1)))
 </pre></div>
 </div>
-</div>
+    </div>
+  </li>
+  <li>
+    <p>(2) Abrir el wallet</p>
 
-<ol>
-  <li>Abrir el wallet</li>
-</ol>
-
-<div><div class="CodeRay">
+    <div class="highlighter-coderay"><div class="CodeRay">
   <div class="code"><pre><span class="class">ALTER</span> SYSTEM <span class="class">SET</span> ENCRYPTION WALLET OPEN IDENTIFIED <span class="keyword">BY</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">password</span><span class="delimiter">&quot;</span></span>;
 </pre></div>
 </div>
-</div>
+    </div>
+  </li>
+  <li>
+    <p>(3) Setear la llave maestra</p>
 
-<ol>
-  <li>Setear la llave maestra</li>
-</ol>
-
-<div><div class="CodeRay">
-  <div class="code"><pre><span class="class">ALTER</span> SYSTEM <span class="class">SET</span> ENCRYPTION <span class="type">KEY</span> IDENTIFIED <span class="keyword">BY</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">password</span><span class="delimiter">&quot;</span></span>;
+    <div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="class">ALTER</span> SYSTEM <span class="class">SET</span> ENCRYPTION WALLET OPEN IDENTIFIED <span class="keyword">BY</span> <span class="string"><span class="delimiter">&quot;</span><span class="content">password</span><span class="delimiter">&quot;</span></span>;
 </pre></div>
 </div>
-</div>
+    </div>
+  </li>
+</ul>
 
 <h3 id="creacin-de-wallet-com-mkstore">Creación de wallet com mkstore</h3>
 
-<h4 id="para-creacin-del-wallet">- Para creación del wallet</h4>
+<ul>
+  <li>
+    <p>Para creación del wallet</p>
 
-<div><div class="CodeRay">
+    <div class="highlighter-coderay"><div class="CodeRay">
   <div class="code"><pre>mkstore -wrl <span class="error">$</span>HOME/admin/orcl/wallets -<span class="class">create</span>
 </pre></div>
 </div>
-</div>
+    </div>
+  </li>
+  <li>
+    <p>Para añadir credenciales al wallet</p>
 
-<h4 id="para-aadir-credenciales-al-wallet">- Para añadir credenciales al wallet</h4>
-
-<div><div class="CodeRay">
+    <div class="highlighter-coderay"><div class="CodeRay">
   <div class="code"><pre>mkstore -wrl <span class="error">$</span>HOME/admin/orcl/wallets
 -createCredential dev hr [hr]
 </pre></div>
 </div>
-</div>
+    </div>
+  </li>
+</ul>
 
-<h3 id="video-prctica">Video práctica</h3>
+<h3 id="video">Video</h3>
 
 <iframe class="youtube-player" type="text/html" width="640" height="385" src="https://www.youtube.com/embed/I2HTtoQSOok" allowfullscreen="" frameborder="0">
-
 </iframe>
 </div>
 
@@ -381,7 +373,7 @@ ENCRYPTION <span class="keyword">USING</span> <span class="string"><span class="
 
 
 
-</span> <time datetime="2014-12-11T11:26:50-05:00"  itemprop="datePublished dateCreated"><time class='entry-date' datetime='2014-12-11T11:26:50-05:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>11</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>11:26 am</span></time></time>
+</span> <time datetime="2015-01-21T07:52:44-05:00"  itemprop="datePublished dateCreated"><time class='entry-date' datetime='2015-01-21T07:52:44-05:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>21</span><span class='date-suffix'>st</span>, <span class='date-year'>2015</span></span> <span class='time'>7:52 am</span></time></time>
           
 
 <span class="glyphicon glyphicon-tags"></span>&nbsp;
@@ -396,7 +388,7 @@ ENCRYPTION <span class="keyword">USING</span> <span class="string"><span class="
         
           <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://merongivian.github.io/blog/2014/12/11/oracle-advanced-security-aso/" data-via="merongivian" data-counturl="http://merongivian.github.io/blog/2014/12/11/oracle-advanced-security-aso/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://merongivian.github.io/blog/2015/01/21/oracle-advanced-security-aso/" data-via="merongivian" data-counturl="http://merongivian.github.io/blog/2015/01/21/oracle-advanced-security-aso/" >Tweet</a>
   
   
   
@@ -411,7 +403,7 @@ ENCRYPTION <span class="keyword">USING</span> <span class="string"><span class="
             <li class="previous"><a href="/blog/2014/10/23/certificacion-de-bases-de-datos-clase-number-4/" title="Previous Post: Oracle Audit Vault">&laquo; Oracle Audit Vault</a></li>
             
             
-            <li class="next"><a href="/blog/2014/12/11/oracle-database-vault-dv/" title="Next Post: Oracle Database Vault (DV)">Oracle Database Vault (DV) &raquo;</a></li>
+            <li class="next"><a href="/blog/2015/01/21/oracle-database-vault-dv/" title="Next Post: Oracle Database Vault (DV)">Oracle Database Vault (DV) &raquo;</a></li>
             
           </ul>
         
@@ -505,7 +497,7 @@ ENCRYPTION <span class="keyword">USING</span> <span class="string"><span class="
     </div>
     <footer role="contentinfo"><div class="container">
     <p class="text-muted credits">
-  Copyright &copy; 2014 - Jose Añasco<br>
+  Copyright &copy; 2015 - Jose Añasco<br>
 </p>
 
 </div>

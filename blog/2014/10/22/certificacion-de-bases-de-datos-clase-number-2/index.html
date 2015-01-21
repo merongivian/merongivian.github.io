@@ -167,7 +167,7 @@ cada sesion)</li>
   </li>
 </ul>
 
-<div><div class="CodeRay">
+<div class="highlighter-coderay"><div class="CodeRay">
   <div class="code"><pre><span class="class">create</span> context hrapp <span class="keyword">using</span> hr_context
 </pre></div>
 </div>
@@ -207,7 +207,7 @@ realidad es la misma base</li>
   </li>
 </ul>
 
-<div><div class="CodeRay">
+<div class="highlighter-coderay"><div class="CodeRay">
   <div class="code"><pre>CUSTOMER_ID=SYS_CONTEXT(<span class="string"><span class="delimiter">'</span><span class="content">OEAPP</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">CUST_ID</span><span class="delimiter">'</span></span>)
 </pre></div>
 </div>
@@ -224,7 +224,7 @@ realidad es la misma base</li>
 <h3 id="pasos-para-la-implementacin-de-vpd-con-triggers">Pasos para la implementación de VPD con triggers</h3>
 <p>1.- Declarar el procedure set_emp_info dentro del paquete current_emp</p>
 
-<div><div class="CodeRay">
+<div class="highlighter-coderay"><div class="CodeRay">
   <div class="code"><pre><span class="class">CREATE</span> <span class="keyword">OR</span> <span class="class">REPLACE</span> PACKAGE CURRENT_EMP <span class="keyword">IS</span>
 <span class="type">PROCEDURE</span> SET_EMP_INFO;
 <span class="keyword">END</span>
@@ -234,7 +234,7 @@ realidad es la misma base</li>
 
 <p>2.- Definir el procedure para la tabla employees</p>
 
-<div><div class="CodeRay">
+<div class="highlighter-coderay"><div class="CodeRay">
   <div class="code"><pre><span class="class">CREATE</span> <span class="keyword">OR</span> <span class="class">REPLACE</span> PACKAGE BODY current_emp <span class="keyword">IS</span> <span class="type">PROCEDURE</span> set_emp_info <span class="keyword">IS</span>
  v_employee_id hr.employees.employee_id%TYPE;
  v_first_name  hr.employees.first_name%TYPE;
@@ -262,7 +262,7 @@ realidad es la misma base</li>
 <p>3.- Crear el trigger con el procedure creado, este se ejecutara cada que
 que se inicia sesion</p>
 
-<div><div class="CodeRay">
+<div class="highlighter-coderay"><div class="CodeRay">
   <div class="code"><pre><span class="class">CREATE</span> <span class="keyword">OR</span> <span class="class">REPLACE</span> <span class="type">TRIGGER</span> EMP_LOGON
 <span class="directive">AFTER</span> LOGON <span class="keyword">ON</span> <span class="type">DATABASE</span>
 <span class="class">BEGIN</span>
@@ -282,7 +282,7 @@ que se inicia sesion</p>
 
 <p>1.- Declarar la politica en el paquete hr_policy_package</p>
 
-<div><div class="CodeRay">
+<div class="highlighter-coderay"><div class="CodeRay">
   <div class="code"><pre><span class="class">create</span> <span class="keyword">or</span> <span class="class">replace</span> package hr_policy_pkg <span class="keyword">is</span>
 <span class="type">function</span> limit_emp_emp(
 object_schema <span class="keyword">in</span> <span class="predefined-type">varchar2</span>,
@@ -295,7 +295,7 @@ object_name <span class="predefined-type">varchar2</span>)
 
 <p>2.- Crear la politica con la funcion limit_emp_emp</p>
 
-<div><div class="CodeRay">
+<div class="highlighter-coderay"><div class="CodeRay">
   <div class="code"><pre><span class="class">create</span> <span class="keyword">or</span> <span class="class">replace</span> package body hr_policy_pkg <span class="keyword">is</span>
   <span class="type">function</span> limit_emp_emp( object_schema <span class="keyword">in</span> <span class="predefined-type">varchar2</span>, object_name <span class="predefined-type">varchar2</span>)
   <span class="directive">return</span> <span class="predefined-type">varchar2</span>
@@ -311,7 +311,7 @@ object_name <span class="predefined-type">varchar2</span>)
 
 <p>3.- Anadir la politica a la tabla employees</p>
 
-<div><div class="CodeRay">
+<div class="highlighter-coderay"><div class="CodeRay">
   <div class="code"><pre>exec dbms_rls.add_policy
 (<span class="string"><span class="delimiter">'</span><span class="content">HR</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">EMPLOYEES</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">HR_EMP_POL</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">SEC</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">HR_POLICY_PKG.LIMIT_EMP_EMP</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">SELECT</span><span class="delimiter">'</span></span>);
 </pre></div>
@@ -470,7 +470,7 @@ object_name <span class="predefined-type">varchar2</span>)
     </div>
     <footer role="contentinfo"><div class="container">
     <p class="text-muted credits">
-  Copyright &copy; 2014 - Jose Añasco<br>
+  Copyright &copy; 2015 - Jose Añasco<br>
 </p>
 
 </div>
