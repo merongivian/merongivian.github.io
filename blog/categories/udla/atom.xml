@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Udla | Merongivian]]></title>
   <link href="http://merongivian.github.io/blog/categories/udla/atom.xml" rel="self"/>
   <link href="http://merongivian.github.io/"/>
-  <updated>2015-01-21T10:11:37-05:00</updated>
+  <updated>2015-01-22T09:36:13-05:00</updated>
   <id>http://merongivian.github.io/</id>
   <author>
     <name><![CDATA[Jose Añasco]]></name>
@@ -12,6 +12,119 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Enmascaramiento De Datos (Data Masking) II Parte]]></title>
+    <link href="http://merongivian.github.io/blog/2015/01/22/enmascaramiento-de-datos-data-masking-ii-parte/"/>
+    <updated>2015-01-22T07:32:29-05:00</updated>
+    <id>http://merongivian.github.io/blog/2015/01/22/enmascaramiento-de-datos-data-masking-ii-parte</id>
+    <content type="html"><![CDATA[<p><img class="center" src="http://exatek.com/wp-content/uploads/2013/01/DataMasking.png" width="300" height="300"></p>
+
+<h3 id="ventajas-y-beneficios-de-oracle-data-masking">Ventajas y Beneficios de Oracle Data Masking</h3>
+
+<ul>
+  <li>A Diferencia de los procesos de enmascaramiento que son tradicionalmente lentos al realizar actualizaciones de tabla, Data Masking optimiza la base de datos para desactivar el ingreso a la base de datos y lograr una ejecución en paralelo.</li>
+  <li>Amplia Formato Masking Biblioteca y plantillas de aplicación para  la versión de OracleE-Business Suite y Oracle Fusion Applications</li>
+  <li>Data Masking Pack proporciona la opción de guardar el proceso de enmascaramiento como un script de manera que se pueda personalizar más adelante</li>
+  <li>Transformaciones de enmascaramiento integrales
+<!--more--></li>
+  <li>Realiza operaciones en bloque para reemplazar con rapidez la tabla que contiene datos sensibles por una tabla idéntica que contiene datos enmascarados</li>
+  <li>Subdivisión de Multi-Factor</li>
+  <li>Rápido, Seguro y heterogéneo</li>
+</ul>
+
+<p><img class="center" src="https://securosis.com/assets/library/main/Mask_ETL.png" width="450" height="450"></p>
+
+<h3 id="desventajas-del-uso-de-scripts-en-data-masking">Desventajas del uso de scripts en Data Masking</h3>
+
+<ul>
+  <li>
+    <p><strong>Reutilización</strong></p>
+
+    <p>Un script que se ha usado específicamente para una base de datos no puede ser reutilizado en otra ya que no esta configurado para funcionar en otros ambientes, estos scripts tendrían que ser re-escrito desde cero si se aplica a otra base de datos. No hay capacidades comunes en una secuencia de comandos que pueden ser fácilmente aprovechados a través de otras bases de datos.</p>
+  </li>
+  <li>
+    <p><strong>Transparencia</strong></p>
+
+    <p>Ya que tienden a ser monolíticos, los procedimientos realizados en el mismo suelen no ser claros para otras personas. Los auditores encontrarían extremadamente difícil ofrecer cualquier recomendación sobre si el proceso de enmascaramiento construido en un script es seguro y ofrece la empresa el grado adecuado de protección</p>
+  </li>
+  <li>
+    <p><strong>Capacidad de Mantenimiento</strong></p>
+
+    <p>Cuando estas aplicaciones empresariales se actualizan, nuevas tablas y columnas que contienen datos sensibles pueden ser añadidos como una parte del proceso de actualización. Con un enfoque basado en el script, todo el script tiene que ser revisado y actualizado para dar cabida a nuevas tablas y columnas añadidas como parte de un parche de aplicación o una actualización</p>
+  </li>
+</ul>
+
+<h3 id="implementacin-de-data-masking">Implementación de Data Masking</h3>
+
+<p><img class="center" src="https://securosis.com/assets/library/main/Mask_Dynamic.png" width="400" height="400"></p>
+
+<p>Este proceso consta de 4 pasos:</p>
+
+<ul>
+  <li>
+    <p><strong>Find :</strong></p>
+
+    <p>Esta fase consiste en la identificación y catalogación de datos confidenciales o regulados a través de toda la empresa. Por lo general realizada por los analistas de negocios o de seguridad, el objetivo de este es llegar a la lista completa de los elementos de datos sensibles específicos para la organización y descubrir los asociados como tablas, columnas y relaciones a través de las bases de dato</p>
+  </li>
+  <li>
+    <p><strong>Assess :</strong></p>
+
+    <p>En esta fase, los desarrolladores o administradores de bases de datos en conjunto con las empresas o analistas de seguridad identifican los algoritmos de enmascaramiento que representan las técnicas óptimas para reemplazar el datos originales sensibles. Los desarrolladores pueden aprovechar la biblioteca enmascaramiento existente o ampliarlo con sus propias rutinas de enmascaramiento.</p>
+  </li>
+  <li>
+    <p><strong>Secure :</strong></p>
+
+    <p>El administrador de seguridad ejecuta el proceso de enmascaramiento para asegurar los datos sensibles durante los ensayos de enmascaramiento</p>
+  </li>
+  <li>
+    <p><strong>Test (FAST) :</strong></p>
+
+    <p>Finalmente, los usuarios de producción ejecutan procesos de aplicación para poner a prueba si los datos enmascarados resultantes pueden ser entregados a los demás usuarios que no sean de producción. Si el enmascarar rutinas necesitan ser modificados de nuevo, el DBA restaura la base de datos al pre- estado enmascarado, corrige los algoritmos de enmascaramiento y volverá a ejecutar el proceso de enmascaramiento</p>
+  </li>
+</ul>
+
+<p><img class="center" src="http://1.bp.blogspot.com/-m0ygDaikl8A/VLan3VoXLCI/AAAAAAAAAfE/8JcbvS6HByc/s1600/data_masking_workflow.gif" width="600" height="600"></p>
+
+<h3 id="tcnicas-de-data-masking">Técnicas de Data Masking</h3>
+
+<p><strong>Enmascaramiento Compuesto</strong></p>
+
+<p>La principal característica del enmascaramiento compuesto es que se asegura de que un conjunto de columnas relacionadas sean enmascaradas como un grupo, para asegurar que los datos ocultos a través de las columnas relacionadas conserven la misma relación</p>
+
+<p><strong>Enmascaramiento Determinista</strong></p>
+
+<p>La técnica de enmascaramiento Determinista garantiza valores enmascarados repetibles. Las Compañías u Organizaciones pueden utilizar esta técnica para garantizar que determinados valores</p>
+
+<p><strong>Enmascaramiento Reversible</strong></p>
+
+<p>Cuando las Compañías u Organizaciones tienen que enviar sus datos a una tercera parte para el análisis, informes o cualquier otro proceso de negocio, esta técnica transforma los datos originales en una representación enmascarada de sí mismo, utilizando una función de enmascaramiento reversible basado en claves seguras</p>
+
+<h3 id="como-crear-un-formato-de-data-mask-definido-por-el-usuario">Como crear un formato de Data-Mask definido por el usuario</h3>
+
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="class">CREATE</span> <span class="keyword">OR</span> <span class="class">REPLACE</span> <span class="type">FUNCTION</span> hr.email_mask
+  (orig_value <span class="predefined-type">VARCHAR2</span>) <span class="directive">RETURN</span> <span class="predefined-type">VARCHAR2</span>
+<span class="keyword">IS</span>
+  emailadd <span class="predefined-type">varchar2</span>(<span class="integer">100</span>);
+<span class="class">BEGIN</span>
+  <span class="class">SELECT</span> first_name || <span class="string"><span class="delimiter">'</span><span class="content">.</span><span class="delimiter">'</span></span> || employee_id || <span class="string"><span class="delimiter">'</span><span class="content">.</span><span class="delimiter">'</span></span> ||
+         last_name || <span class="string"><span class="delimiter">'</span><span class="content">@not_realco.com</span><span class="delimiter">'</span></span> <span class="class">INTO</span> emailadd
+  <span class="keyword">FROM</span> hr.employees
+  <span class="keyword">WHERE</span> email = orig_value;
+  <span class="directive">RETURN</span> emailadd;
+<span class="keyword">END</span>;
+</pre></div>
+</div>
+</div>
+
+<h3 id="video-prctica">Video Práctica</h3>
+
+<iframe class="youtube-player" type="text/html" width="640" height="385" src="https://www.youtube.com/embed/dcldnaukpcI" allowfullscreen="" frameborder="0">
+</iframe>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Enmascaramiento De Datos (Data Masking)]]></title>
@@ -411,132 +524,6 @@ superar los desafios de cumplimiento y seguridad del mismo</li>
 depósito de datos para alcanzar escalibilidad y almacenamiento
 masivo</li>
 </ul>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Oracle Label Security (OLS)]]></title>
-    <link href="http://merongivian.github.io/blog/2014/10/22/certificacion-de-bases-de-datos-clase-number-3/"/>
-    <updated>2014-10-22T23:41:30-05:00</updated>
-    <id>http://merongivian.github.io/blog/2014/10/22/certificacion-de-bases-de-datos-clase-number-3</id>
-    <content type="html"><![CDATA[<h3 id="modelos-de-control-de-acceso">Modelos de control de Acceso</h3>
-<ul>
-  <li>Control de acceso Discrecional(DAC): es una forma en la cual
-podemos restringir el acceso a objetos basados en la identidad o
-grupos a los que pertenecen</li>
-  <li>Seguridad a nivel de registro:
-    <ul>
-      <li>Se pueden aplicar sofisticadas reglas para el control de acceso</li>
-      <li>Complementa a DAC</li>
-      <li>Es provisto por VPD o por OLS</li>
-    </ul>
-  </li>
-</ul>
-
-<h3 id="oracle-label-security-ols">Oracle Label Security (OLS)</h3>
-
-<p><img class="center" src="/images/posts/ols-principal.png"></p>
-
-<!--more-->
-
-<ul>
-  <li>Categoriza e intercede fácilmente en el acceso a datos según su
-clasificación.</li>
-  <li>Integrada con Oracle Identity Management, permitiendo la gestión
-centralizada de definiciones de políticas</li>
-</ul>
-
-<h3 id="componentes-data-label">Componentes data label</h3>
-
-<p><img class="center" src="/images/posts/ols-componentes.png"></p>
-
-<h3 id="pasos-para-la-implementacin-de-ols">Pasos Para la implementación de OLS</h3>
-
-<p>1.- Crear la politica facility</p>
-
-<div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="class">BEGIN</span>
-  SA_SYSDBA.CREATE_POLICY(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">FACLAB</span><span class="delimiter">'</span></span>,
-  <span class="string"><span class="delimiter">'</span><span class="content">READ_CONTROL,CHECK_CONTROL,LABEL_DEFAULT,HIDE</span><span class="delimiter">'</span></span>);
-<span class="keyword">END</span>;
-</pre></div>
-</div>
-</div>
-
-<p>2.- Crear los niveles para la politica</p>
-
-<div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="class">BEGIN</span>
-  SA_COMPONENTS.CREATE_LEVEL(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">1000</span>,<span class="string"><span class="delimiter">'</span><span class="content">P</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">PUBLIC</span><span class="delimiter">'</span></span>);
-  SA_COMPONENTS.CREATE_LEVEL(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">2000</span>,<span class="string"><span class="delimiter">'</span><span class="content">S</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">SENSITIVE</span><span class="delimiter">'</span></span>);
-  SA_COMPONENTS.CREATE_LEVEL(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">3000</span>,<span class="string"><span class="delimiter">'</span><span class="content">HS</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">HIGHLY_SENSITIVE</span><span class="delimiter">'</span></span>);
-<span class="keyword">END</span>;
-</pre></div>
-</div>
-</div>
-
-<p>3.- Crear los grupos para la politica</p>
-
-<div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="class">BEGIN</span>
-  SA_COMPONENTS.CREATE_GROUP(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">1000</span>,<span class="string"><span class="delimiter">'</span><span class="content">Global</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">Global</span><span class="delimiter">'</span></span>);
-  SA_COMPONENTS.CREATE_GROUP(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">101</span>,<span class="string"><span class="delimiter">'</span><span class="content">US</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">United States</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">GLOBAL</span><span class="delimiter">'</span></span>);
-  SA_COMPONENTS.CREATE_GROUP(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">102</span>,<span class="string"><span class="delimiter">'</span><span class="content">EU</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">Europe</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">GLOBAL</span><span class="delimiter">'</span></span>);
-  SA_COMPONENTS.CREATE_GROUP(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">103</span>,<span class="string"><span class="delimiter">'</span><span class="content">Asia</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">Asia</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">GLOBAL</span><span class="delimiter">'</span></span>);
-<span class="keyword">END</span>;
-</pre></div>
-</div>
-</div>
-
-<p>4.- Crear las etiquetas, juntando los niveles y grupos</p>
-
-<div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="class">BEGIN</span>
-  SA_LABEL_ADMIN.CREATE_LABEL(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">1000</span>,<span class="string"><span class="delimiter">'</span><span class="content">P</span><span class="delimiter">'</span></span>);
-  SA_LABEL_ADMIN.CREATE_LABEL(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">2101</span>,<span class="string"><span class="delimiter">'</span><span class="content">S::US</span><span class="delimiter">'</span></span>);.
-  SA_LABEL_ADMIN.CREATE_LABEL(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">3101</span>,<span class="string"><span class="delimiter">'</span><span class="content">HS::US</span><span class="delimiter">'</span></span>);
-  SA_LABEL_ADMIN.CREATE_LABEL(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="integer">3103</span>,<span class="string"><span class="delimiter">'</span><span class="content">HS::ASIA</span><span class="delimiter">'</span></span>);
-<span class="keyword">END</span>;
-</pre></div>
-</div>
-</div>
-
-<p>5.- Crear etiquetas para usuarios</p>
-
-<div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="class">BEGIN</span>
-  SA_USER_ADMIN.SET_USER_LABELS(<span class="string"><span class="delimiter">'</span><span class="content">PRIVACY</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">MYCO_MGR</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">C</span><span class="delimiter">'</span></span>);
-  SA_USER_ADMIN.SET_USER_LABELS(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">MYCO_EMP</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">P</span><span class="delimiter">'</span></span>);
-  SA_USER_ADMIN.SET_USER_LABELS(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">MYCO_MGR</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">S::US,EU,ASIA</span><span class="delimiter">'</span></span>);
-  SA_USER_ADMIN.SET_USER_LABELS(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">MYCO_PLANNING</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">HS::GLOBAL</span><span class="delimiter">'</span></span>);.
-<span class="keyword">END</span>;
-</pre></div>
-</div>
-</div>
-
-<p>6.- Actualizar la tabla locations con las nuevas etiquetas</p>
-
-<div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="class">BEGIN</span>
-  <span class="class">UPDATE</span> LOCATIONS
-    <span class="class">SET</span> FACLAB=CHAR_TO_LABEL(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">S::ASIA</span><span class="delimiter">'</span></span>)
-    <span class="keyword">WHERE</span> UPPER(CITY) <span class="keyword">IN</span> (<span class="string"><span class="delimiter">'</span><span class="content">BEIJING</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">TOKYO</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">SINGAPORE</span><span class="delimiter">'</span></span>);
-  <span class="class">UPDATE</span> LOCATIONS
-    <span class="class">SET</span> FACLAB=CHAR_TO_LABEL(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">HS::US</span><span class="delimiter">'</span></span>).
-    <span class="keyword">WHERE</span> UPPER(CITY) <span class="keyword">IN</span> (<span class="string"><span class="delimiter">'</span><span class="content">SOUTH SAN FRANCISCO</span><span class="delimiter">'</span></span>);
-  <span class="class">UPDATE</span> LOCATIONS
-    <span class="class">SET</span> FACLAB=CHAR_TO_LABEL(<span class="string"><span class="delimiter">'</span><span class="content">FACILITY</span><span class="delimiter">'</span></span>,<span class="string"><span class="delimiter">'</span><span class="content">P</span><span class="delimiter">'</span></span>)
-    <span class="keyword">WHERE</span> FACLAB <span class="keyword">IS</span> <span class="predefined-constant">NULL</span>;
-  <span class="class">COMMIT</span>;
-<span class="keyword">END</span>;
-</pre></div>
-</div>
-</div>
-
-<h4 id="video">Video</h4>
-
-<iframe class="youtube-player" type="text/html" width="640" height="385" src="https://www.youtube.com/embed/bTAn45ejjL0" allowfullscreen="" frameborder="0">
-</iframe>
 ]]></content>
   </entry>
   

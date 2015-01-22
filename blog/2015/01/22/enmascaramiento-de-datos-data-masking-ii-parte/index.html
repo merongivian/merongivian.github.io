@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Enmascaramiento De Datos (Data Masking) - Merongivian</title>
+  <title>Enmascaramiento De Datos (Data Masking) II Parte - Merongivian</title>
   <meta name="author" content="Jose Añasco">
 
   
@@ -14,15 +14,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://merongivian.github.io/blog/2015/01/21/enmascaramiento-de-datos-data-masking">
+  <link rel="canonical" href="http://merongivian.github.io/blog/2015/01/22/enmascaramiento-de-datos-data-masking-ii-parte">
   <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="Merongivian" type="application/atom+xml">
 
   <!-- http://opengraphprotocol.org/ -->
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="http://merongivian.github.io/blog/2015/01/21/enmascaramiento-de-datos-data-masking">
-  <meta property="og:title" content="Enmascaramiento De Datos (Data Masking) - Merongivian">
+  <meta property="og:url" content="http://merongivian.github.io/blog/2015/01/22/enmascaramiento-de-datos-data-masking-ii-parte">
+  <meta property="og:title" content="Enmascaramiento De Datos (Data Masking) II Parte - Merongivian">
   
 
   <script src="/javascripts/libs/jquery/jquery-2.0.3.min.js"></script>
@@ -134,45 +134,124 @@
 
 
 
-</span> <time datetime="2015-01-21T07:55:04-05:00"  itemprop="datePublished dateCreated"><time class='entry-date' datetime='2015-01-21T07:55:04-05:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>21</span><span class='date-suffix'>st</span>, <span class='date-year'>2015</span></span> <span class='time'>7:55 am</span></time></time>
+</span> <time datetime="2015-01-22T07:32:29-05:00"  itemprop="datePublished dateCreated"><time class='entry-date' datetime='2015-01-22T07:32:29-05:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>22</span><span class='date-suffix'>nd</span>, <span class='date-year'>2015</span></span> <span class='time'>7:32 am</span></time></time>
         
       </p>
     
     
     <h1 class="entry-title" itemprop="name headline">
-        Enmascaramiento De Datos (Data Masking)
+        Enmascaramiento De Datos (Data Masking) II Parte
         
     </h1>
     
   </header>
 
 
-<div class="entry-content clearfix" itemprop="articleBody description"><p><img class="center" src="http://www.toadworld.com/cfs-file.ashx/__key/communityserver-wikis-components-files/00-00-00-00-03/SJH_2D00_060414_2D00_1.png" /></p>
+<div class="entry-content clearfix" itemprop="articleBody description"><p><img class="center" src="http://exatek.com/wp-content/uploads/2013/01/DataMasking.png" width="300" height="300" /></p>
 
-<h3 id="introduccin">Introducción</h3>
+<h3 id="ventajas-y-beneficios-de-oracle-data-masking">Ventajas y Beneficios de Oracle Data Masking</h3>
 
-<p>Se calcula que más del 50% de los datos almacenados en bases de datos podría clasificarse como confidencial. Por otro lado, el riesgo asociado a las filtraciones de datos no hace más que aumentar a medida que los departamentos de IT recogen y almacenan de manera cada vez más prolongada un número creciente de datos.</p>
+<ul>
+  <li>A Diferencia de los procesos de enmascaramiento que son tradicionalmente lentos al realizar actualizaciones de tabla, Data Masking optimiza la base de datos para desactivar el ingreso a la base de datos y lograr una ejecución en paralelo.</li>
+  <li>Amplia Formato Masking Biblioteca y plantillas de aplicación para  la versión de OracleE-Business Suite y Oracle Fusion Applications</li>
+  <li>Data Masking Pack proporciona la opción de guardar el proceso de enmascaramiento como un script de manera que se pueda personalizar más adelante</li>
+  <li>Transformaciones de enmascaramiento integrales
+<!--more--></li>
+  <li>Realiza operaciones en bloque para reemplazar con rapidez la tabla que contiene datos sensibles por una tabla idéntica que contiene datos enmascarados</li>
+  <li>Subdivisión de Multi-Factor</li>
+  <li>Rápido, Seguro y heterogéneo</li>
+</ul>
 
-<!--more-->
+<p><img class="center" src="https://securosis.com/assets/library/main/Mask_ETL.png" width="450" height="450" /></p>
 
-<p>Las soluciones para garantizar la seguridad de las bases de datos son difíciles de configurar y de administrar. Las soluciones de codificación manual, por su parte, requieren mucho trabajo y dan pie a la comisión de errores. No obstante, su organización de IT necesita automatizar los procesos de enmascaramiento de datos para aumentar la productividad y reducir los costes. Oracle® Data Masking™ es un software completo, flexible y escalable que se emplea para gestionar el acceso a datos sensibles de aplicaciones (p.ej., información de tarjetas de crédito, números de la Seguridad Social, nombres, direcciones, números de teléfono, etc.). Este software evita la exposición involuntaria de información confidencial y disminuye el riesgo de filtración de datos. Oracle Data Masking minimiza el riesgo de filtración de datos enmascarando los entornos de desarrollo y de pruebas creados a partir de copias o subconjuntos de datos de producción. Gracias a este software, los equipos de IT pueden contar con reglas de enmascaramiento sofisticadas pero flexibles a la vez, que les permiten aplicar distintas clases de máscaras a diversos tipos de datos empleados en entornos de no producción (de pruebas, formación, etc.).</p>
+<h3 id="desventajas-del-uso-de-scripts-en-data-masking">Desventajas del uso de scripts en Data Masking</h3>
 
-<p>Oracle Data Masking resulta idónea para reducir el riesgo de filtración de datos; mejorar la calidad de las actividades de desarrollo, pruebas y formación; y respaldar el cumplimiento de normativas y disposiciones internas, industriales y gubernamentales relacionadas con la privacidad de los datos.</p>
+<ul>
+  <li>
+    <p><strong>Reutilización</strong></p>
 
-<p><img class="center" src="http://www.digora.com/wp-content/uploads/2013/09/11-2-0-4-c.png" /></p>
+    <p>Un script que se ha usado específicamente para una base de datos no puede ser reutilizado en otra ya que no esta configurado para funcionar en otros ambientes, estos scripts tendrían que ser re-escrito desde cero si se aplica a otra base de datos. No hay capacidades comunes en una secuencia de comandos que pueden ser fácilmente aprovechados a través de otras bases de datos.</p>
+  </li>
+  <li>
+    <p><strong>Transparencia</strong></p>
 
-<h3 id="limitaciones">Limitaciones</h3>
+    <p>Ya que tienden a ser monolíticos, los procedimientos realizados en el mismo suelen no ser claros para otras personas. Los auditores encontrarían extremadamente difícil ofrecer cualquier recomendación sobre si el proceso de enmascaramiento construido en un script es seguro y ofrece la empresa el grado adecuado de protección</p>
+  </li>
+  <li>
+    <p><strong>Capacidad de Mantenimiento</strong></p>
 
-<p>Por un lado, se ha de tener en cuenta que los procesos de data masking están diseñados para ser irreversibles, en el sentido de que no se podría volver a recuperar el dato inicial.</p>
+    <p>Cuando estas aplicaciones empresariales se actualizan, nuevas tablas y columnas que contienen datos sensibles pueden ser añadidos como una parte del proceso de actualización. Con un enfoque basado en el script, todo el script tiene que ser revisado y actualizado para dar cabida a nuevas tablas y columnas añadidas como parte de un parche de aplicación o una actualización</p>
+  </li>
+</ul>
 
-<p>No obstante, cabe decir que mediante el cruce de información o el múltiple acceso a datos enmascarados y realizando un gran esfuerzo se podrían llegar a obtener de alguna manera los datos sensibles que han sido enmascarados. Aplicando un proceso de enmascaramiento de datos la idea es que sea difícil realizarlo, pero con esfuerzo es importante señalar que se podría llegar a lograr.</p>
+<h3 id="implementacin-de-data-masking">Implementación de Data Masking</h3>
 
-<p>Hay que tener en cuenta también que en cuanto al desarrollo de sistemas siempre se necesita un acceso a producción para casos puntuales que requiere conectarse a los datos reales, eso no se puede abolir ya que incidencias siempre existen y se necesitan reparar datos reales de producción. No obstante, lo que se deberá hacer en estos casos es que las personas que están gobernando los datos puedan verificar la información de producción a la que están accediendo y que no deberían ver para evitar de esta manera filtraciones de información.</p>
+<p><img class="center" src="https://securosis.com/assets/library/main/Mask_Dynamic.png" width="400" height="400" /></p>
 
-<h3 id="video">Video</h3>
+<p>Este proceso consta de 4 pasos:</p>
+
+<ul>
+  <li>
+    <p><strong>Find :</strong></p>
+
+    <p>Esta fase consiste en la identificación y catalogación de datos confidenciales o regulados a través de toda la empresa. Por lo general realizada por los analistas de negocios o de seguridad, el objetivo de este es llegar a la lista completa de los elementos de datos sensibles específicos para la organización y descubrir los asociados como tablas, columnas y relaciones a través de las bases de dato</p>
+  </li>
+  <li>
+    <p><strong>Assess :</strong></p>
+
+    <p>En esta fase, los desarrolladores o administradores de bases de datos en conjunto con las empresas o analistas de seguridad identifican los algoritmos de enmascaramiento que representan las técnicas óptimas para reemplazar el datos originales sensibles. Los desarrolladores pueden aprovechar la biblioteca enmascaramiento existente o ampliarlo con sus propias rutinas de enmascaramiento.</p>
+  </li>
+  <li>
+    <p><strong>Secure :</strong></p>
+
+    <p>El administrador de seguridad ejecuta el proceso de enmascaramiento para asegurar los datos sensibles durante los ensayos de enmascaramiento</p>
+  </li>
+  <li>
+    <p><strong>Test (FAST) :</strong></p>
+
+    <p>Finalmente, los usuarios de producción ejecutan procesos de aplicación para poner a prueba si los datos enmascarados resultantes pueden ser entregados a los demás usuarios que no sean de producción. Si el enmascarar rutinas necesitan ser modificados de nuevo, el DBA restaura la base de datos al pre- estado enmascarado, corrige los algoritmos de enmascaramiento y volverá a ejecutar el proceso de enmascaramiento</p>
+  </li>
+</ul>
+
+<p><img class="center" src="http://1.bp.blogspot.com/-m0ygDaikl8A/VLan3VoXLCI/AAAAAAAAAfE/8JcbvS6HByc/s1600/data_masking_workflow.gif" width="600" height="600" /></p>
+
+<h3 id="tcnicas-de-data-masking">Técnicas de Data Masking</h3>
+
+<p><strong>Enmascaramiento Compuesto</strong></p>
+
+<p>La principal característica del enmascaramiento compuesto es que se asegura de que un conjunto de columnas relacionadas sean enmascaradas como un grupo, para asegurar que los datos ocultos a través de las columnas relacionadas conserven la misma relación</p>
+
+<p><strong>Enmascaramiento Determinista</strong></p>
+
+<p>La técnica de enmascaramiento Determinista garantiza valores enmascarados repetibles. Las Compañías u Organizaciones pueden utilizar esta técnica para garantizar que determinados valores</p>
+
+<p><strong>Enmascaramiento Reversible</strong></p>
+
+<p>Cuando las Compañías u Organizaciones tienen que enviar sus datos a una tercera parte para el análisis, informes o cualquier otro proceso de negocio, esta técnica transforma los datos originales en una representación enmascarada de sí mismo, utilizando una función de enmascaramiento reversible basado en claves seguras</p>
+
+<h3 id="como-crear-un-formato-de-data-mask-definido-por-el-usuario">Como crear un formato de Data-Mask definido por el usuario</h3>
+
+<div class="highlighter-coderay"><div class="CodeRay">
+  <div class="code"><pre><span class="class">CREATE</span> <span class="keyword">OR</span> <span class="class">REPLACE</span> <span class="type">FUNCTION</span> hr.email_mask
+  (orig_value <span class="predefined-type">VARCHAR2</span>) <span class="directive">RETURN</span> <span class="predefined-type">VARCHAR2</span>
+<span class="keyword">IS</span>
+  emailadd <span class="predefined-type">varchar2</span>(<span class="integer">100</span>);
+<span class="class">BEGIN</span>
+  <span class="class">SELECT</span> first_name || <span class="string"><span class="delimiter">'</span><span class="content">.</span><span class="delimiter">'</span></span> || employee_id || <span class="string"><span class="delimiter">'</span><span class="content">.</span><span class="delimiter">'</span></span> ||
+         last_name || <span class="string"><span class="delimiter">'</span><span class="content">@not_realco.com</span><span class="delimiter">'</span></span> <span class="class">INTO</span> emailadd
+  <span class="keyword">FROM</span> hr.employees
+  <span class="keyword">WHERE</span> email = orig_value;
+  <span class="directive">RETURN</span> emailadd;
+<span class="keyword">END</span>;
+</pre></div>
+</div>
+</div>
+
+<h3 id="video-prctica">Video Práctica</h3>
 
 <iframe class="youtube-player" type="text/html" width="640" height="385" src="https://www.youtube.com/embed/dcldnaukpcI" allowfullscreen="" frameborder="0">
 </iframe>
+
 </div>
 
 
@@ -197,7 +276,7 @@
 
 
 
-</span> <time datetime="2015-01-21T07:55:04-05:00"  itemprop="datePublished dateCreated"><time class='entry-date' datetime='2015-01-21T07:55:04-05:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>21</span><span class='date-suffix'>st</span>, <span class='date-year'>2015</span></span> <span class='time'>7:55 am</span></time></time>
+</span> <time datetime="2015-01-22T07:32:29-05:00"  itemprop="datePublished dateCreated"><time class='entry-date' datetime='2015-01-22T07:32:29-05:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>22</span><span class='date-suffix'>nd</span>, <span class='date-year'>2015</span></span> <span class='time'>7:32 am</span></time></time>
           
 
 <span class="glyphicon glyphicon-tags"></span>&nbsp;
@@ -212,7 +291,7 @@
         
           <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://merongivian.github.io/blog/2015/01/21/enmascaramiento-de-datos-data-masking/" data-via="merongivian" data-counturl="http://merongivian.github.io/blog/2015/01/21/enmascaramiento-de-datos-data-masking/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://merongivian.github.io/blog/2015/01/22/enmascaramiento-de-datos-data-masking-ii-parte/" data-via="merongivian" data-counturl="http://merongivian.github.io/blog/2015/01/22/enmascaramiento-de-datos-data-masking-ii-parte/" >Tweet</a>
   
   
   
@@ -224,10 +303,8 @@
         
           <ul class="meta text-muted pager">
             
-            <li class="previous"><a href="/blog/2015/01/21/oracle-database-vault-dv/" title="Previous Post: Oracle Database Vault (DV)">&laquo; Oracle Database Vault (DV)</a></li>
+            <li class="previous"><a href="/blog/2015/01/21/enmascaramiento-de-datos-data-masking/" title="Previous Post: Enmascaramiento de Datos (Data Masking)">&laquo; Enmascaramiento de Datos (Data Masking)</a></li>
             
-            
-            <li class="next"><a href="/blog/2015/01/22/enmascaramiento-de-datos-data-masking-ii-parte/" title="Next Post: Enmascaramiento de Datos (Data masking) II Parte">Enmascaramiento de Datos (Data masking) II Parte &raquo;</a></li>
             
           </ul>
         
