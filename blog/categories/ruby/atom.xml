@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Merongivian]]></title>
-  <link href="http://merongivian.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Ruby | Merongivian]]></title>
+  <link href="http://merongivian.github.io/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://merongivian.github.io/"/>
   <updated>2015-01-30T00:30:57-05:00</updated>
   <id>http://merongivian.github.io/</id>

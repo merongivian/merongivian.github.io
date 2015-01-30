@@ -2,10 +2,10 @@
 <html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Oracle Audit Vault - Merongivian</title>
+  <title>Category: Metaprogramming - Merongivian</title>
   <meta name="author" content="Jose Añasco">
 
-  
+  <meta name="description" content="Category: metaprogramming">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -14,16 +14,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://merongivian.github.io/blog/2014/10/23/certificacion-de-bases-de-datos-clase-number-4">
+  <link rel="canonical" href="http://merongivian.github.io/blog/categories/metaprogramming">
   <link href="/favicon.png" type="image/png" rel="icon">
   <link href="/atom.xml" rel="alternate" title="Merongivian" type="application/atom+xml">
 
   <!-- http://opengraphprotocol.org/ -->
   <meta name="twitter:card" content="summary_large_image">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="http://merongivian.github.io/blog/2014/10/23/certificacion-de-bases-de-datos-clase-number-4">
-  <meta property="og:title" content="Oracle Audit Vault - Merongivian">
-  
+  <meta property="og:url" content="http://merongivian.github.io/blog/categories/metaprogramming">
+  <meta property="og:title" content="Category: Metaprogramming - Merongivian">
+  <meta property="og:description" content="Category: metaprogramming">
 
   <script src="/javascripts/libs/jquery/jquery-2.0.3.min.js"></script>
 
@@ -70,10 +70,10 @@
 
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active">
+                <li >
                     <a class="trim" rel="index" href="/">Blog</a>
                 </li>
-                <li >
+                <li class="active">
                     <a class="trim" href="/blog/archives">Archives</a>
                 </li>
             </ul>
@@ -111,156 +111,36 @@
       <div id="main" class="container">
         <div id="content">
           <div class="row">
-  <div class="page-content col-md-9" itemscope itemtype="http://schema.org/Blog">
-    <meta itemprop="name" content="Merongivian" />
-    
-    <meta itemprop="url" content="http://merongivian.github.io" />
-    <article class="hentry" role="article" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="page-content col-md-9">
+    <article role="article">
       
-  <header class="page-header">
-    
-      <p class="meta text-muted text-uppercase">
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-</span> <time datetime="2014-10-23T05:56:02-05:00"  itemprop="datePublished dateCreated"><time class='entry-date' datetime='2014-10-23T05:56:02-05:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2014</span></span> <span class='time'>5:56 am</span></time></time>
-        
-      </p>
-    
-    
-    <h1 class="entry-title" itemprop="name headline">
-        Oracle Audit Vault
-        
-    </h1>
-    
-  </header>
-
-
-<div class="entry-content clearfix" itemprop="articleBody description"><h3 id="oracle-audit-vault">Oracle Audit Vault</h3>
-
-<p><img class="right" src="/images/posts/audit-vault-principal.png" /></p>
-
-<ul>
-  <li>Recopila y consolida los datos de auditorías de manera transparente, brindando valiosos conocimientos respecto de quién hizo qué a cuáles datos y cuándo lo hizo</li>
-  <li>Con los informes de Audit Vault, las notificaciones de alertas, y la administración depolíticas de auditoría centralizada, los
-riesgos de amenazas internas y el costo de cumplimiento son altamente
-reducidos.</li>
-  <li>Aprovecha la seguridad de la base de datos líder del sector de Oracle y
-la tecnología de data warehousing para administrar, analizar, almacenar, y archivar grandes
-volúmenes de datos de auditoría.</li>
-</ul>
-
-<!--more-->
-
-<h3 id="caracteristicas">Caracteristicas</h3>
-
-<ul>
-  <li>Recopilación y Consolidación de Datos de Auditoria de manera
-transparente</li>
-  <li>
-    <p>Informe Simplificado de cumplimiento</p>
-
-    <p><img src="/images/posts/audit-vault-informe.png" /></p>
-  </li>
-  <li>
-    <p>Detección Anticipada de Amenazas con Alertas</p>
-
-    <p><img src="/images/posts/audit-vault-alerta.png" /></p>
-  </li>
-  <li>Seguridad y Escalabilidad</li>
-  <li>Reducción los costos de IT con las políticas de Oracle Audit Vault</li>
-</ul>
-
-<h3 id="pasos-para-la-implementacin-de-audit-volt">Pasos para la implementación de Audit Volt</h3>
-
-<p>1.- Subir base de datos oracle vault
-2.- Creat usuario en base remota</p>
-
-<div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="class">create</span> user avagusr01 identified <span class="keyword">by</span> oracle_4U
-</pre></div>
-</div>
-</div>
-
-<p>3.- Ejecutar permisos con scriptk</p>
-
-<div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre><span class="error">@</span>/home/oracle/oracle/product/<span class="float">10.3</span><span class="float">.0</span>/av_agent_1/av/scripts/streams/source/zarsspriv.sql
-</pre></div>
-</div>
-</div>
-
-<p>4.- Setear Oracle Home</p>
-
-<div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre>export ORACLE_HOME=/home/oracle/oracle/product/<span class="float">10.3</span><span class="float">.0</span>/agent
-</pre></div>
-</div>
-</div>
-
-<p>5.- Arrancar el agent en el directorio $ORACLE_HOME/bin</p>
-
-<div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre>./avctl start_agent
-</pre></div>
-</div>
-</div>
-
-<p>6.- Cambiamos el sourcename</p>
-
-<div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre>./avorcldb setup -srcname aci040_db
-</pre></div>
-</div>
-</div>
-
-<p>7.- Creamos el collector en la base de datos audit volt</p>
-
-<div class="highlighter-coderay"><div class="CodeRay">
-  <div class="code"><pre>avorcldb add_collector -srcname aci040_db -agentname agaci040lab -colltype DBAUD -collname colaci040lab
-</pre></div>
-</div>
-</div>
-
-<iframe class="youtube-player" type="text/html" width="640" height="385" src="https://www.youtube.com/embed/4ZE8-ds4-2w" allowfullscreen="" frameborder="0">
-</iframe>
-
-<h3 id="conclucin">Conclución</h3>
-
-<ul>
-  <li>Brinda una avanzada solución de auditoría que a ayuda
-a simplificar los informes de cumplimiento, detectar las amenazas con
-alertas anticipadas, reducir el costo de cumplimiento y garantizar los
-datos de Auditoría</li>
-  <li>Automatiza el proceso de análisis y consolidación, convirtiendo los
-datos de auditoría en un recurso de seguridad clave para ayudar a
-superar los desafios de cumplimiento y seguridad del mismo</li>
-  <li>Aprovecha las capacidades comprobadas de particionamiento y
-depósito de datos para alcanzar escalibilidad y almacenamiento
-masivo</li>
-</ul>
-</div>
-
-
-      <footer>
-        <p class="meta text-muted">
+        <header class="page-header">
           
+          
+            <h1 class="entry-title">
+              Category: Metaprogramming
+              
+            </h1>
+          
+        </header>
+      
+      <div class="entry-content">
+        <div id="blog-archives" class="category" itemscope itemtype="http://schema.org/Blog">
+<meta itemprop="name" content="Merongivian" />
+
+<meta itemprop="url" content="http://merongivian.github.io" />
+
+
+
+  
+  <h2>2014</h2>
+
+<article class="page-header" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+  
+<h1 itemprop="name headline"><a href="/blog/2014/11/18/defining-methods-dinamycally-metaprogramming/" itemprop="url">Defining Methods Dinamycally (Metaprogramming)</a></h1>
+<p class="meta text-muted">
   
 
-<span class="glyphicon glyphicon-user"></span> <span class="byline author vcard" itemprop="author" itemscope itemtype="http://schema.org/Person">Posted by <span class="fn" itemprop="name">Jose Añasco</span></span>
-
-          
 
 
 
@@ -273,50 +153,33 @@ masivo</li>
 
 
 
-
-</span> <time datetime="2014-10-23T05:56:02-05:00"  itemprop="datePublished dateCreated"><time class='entry-date' datetime='2014-10-23T05:56:02-05:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2014</span></span> <span class='time'>5:56 am</span></time></time>
-          
+</span> <time datetime="2014-11-18T11:00:57-05:00"  itemprop="datePublished dateCreated"><time class='entry-date' datetime='2014-11-18T11:00:57-05:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>11:00 am</span></time></time>
+  
 
 <span class="glyphicon glyphicon-tags"></span>&nbsp;
 <span class="categories">
   
-    <a class='category' href='/blog/categories/aci040/'>aci040</a>, <a class='category' href='/blog/categories/udla/'>udla</a>
+    <a class='category' href='/blog/categories/development/'>development</a>, <a class='category' href='/blog/categories/metaprogramming/'>metaprogramming</a>, <a class='category' href='/blog/categories/ruby/'>ruby</a>
   
 </span>
 
 
-        </p>
-        
-          <div class="sharing">
-  
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://merongivian.github.io/blog/2014/10/23/certificacion-de-bases-de-datos-clase-number-4/" data-via="merongivian" data-counturl="http://merongivian.github.io/blog/2014/10/23/certificacion-de-bases-de-datos-clase-number-4/" >Tweet</a>
-  
-  
-  
-    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
-  
+</p>
+
+</article>
+
 </div>
 
-        
-        
-          <ul class="meta text-muted pager">
-            
-            <li class="previous"><a href="/blog/2014/10/22/certificacion-de-bases-de-datos-clase-number-3/" title="Previous Post: Oracle Label Security (OLS)">&laquo; Oracle Label Security (OLS)</a></li>
-            
-            
-            <li class="next"><a href="/blog/2015/01/21/oracle-advanced-security-aso/" title="Next Post: Oracle Advanced Security (ASO)">Oracle Advanced Security (ASO) &raquo;</a></li>
-            
-          </ul>
-        
-      </footer>
+      </div>
+      
     </article>
     
   </div>
 
   
-  <aside class="sidebar col-md-3">
-    
-      <section>
+    <aside class="sidebar col-md-3">
+      
+        <section>
   <h1>About Me</h1>
   <div class="avatar">
     <img class="" src="https://avatars0.githubusercontent.com/u/4277403?v=2&s=160">
@@ -332,6 +195,8 @@ masivo</li>
   </div>
   
   <div id="recent_posts" class="list-group">
+    
+    <a class="list-group-item " href="/blog/2014/11/18/defining-methods-dinamycally-metaprogramming/">Defining Methods Dinamycally (Metaprogramming)</a>
     
   </div>
 </section>
@@ -388,8 +253,8 @@ masivo</li>
 
 
 
-    
-  </aside>
+      
+    </aside>
   
 </div>
 
@@ -404,6 +269,19 @@ masivo</li>
 </div>
 </footer>
     
+
+<script type="text/javascript">
+      var disqus_shortname = 'merongivian';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 
