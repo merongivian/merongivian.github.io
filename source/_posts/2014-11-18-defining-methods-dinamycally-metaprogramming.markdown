@@ -3,7 +3,7 @@ layout: post
 title: "Defining methods dinamycally (metaprogramming)"
 date: 2014-11-18 11:00:57 -0500
 comments: true
-published: false
+published: true
 categories: [development, ruby, metaprogramming]
 ---
 
