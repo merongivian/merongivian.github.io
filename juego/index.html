@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Monster Wants Candy demo</title>
+	<style> body { margin: 0; background: url("img/background.jpg"); background-size: cover } </style>
+	<script src="src/phaser-2.0.7.min.js"></script>
+	<script src="src/Boot.js"></script>
+	<script src="src/Preloader.js"></script>
+	<script src="src/MainMenu.js"></script>
+  <script src="src/StoryHowto.js"></script>
+  <script src="src/PickRecipient.js"></script>
+  <script src="src/PickSeed.js"></script>
+	<script src="src/Game.js"></script>
+	<script src="src/TheEnd.js"></script>
+	<script src="src/YouLost.js"></script>
+</head>
+<body>
+<script>
+(function() {
+	// initialize the framework
+	var game = new Phaser.Game(636, 947, Phaser.AUTO, 'game');
+	// add game states
+	game.state.add('Boot', Candy.Boot);
+	game.state.add('Preloader', Candy.Preloader);
+	game.state.add('MainMenu', Candy.MainMenu);
+	game.state.add('StoryHowto', Candy.StoryHowto);
+	game.state.add('PickRecipient', Candy.PickRecipient);
+	game.state.add('PickSeed', Candy.PickSeed);
+	game.state.add('Game', Candy.Game);
+	game.state.add('TheEnd', Candy.TheEnd);
+	game.state.add('YouLost', Candy.YouLost);
+	// start the Boot state
+	game.state.start('Boot');
+})();
+</script>
+</body>
+</html>

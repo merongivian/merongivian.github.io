@@ -1,20 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://merongivian.github.io/blog/2015/02/24/software-development-is-clearly-still-a-black-art/</loc>
+    <lastmod>2015-02-24T08:45:20-05:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>http://merongivian.github.io/blog/2014/11/18/defining-methods-dinamycally-metaprogramming/</loc>
     <lastmod>2014-11-18T11:00:57-05:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://merongivian.github.io/blog/archives/</loc>
-    <lastmod>2015-01-30T00:44:45-05:00</lastmod>
+    <lastmod>2015-06-09T19:52:26-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://merongivian.github.io/</loc>
-    <lastmod>2015-01-30T00:44:45-05:00</lastmod>
+    <lastmod>2015-06-09T19:52:26-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>http://merongivian.github.io/juego/index.html</loc>
+    <lastmod>2015-06-09T19:50:58-05:00</lastmod>
+    <priority>0.6</priority>
   </url>
 </urlset>

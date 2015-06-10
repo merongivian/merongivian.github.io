@@ -4,7 +4,7 @@
   <title><![CDATA[Merongivian]]></title>
   <link href="http://merongivian.github.io/atom.xml" rel="self"/>
   <link href="http://merongivian.github.io/"/>
-  <updated>2015-01-30T00:44:45-05:00</updated>
+  <updated>2015-06-09T19:52:26-05:00</updated>
   <id>http://merongivian.github.io/</id>
   <author>
     <name><![CDATA[Jose Añasco]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Software Development Is Clearly Still a Black Art]]></title>
+    <link href="http://merongivian.github.io/blog/2015/02/24/software-development-is-clearly-still-a-black-art/"/>
+    <updated>2015-02-24T08:45:20-05:00</updated>
+    <id>http://merongivian.github.io/blog/2015/02/24/software-development-is-clearly-still-a-black-art</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Defining Methods Dinamycally (Metaprogramming)]]></title>
